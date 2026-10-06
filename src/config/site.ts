@@ -62,4 +62,37 @@ export const siteConfig = {
       },
     },
   },
+  beginning: {
+    eyebrow: "01 / THE BEGINNING",
+    titleLine1: "IT STARTS",
+    titleLine2: "WITH A DETAIL.",
+    narrative: [
+      "A small piece.",
+      "A quiet moment.",
+      "Something that doesn't just complete you,",
+      "but becomes a part of your story.",
+    ],
+    cta: {
+      label: "DISCOVER AZOR",
+      href: "#signature",
+    },
+    images: {
+      necklace: {
+        src: "/images/beginning-necklace.webp",
+        alt: "Close-up detail of handcrafted four-petal diamond pendant necklace by Azor",
+      },
+      rings: {
+        src: "/images/beginning-rings.webp",
+        alt: "Close-up view of delicate diamond bands and fine rings on elegant hands by Azor",
+      },
+    },
+    rightTaglines: [
+      "SOMETHING",
+      "SMALL.",
+      "SOMETHING",
+      "PERSONAL.",
+      "SOMETHING",
+      "YOURS.",
+    ],
+  },
 };
