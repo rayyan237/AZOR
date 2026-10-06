@@ -8,6 +8,7 @@ import { SocialIcon } from "./SocialIcon";
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Prevent background scroll when mobile drawer is open
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
     return () => {
@@ -15,6 +16,7 @@ export function Navbar() {
     };
   }, [isMobileMenuOpen]);
 
+  // Accessibility: Close drawer on Escape key
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") setIsMobileMenuOpen(false);
@@ -25,37 +27,41 @@ export function Navbar() {
 
   return (
     <>
-      {/* Changed from 'fixed' to 'absolute' so it stays at the top and does not follow the scroll */}
-      <header className="absolute top-0 left-0 right-0 z-50 w-full">
+      {/* 
+        Header: Absolute positioning keeps it anchored naturally to the top of the hero
+        Fluid height scaling: h-16 (small mobile) -> h-20 (standard mobile/tablet) -> h-24 (desktop)
+      */}
+      <header className="absolute top-0 left-0 right-0 z-50 w-full transition-all duration-300">
         <nav
           aria-label="Main Navigation"
-          className="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-14 h-20 sm:h-24 flex items-center justify-between"
+          className="max-w-[1440px] mx-auto px-5 xs:px-6 sm:px-8 md:px-10 lg:px-14 xl:px-18 2xl:px-20 h-16 xs:h-18 sm:h-20 lg:h-24 flex items-center justify-between"
         >
-          {/* Brand Logo */}
+          {/* Brand Logo: Fluid font scaling and letter-spacing */}
           <Link
             href="/"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="font-[family-name:var(--font-serif)] font-medium text-2xl sm:text-[26px] tracking-[0.18em] text-white/95 hover:text-white transition-opacity select-none"
+            className="font-[family-name:var(--font-serif)] font-medium text-xl xs:text-2xl sm:text-[25px] lg:text-[26px] tracking-[0.16em] xs:tracking-[0.18em] text-white/95 hover:text-white transition-opacity select-none focus:outline-none focus:ring-1 focus:ring-white/40 rounded-sm"
           >
             {siteConfig.name}
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center gap-8 lg:gap-11">
+          {/* Desktop Navigation Links: Visible from md (768px) and above */}
+          <div className="hidden md:flex items-center gap-5 lg:gap-8 xl:gap-11">
             {siteConfig.navItems.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
-                className="text-[10px] lg:text-[10.5px] font-[family-name:var(--font-sans)] font-medium tracking-[0.24em] text-white/70 hover:text-white transition-colors duration-200"
+                className="text-[9.5px] lg:text-[10px] xl:text-[10.5px] font-[family-name:var(--font-sans)] font-medium tracking-[0.2em] lg:tracking-[0.24em] text-white/75 hover:text-white transition-colors duration-200 py-1"
               >
                 {item.label}
               </Link>
             ))}
           </div>
 
-          {/* Right Section: Socials & Mobile Menu Trigger */}
-          <div className="flex items-center gap-5 sm:gap-6">
-            <div className="flex items-center gap-4 text-white/80">
+          {/* Right Section: Socials & Mobile Menu Toggle */}
+          <div className="flex items-center gap-3.5 xs:gap-4 sm:gap-5 lg:gap-6">
+            {/* Social Icons */}
+            <div className="flex items-center gap-2.5 xs:gap-3 sm:gap-4 text-white/80">
               {siteConfig.socials.map((social) => (
                 <a
                   key={social.platform}
@@ -63,24 +69,28 @@ export function Navbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="hover:text-white transition-colors p-1"
+                  className="hover:text-white transition-colors p-1.5 focus:outline-none focus:ring-1 focus:ring-white/40 rounded-full"
                 >
-                  <SocialIcon platform={social.platform} className="w-[18px] h-[18px]" />
+                  <SocialIcon
+                    platform={social.platform}
+                    className="w-4 h-4 sm:w-[17px] sm:h-[17px] lg:w-[18px] lg:h-[18px]"
+                  />
                 </a>
               ))}
             </div>
 
+            {/* Mobile Hamburger Trigger: Accessible touch target (min 44x44px) */}
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
               aria-expanded={isMobileMenuOpen}
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-              className="md:hidden text-white/90 hover:text-white p-2 focus:outline-none z-50 relative"
+              className="md:hidden text-white/90 hover:text-white p-2.5 -mr-1 focus:outline-none focus:ring-1 focus:ring-white/40 rounded z-50 relative"
             >
-              <div className="w-6 h-5 flex flex-col justify-between">
+              <div className="w-5 xs:w-6 h-4 xs:h-5 flex flex-col justify-between">
                 <span
-                  className={`h-[1.5px] w-full bg-white transition-all duration-300 ${
-                    isMobileMenuOpen ? "rotate-45 translate-y-2" : ""
+                  className={`h-[1.5px] w-full bg-white transition-all duration-300 origin-center ${
+                    isMobileMenuOpen ? "rotate-45 translate-y-[7px] xs:translate-y-2" : ""
                   }`}
                 />
                 <span
@@ -89,8 +99,8 @@ export function Navbar() {
                   }`}
                 />
                 <span
-                  className={`h-[1.5px] w-full bg-white transition-all duration-300 ${
-                    isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
+                  className={`h-[1.5px] w-full bg-white transition-all duration-300 origin-center ${
+                    isMobileMenuOpen ? "-rotate-45 -translate-y-[7px] xs:-translate-y-2" : ""
                   }`}
                 />
               </div>
@@ -99,27 +109,36 @@ export function Navbar() {
         </nav>
       </header>
 
-      {/* Full-Screen Mobile Drawer: Remains fixed so it locks to viewport when opened */}
+      {/* 
+        Full-Screen Mobile Drawer:
+        - Viewport height lock (100dvh)
+        - Backdrop frosted blur
+        - Fluid padding ensuring safe spacing across compact phones & phablets
+      */}
       <div
-        className={`fixed inset-0 z-40 md:hidden transition-all duration-500 flex flex-col justify-between px-8 pt-28 pb-12 bg-black/85 backdrop-blur-2xl ${
+        className={`fixed inset-0 z-40 md:hidden transition-all duration-500 flex flex-col justify-between px-6 xs:px-8 sm:px-12 pt-24 xs:pt-28 pb-8 xs:pb-12 bg-black/90 backdrop-blur-2xl ${
           isMobileMenuOpen
             ? "opacity-100 pointer-events-auto visible"
             : "opacity-0 pointer-events-none invisible"
         }`}
+        style={{ minHeight: "100dvh" }}
       >
-        <div className="flex flex-col gap-6 my-auto">
+        {/* Navigation Links with Staggered Fade */}
+        <div className="flex flex-col gap-4 xs:gap-5 sm:gap-6 my-auto overflow-y-auto py-4">
           {siteConfig.navItems.map((item, index) => (
             <Link
               key={item.label}
               href={item.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className={`text-2xl font-[family-name:var(--font-serif)] font-medium tracking-[0.22em] text-white/90 hover:text-white transition-all duration-300 transform ${
+              className={`text-xl xs:text-2xl sm:text-3xl font-[family-name:var(--font-serif)] font-medium tracking-[0.18em] xs:tracking-[0.22em] text-white/90 hover:text-white transition-all duration-300 transform ${
                 isMobileMenuOpen
                   ? "translate-y-0 opacity-100"
                   : "translate-y-4 opacity-0"
               }`}
               style={{
-                transitionDelay: isMobileMenuOpen ? `${index * 50 + 100}ms` : "0ms",
+                transitionDelay: isMobileMenuOpen
+                  ? `${index * 40 + 80}ms`
+                  : "0ms",
               }}
             >
               {item.label}
@@ -127,11 +146,12 @@ export function Navbar() {
           ))}
         </div>
 
-        <div className="pt-8 border-t border-white/10 flex items-center justify-between">
-          <p className="text-[10px] tracking-[0.25em] text-white/50 uppercase font-[family-name:var(--font-sans)] font-medium">
+        {/* Mobile Drawer Bottom Footer */}
+        <div className="pt-6 xs:pt-8 border-t border-white/10 flex items-center justify-between">
+          <p className="text-[9px] xs:text-[10px] tracking-[0.2em] xs:tracking-[0.25em] text-white/50 uppercase font-[family-name:var(--font-sans)] font-medium">
             A Digital Jewelry House
           </p>
-          <div className="flex items-center gap-4 text-white/70">
+          <div className="flex items-center gap-3.5 xs:gap-4 text-white/70">
             {siteConfig.socials.map((social) => (
               <a
                 key={social.platform}
@@ -139,9 +159,9 @@ export function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="hover:text-white p-1"
+                className="hover:text-white p-1.5 focus:outline-none"
               >
-                <SocialIcon platform={social.platform} className="w-4 h-4" />
+                <SocialIcon platform={social.platform} className="w-4 h-4 xs:w-[18px] xs:h-[18px]" />
               </a>
             ))}
           </div>
