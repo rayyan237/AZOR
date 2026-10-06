@@ -11,7 +11,7 @@ export function HeroSection() {
       aria-label="Hero Showcase"
       className="relative w-full h-screen h-[100dvh] overflow-hidden flex flex-col justify-between pt-20 sm:pt-24 md:pt-28 pb-6 sm:pb-8 lg:pb-10 px-6 sm:px-12 lg:px-20"
     >
-      {/* Background Image Container */}
+      {/* Background Image Container — Raw image without any filters, scrims, or darkening gradients */}
       <div className="absolute inset-0 z-0">
         <Image
           src={hero.image.src}
@@ -20,24 +20,18 @@ export function HeroSection() {
           priority
           sizes="100vw"
           className="object-cover object-[68%_center] sm:object-[60%_center] lg:object-center select-none pointer-events-none"
-          quality={92}
-        />
-
-        {/* Minimal soft gradient on the left edge only for text contrast */}
-        <div
-          className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/10 to-transparent pointer-events-none"
-          aria-hidden="true"
+          
         />
       </div>
 
       {/* Main Content Area */}
       <div className="relative z-10 my-auto max-w-xl sm:max-w-2xl lg:max-w-3xl flex flex-col items-start select-none">
-        {/* Eyebrow: Uppercase Clean Sans with generous tracking */}
+        {/* Eyebrow */}
         <p className="text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.32em] uppercase text-zinc-300 font-[family-name:var(--font-sans-clean)] font-medium mb-3 sm:mb-4">
           {hero.eyebrow}
         </p>
 
-        {/* Brand Display Title: High-Contrast Didone Serif */}
+        {/* Brand Display Title */}
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[88px] xl:text-[96px] font-[family-name:var(--font-serif-brand)] font-normal tracking-[0.14em] leading-[0.92] text-white">
           {hero.brand}
         </h1>
