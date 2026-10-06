@@ -40,7 +40,7 @@ export function Navbar() {
           <Link
             href="/"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="font-[family-name:var(--font-serif-brand)] text-2xl tracking-[0.22em] text-white/95 hover:text-white transition-opacity select-none"
+            className="font-[family-name:var(--font-serif-brand)] text-2xl tracking-[0.18em] text-white/95 hover:text-white transition-opacity select-none"
           >
             {siteConfig.name}
           </Link>

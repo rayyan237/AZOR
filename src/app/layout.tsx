@@ -1,25 +1,26 @@
+// src/app/layout.tsx
 import type { Metadata, Viewport } from "next";
-import { Cinzel, Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
+import { Playfair_Display, Cormorant_Garamond, Montserrat } from "next/font/google";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 
-const cinzel = Cinzel({
-  variable: "--font-cinzel",
+const playfair = Playfair_Display({
+  variable: "--font-brand-serif",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
 const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
+  variable: "--font-accent-italic",
   subsets: ["latin"],
   style: ["normal", "italic"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500"],
   display: "swap",
 });
 
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
+const montserrat = Montserrat({
+  variable: "--font-clean-sans",
   subsets: ["latin"],
   weight: ["300", "400", "500"],
   display: "swap",
@@ -75,7 +76,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${cinzel.variable} ${cormorant.variable} ${jakarta.variable} antialiased selection:bg-white/20 selection:text-white`}
+        className={`${playfair.variable} ${cormorant.variable} ${montserrat.variable} antialiased selection:bg-white/20 selection:text-white`}
       >
         {children}
       </body>

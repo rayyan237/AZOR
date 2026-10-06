@@ -1,9 +1,10 @@
+/* src/app/globals.css */
 @import "tailwindcss";
 
 @theme {
-  --font-serif-brand: var(--font-cinzel), serif;
-  --font-serif-accent: var(--font-cormorant), serif;
-  --font-sans-clean: var(--font-jakarta), sans-serif;
+  --font-serif-brand: var(--font-brand-serif), serif;
+  --font-serif-accent: var(--font-accent-italic), serif;
+  --font-sans-clean: var(--font-clean-sans), sans-serif;
 
   --color-luxury-bg: #090b0e;
   --color-luxury-surface: #10141a;
