@@ -1,15 +1,16 @@
-/* src/app/globals.css */
 @import "tailwindcss";
 
 @theme {
-  --font-serif-brand: var(--font-brand-serif), serif;
-  --font-serif-accent: var(--font-accent-italic), serif;
-  --font-sans-clean: var(--font-clean-sans), sans-serif;
+  --font-serif-brand: var(--font-serif-editorial), Georgia, serif;
+  --font-serif-accent: var(--font-serif-editorial), Georgia, serif;
+  --font-sans-clean: var(--font-clean-sans), -apple-system, BlinkMacSystemFont, sans-serif;
 
-  --color-luxury-bg: #090b0e;
-  --color-luxury-surface: #10141a;
-  --color-luxury-text: #e6e8eb;
-  --color-luxury-muted: #8b929a;
+  /* Editorial parchment palette from design */
+  --color-parchment-bg: #f5f2ed;
+  --color-parchment-headline: #1e242d;
+  --color-parchment-muted: #535d6a;
+  --color-parchment-subtle: #798492;
+  --color-parchment-border: #d4cdc3;
 }
 
 :root {
@@ -19,8 +20,6 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--background);
-  color: var(--foreground);
 }
 
 body {

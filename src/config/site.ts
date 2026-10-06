@@ -87,12 +87,9 @@ export const siteConfig = {
       },
     },
     rightTaglines: [
-      "SOMETHING",
-      "SMALL.",
-      "SOMETHING",
-      "PERSONAL.",
-      "SOMETHING",
-      "YOURS.",
+      { prefix: "SOMETHING", highlight: "SMALL." },
+      { prefix: "SOMETHING", highlight: "PERSONAL." },
+      { prefix: "SOMETHING", highlight: "YOURS." },
     ],
   },
 };
