@@ -11,17 +11,31 @@ export function HeroSection() {
       aria-label="Hero Showcase"
       className="relative w-full h-screen h-[100dvh] overflow-hidden flex flex-col justify-between pt-20 sm:pt-24 md:pt-28 pb-6 sm:pb-8 lg:pb-10 px-6 sm:px-12 lg:px-20"
     >
-      {/* Background Image Container — Raw image without any filters, scrims, or darkening gradients */}
+      {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src={hero.image.src}
-          alt={hero.image.alt}
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-[68%_center] sm:object-[60%_center] lg:object-center select-none pointer-events-none"
-          
-        />
+        {/* Mobile Viewport Image (< 768px): Tailored crop for vertical screens */}
+        <div className="relative w-full h-full md:hidden">
+          <Image
+            src={hero.images.mobile.src}
+            alt={hero.images.mobile.alt}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center select-none pointer-events-none"
+          />
+        </div>
+
+        {/* Desktop Viewport Image (>= 768px): Cinematic horizontal composition */}
+        <div className="hidden md:block relative w-full h-full">
+          <Image
+            src={hero.images.desktop.src}
+            alt={hero.images.desktop.alt}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center select-none pointer-events-none"
+          />
+        </div>
       </div>
 
       {/* Main Content Area */}

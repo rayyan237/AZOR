@@ -51,9 +51,15 @@ export const siteConfig = {
     statement2: "It's a feeling.",
     ctaScroll: "SCROLL TO EXPLORE",
     pagination: "01 / 11",
-    image: {
-      src: "/images/hero-model.webp",
-      alt: "Fine jewelry portrait showcasing signature rings and earrings by Azor",
+    images: {
+      desktop: {
+        src: "/images/hero-desktop.webp",
+        alt: "Fine jewelry portrait showcasing signature rings and earrings by Azor on desktop",
+      },
+      mobile: {
+        src: "/images/hero-mobile.webp",
+        alt: "Fine jewelry vertical portrait showcasing signature rings and earrings by Azor on mobile",
+      },
     },
   },
 };
