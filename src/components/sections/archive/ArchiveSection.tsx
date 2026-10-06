@@ -9,41 +9,38 @@ export function ArchiveSection() {
     <section
       id="archive"
       aria-label="The Azor Archive"
-      /* Slim panoramic banner height matching Beginning and Philosophy sections */
-      className="relative w-full bg-[#EFECE6] text-[#1D232C] py-10 xs:py-12 sm:py-14 md:py-16 lg:py-18 xl:py-20 px-5 xs:px-6 sm:px-8 md:px-10 lg:px-14 xl:px-18 2xl:px-20 border-b border-[#E2DDD3] selection:bg-[#1D232C] selection:text-white"
+      /* Exact bone/alabaster canvas with restrained vertical padding matching reference */
+      className="relative w-full bg-[#EFECE6] text-[#1B222C] py-8 xs:py-10 sm:py-12 md:py-14 lg:py-16 px-5 xs:px-6 sm:px-8 md:px-10 lg:px-14 xl:px-18 2xl:px-20 border-b border-[#E2DDD3] selection:bg-[#1B222C] selection:text-white"
     >
       <div className="max-w-[1440px] mx-auto">
         
-        {/* Header Row: Title & Subtitle on Left, CTA on Right */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6 mb-6 xs:mb-8 sm:mb-10 lg:mb-12">
-          <div className="flex flex-col items-start space-y-1 xs:space-y-1.5">
-            {/* Main Section Title */}
-            <h2 className="text-2xl xs:text-3xl sm:text-[34px] md:text-[38px] lg:text-[42px] font-[family-name:var(--font-serif)] font-normal tracking-[0.04em] text-[#1D232C] leading-tight">
+        {/* Header Block: Refined editorial font sizes & clean hierarchy */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 sm:gap-6 mb-5 xs:mb-6 sm:mb-8 lg:mb-10">
+          <div className="flex flex-col items-start space-y-1">
+            {/* Main Section Title: Cormorant Garamond in accurate restrained scale */}
+            <h2 className="text-[22px] xs:text-[25px] sm:text-[28px] md:text-[30px] lg:text-[32px] xl:text-[34px] font-[family-name:var(--font-serif)] font-normal tracking-[0.03em] text-[#1B222C] leading-none">
               {archive.title}
             </h2>
 
-            {/* Subtitle Eyebrow & Description */}
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-0.5 pt-0.5">
-              <span className="text-[9.5px] xs:text-[10px] sm:text-[10.5px] font-[family-name:var(--font-sans)] font-medium tracking-[0.24em] uppercase text-[#747B86]">
-                {archive.subtitle}
-              </span>
-              <span className="hidden sm:inline text-[#A4ACB8] text-xs" aria-hidden="true">
-                •
-              </span>
-              <p className="text-[11px] xs:text-[11.5px] sm:text-[12px] font-[family-name:var(--font-sans)] font-light text-[#4E5562] tracking-[0.02em]">
-                {archive.description}
-              </p>
-            </div>
+            {/* Eyebrow: Tiny uppercase sans with generous letter-spacing */}
+            <p className="text-[9px] xs:text-[9.5px] sm:text-[10px] font-[family-name:var(--font-sans)] font-medium tracking-[0.24em] uppercase text-[#6E7684] pt-0.5">
+              {archive.subtitle}
+            </p>
+
+            {/* Narrative Description: Small, delicate editorial text */}
+            <p className="text-[10.5px] xs:text-[11px] sm:text-[11.5px] font-[family-name:var(--font-sans)] font-light text-[#525A67] tracking-[0.02em] leading-normal pt-0.5">
+              {archive.description}
+            </p>
           </div>
 
-          {/* Right Header Action: EXPLORE ALL */}
+          {/* Right Action: EXPLORE ALL */}
           <div className="self-start sm:self-end pt-1 sm:pt-0">
             <Link
               href={archive.cta.href}
-              className="group inline-flex items-center gap-2 text-[10px] xs:text-[10.5px] sm:text-[11px] font-[family-name:var(--font-sans)] font-semibold tracking-[0.22em] uppercase text-[#1D232C] border-b border-[#1D232C] pb-0.5 hover:text-[#555C68] hover:border-[#555C68] transition-colors"
+              className="group inline-flex items-center gap-2 text-[9px] xs:text-[9.5px] sm:text-[10px] font-[family-name:var(--font-sans)] font-medium tracking-[0.24em] uppercase text-[#1B222C] border-b border-[#1B222C] pb-0.5 hover:text-[#525A67] hover:border-[#525A67] transition-colors"
             >
               <span>{archive.cta.label}</span>
-              <span className="text-xs transition-transform duration-300 group-hover:translate-x-1">
+              <span className="text-[11px] transition-transform duration-300 group-hover:translate-x-1">
                 →
               </span>
             </Link>
@@ -51,17 +48,16 @@ export function ArchiveSection() {
         </div>
 
         {/* 
-          Product Grid & Mobile Horizontal Snap Rail:
-          - Desktop (lg/xl/2xl): 5 balanced columns
-          - Tablet (md): 3 columns
-          - Mobile (sm and below): Horizontal snap rail with peek styling
+          5-Card Showcase:
+          - Desktop (lg/xl/2xl): Exactly 5 square cards with tight, uniform gaps
+          - Mobile & Tablet (< lg): Smooth edge-to-edge swipe rail with touch momentum
         */}
-        <div className="relative">
-          <div className="flex md:grid md:grid-cols-3 lg:grid-cols-5 gap-3.5 xs:gap-4 sm:gap-4 lg:gap-4 xl:gap-5 overflow-x-auto md:overflow-x-visible pb-4 md:pb-0 scroll-smooth snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div className="relative -mx-5 xs:-mx-6 sm:-mx-8 md:-mx-10 lg:mx-0">
+          <div className="flex lg:grid lg:grid-cols-5 gap-2.5 xs:gap-3 sm:gap-3.5 lg:gap-3 xl:gap-3.5 overflow-x-auto lg:overflow-x-visible px-5 xs:px-6 sm:px-8 md:px-10 lg:px-0 pb-2 lg:pb-0 scroll-smooth snap-x snap-mandatory touch-pan-x [-webkit-overflow-scrolling:touch] [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {archive.items.map((item) => (
               <div
                 key={item.id}
-                className="min-w-[68vw] xs:min-w-[55vw] sm:min-w-[42vw] md:min-w-0 snap-center shrink-0 md:shrink"
+                className="w-[58vw] xs:w-[48vw] sm:w-[32vw] md:w-[24vw] lg:w-auto snap-start shrink-0 lg:shrink"
               >
                 <ArchiveCard item={item} />
               </div>
