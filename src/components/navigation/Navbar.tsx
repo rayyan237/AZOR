@@ -25,12 +25,13 @@ export function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300">
+      {/* Changed from 'fixed' to 'absolute' so it stays at the top and does not follow the scroll */}
+      <header className="absolute top-0 left-0 right-0 z-50 w-full">
         <nav
           aria-label="Main Navigation"
           className="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-14 h-20 sm:h-24 flex items-center justify-between"
         >
-          {/* Brand Logo: Cormorant Garamond Medium */}
+          {/* Brand Logo */}
           <Link
             href="/"
             onClick={() => setIsMobileMenuOpen(false)}
@@ -39,7 +40,7 @@ export function Navbar() {
             {siteConfig.name}
           </Link>
 
-          {/* Desktop Navigation: Montserrat Medium with wider letter-spacing */}
+          {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center gap-8 lg:gap-11">
             {siteConfig.navItems.map((item) => (
               <Link
@@ -52,7 +53,7 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Right Section: Official Social Glyphs & Mobile Trigger */}
+          {/* Right Section: Socials & Mobile Menu Trigger */}
           <div className="flex items-center gap-5 sm:gap-6">
             <div className="flex items-center gap-4 text-white/80">
               {siteConfig.socials.map((social) => (
@@ -98,7 +99,7 @@ export function Navbar() {
         </nav>
       </header>
 
-      {/* Full-Screen Mobile Drawer */}
+      {/* Full-Screen Mobile Drawer: Remains fixed so it locks to viewport when opened */}
       <div
         className={`fixed inset-0 z-40 md:hidden transition-all duration-500 flex flex-col justify-between px-8 pt-28 pb-12 bg-black/85 backdrop-blur-2xl ${
           isMobileMenuOpen
