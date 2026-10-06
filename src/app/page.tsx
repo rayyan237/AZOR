@@ -1,8 +1,8 @@
-// src/app/page.tsx
 import { Navbar } from "@/components/navigation/Navbar";
 import { HeroSection } from "@/components/hero/HeroSection";
 import { BeginningSection } from "@/components/sections/beginning/BeginningSection";
 import { PhilosophySection } from "@/components/sections/philosophy/PhilosophySection";
+import { ArchiveSection } from "@/components/sections/archive/ArchiveSection";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 export default function Home() {
@@ -14,6 +14,7 @@ export default function Home() {
         <HeroSection />
         <BeginningSection />
         <PhilosophySection />
+        <ArchiveSection />
       </main>
     </>
   );

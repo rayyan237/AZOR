@@ -9,6 +9,16 @@ export interface SocialLink {
   url: string;
 }
 
+export interface ArchiveItem {
+  id: string;
+  title: string;
+  image: {
+    src: string;
+    alt: string;
+  };
+  href: string;
+}
+
 export const siteConfig = {
   name: "AZOR",
   title: "AZOR — A Digital Jewelry House",
@@ -115,5 +125,61 @@ export const siteConfig = {
         alt: "Azor philosophy vertical portrait showcasing signature jewelry on mobile",
       },
     },
+  },
+  archive: {
+    title: "THE AZOR ARCHIVE",
+    subtitle: "PIECES WITH A STORY.",
+    description: "Explore the pieces that make up the world of Azor.",
+    cta: {
+      label: "EXPLORE ALL",
+      href: "#signature",
+    },
+    items: [
+      {
+        id: "001",
+        title: "THE SIGNATURE",
+        image: {
+          src: "/images/archive-01.jpeg",
+          alt: "The Signature four-petal pendant necklace by Azor",
+        },
+        href: "#archive-01",
+      },
+      {
+        id: "002",
+        title: "THE AFTERGLOW",
+        image: {
+          src: "/images/archive-02.webp",
+          alt: "The Afterglow diamond drop earring worn on model by Azor",
+        },
+        href: "#archive-02",
+      },
+      {
+        id: "003",
+        title: "THE NOIR",
+        image: {
+          src: "/images/archive-03.webp",
+          alt: "The Noir black gemstone ring by Azor",
+        },
+        href: "#archive-03",
+      },
+      {
+        id: "004",
+        title: "THE PETAL",
+        image: {
+          src: "/images/archive-04.webp",
+          alt: "The Petal floral sculptural ring by Azor",
+        },
+        href: "#archive-04",
+      },
+      {
+        id: "005",
+        title: "THE LUNE",
+        image: {
+          src: "/images/archive-05.webp",
+          alt: "The Lune crescent moon pendant necklace by Azor",
+        },
+        href: "#archive-05",
+      },
+    ] as ArchiveItem[],
   },
 };
