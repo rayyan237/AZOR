@@ -53,11 +53,11 @@ export const siteConfig = {
     pagination: "01 / 11",
     images: {
       desktop: {
-        src: "/images/hero-desktop.webp",
+        src: "/images/hero-desktop.jpg",
         alt: "Fine jewelry portrait showcasing signature rings and earrings by Azor on desktop",
       },
       mobile: {
-        src: "/images/hero-mobile.webp",
+        src: "/images/hero-mobile.jpg",
         alt: "Fine jewelry vertical portrait showcasing signature rings and earrings by Azor on mobile",
       },
     },
@@ -78,11 +78,11 @@ export const siteConfig = {
     },
     images: {
       necklace: {
-        src: "/images/beginning-necklace.jpg",
+        src: "/images/beginning-necklace.webp",
         alt: "Close-up detail of handcrafted four-petal diamond pendant necklace by Azor",
       },
       rings: {
-        src: "/images/beginning-rings.jpg",
+        src: "/images/beginning-rings.webp",
         alt: "Close-up view of delicate diamond bands and fine rings on elegant hands by Azor",
       },
     },
@@ -91,5 +91,23 @@ export const siteConfig = {
       { prefix: "SOMETHING", highlight: "PERSONAL." },
       { prefix: "SOMETHING", highlight: "YOURS." },
     ],
+  },
+  philosophy: {
+    eyebrow: "02 / OUR PHILOSOPHY",
+    titleLines: ["JEWELRY", "SHOULD FEEL", "PERSONAL."],
+    narrative: [
+      "Not just for special occasions.",
+      "But for your everyday moments,",
+      "the in-betweens, and everything",
+      "that makes you, you.",
+    ],
+    cta: {
+      label: "THE AZOR PHILOSOPHY",
+      href: "#about",
+    },
+    image: {
+      src: "/images/philosophy-portrait.webp",
+      alt: "Close-up portrait of model wearing fine diamond earrings and delicate necklace by Azor",
+    },
   },
 };
