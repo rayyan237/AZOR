@@ -78,11 +78,11 @@ export const siteConfig = {
     },
     images: {
       necklace: {
-        src: "/images/beginning-necklace.webp",
+        src: "/images/beginning-necklace.jpg",
         alt: "Close-up detail of handcrafted four-petal diamond pendant necklace by Azor",
       },
       rings: {
-        src: "/images/beginning-rings.webp",
+        src: "/images/beginning-rings.jpg",
         alt: "Close-up view of delicate diamond bands and fine rings on elegant hands by Azor",
       },
     },
