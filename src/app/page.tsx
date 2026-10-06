@@ -1,3 +1,4 @@
+// src/app/page.tsx
 import { Navbar } from "@/components/navigation/Navbar";
 import { HeroSection } from "@/components/hero/HeroSection";
 import { BeginningSection } from "@/components/sections/beginning/BeginningSection";
