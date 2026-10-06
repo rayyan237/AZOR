@@ -19,8 +19,8 @@ export const siteConfig = {
   keywords: [
     "Azor",
     "Digital Jewelry House",
-    "Luxury Jewelry",
-    "Fine Jewelry",
+    "Luxury Fine Jewelry",
+    "Bespoke Jewelry",
     "Signature Collection",
   ],
   navItems: [
@@ -51,5 +51,9 @@ export const siteConfig = {
     statement2: "It's a feeling.",
     ctaScroll: "SCROLL TO EXPLORE",
     pagination: "01 / 11",
+    image: {
+      src: "/images/hero-model.webp",
+      alt: "Fine jewelry portrait showcasing signature rings and earrings by Azor",
+    },
   },
 };
