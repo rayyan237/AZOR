@@ -8,19 +8,13 @@ import { SocialIcon } from "./SocialIcon";
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Lock background body scroll when mobile menu is open
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
   }, [isMobileMenuOpen]);
 
-  // Handle escape key to close menu
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") setIsMobileMenuOpen(false);
@@ -36,29 +30,29 @@ export function Navbar() {
           aria-label="Main Navigation"
           className="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-14 h-20 sm:h-24 flex items-center justify-between"
         >
-          {/* Brand Logo */}
+          {/* Brand Logo: Cormorant Garamond Medium */}
           <Link
             href="/"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="font-[family-name:var(--font-serif-brand)] text-2xl tracking-[0.18em] text-white/95 hover:text-white transition-opacity select-none"
+            className="font-[family-name:var(--font-serif)] font-medium text-2xl sm:text-[26px] tracking-[0.18em] text-white/95 hover:text-white transition-opacity select-none"
           >
             {siteConfig.name}
           </Link>
 
-          {/* Desktop Navigation Links */}
+          {/* Desktop Navigation: Montserrat Medium with wider letter-spacing */}
           <div className="hidden md:flex items-center gap-8 lg:gap-11">
             {siteConfig.navItems.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
-                className="text-[11px] font-[family-name:var(--font-sans-clean)] tracking-[0.24em] text-white/70 hover:text-white transition-colors duration-200"
+                className="text-[10px] lg:text-[10.5px] font-[family-name:var(--font-sans)] font-medium tracking-[0.24em] text-white/70 hover:text-white transition-colors duration-200"
               >
                 {item.label}
               </Link>
             ))}
           </div>
 
-          {/* Right Section: Desktop Socials & Hamburger */}
+          {/* Right Section: Official Social Glyphs & Mobile Trigger */}
           <div className="flex items-center gap-5 sm:gap-6">
             <div className="flex items-center gap-4 text-white/80">
               {siteConfig.socials.map((social) => (
@@ -75,7 +69,6 @@ export function Navbar() {
               ))}
             </div>
 
-            {/* Mobile Hamburger Toggle */}
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
@@ -105,22 +98,21 @@ export function Navbar() {
         </nav>
       </header>
 
-      {/* Full-Screen Mobile Drawer with Frosted Blur */}
+      {/* Full-Screen Mobile Drawer */}
       <div
-        className={`fixed inset-0 z-40 md:hidden transition-all duration-500 flex flex-col justify-between px-8 pt-28 pb-12 bg-black/80 backdrop-blur-2xl ${
+        className={`fixed inset-0 z-40 md:hidden transition-all duration-500 flex flex-col justify-between px-8 pt-28 pb-12 bg-black/85 backdrop-blur-2xl ${
           isMobileMenuOpen
             ? "opacity-100 pointer-events-auto visible"
             : "opacity-0 pointer-events-none invisible"
         }`}
       >
-        {/* Navigation Links */}
         <div className="flex flex-col gap-6 my-auto">
           {siteConfig.navItems.map((item, index) => (
             <Link
               key={item.label}
               href={item.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className={`text-xl sm:text-2xl font-[family-name:var(--font-serif-brand)] tracking-[0.25em] text-white/90 hover:text-white transition-all duration-300 transform ${
+              className={`text-2xl font-[family-name:var(--font-serif)] font-medium tracking-[0.22em] text-white/90 hover:text-white transition-all duration-300 transform ${
                 isMobileMenuOpen
                   ? "translate-y-0 opacity-100"
                   : "translate-y-4 opacity-0"
@@ -134,9 +126,8 @@ export function Navbar() {
           ))}
         </div>
 
-        {/* Footer info inside mobile menu */}
         <div className="pt-8 border-t border-white/10 flex items-center justify-between">
-          <p className="text-[10px] tracking-[0.25em] text-white/50 uppercase font-[family-name:var(--font-sans-clean)]">
+          <p className="text-[10px] tracking-[0.25em] text-white/50 uppercase font-[family-name:var(--font-sans)] font-medium">
             A Digital Jewelry House
           </p>
           <div className="flex items-center gap-4 text-white/70">

@@ -3,16 +3,18 @@ import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 
+// Primary Editorial Serif (Headings, Logo, Taglines)
 const cormorant = Cormorant_Garamond({
-  variable: "--font-serif-editorial",
+  variable: "--font-serif",
   subsets: ["latin"],
   style: ["normal", "italic"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
+// Editorial Sans (Eyebrows, UI, Buttons, Navigation, Body)
 const montserrat = Montserrat({
-  variable: "--font-clean-sans",
+  variable: "--font-sans",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
   display: "swap",
@@ -32,6 +34,32 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: siteConfig.keywords,
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteConfig.url,
+    title: siteConfig.title,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

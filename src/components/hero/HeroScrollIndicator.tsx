@@ -11,7 +11,7 @@ export function HeroScrollIndicator() {
       <div className="flex flex-col items-center">
         <span className="text-xs">↓</span>
       </div>
-      <span className="text-[10px] sm:text-[11px] font-[family-name:var(--font-sans-clean)] tracking-[0.25em] transition-transform duration-300 group-hover:translate-x-1">
+      <span className="text-[10px] sm:text-[11px] font-[family-name:var(--font-sans)] font-medium tracking-[0.25em] transition-transform duration-300 group-hover:translate-x-1">
         {siteConfig.hero.ctaScroll}
       </span>
     </Link>
