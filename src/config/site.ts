@@ -1,0 +1,55 @@
+export interface NavItem {
+  label: string;
+  href: string;
+}
+
+export interface SocialLink {
+  platform: "instagram" | "whatsapp";
+  label: string;
+  url: string;
+}
+
+export const siteConfig = {
+  name: "AZOR",
+  title: "AZOR — A Digital Jewelry House",
+  description:
+    "AZOR is a contemporary digital jewelry house. Explore our signature collection, bespoke archives, and timeless craftsmanship.",
+  url: "https://azorjewelry.com",
+  ogImage: "https://azorjewelry.com/og.jpg",
+  keywords: [
+    "Azor",
+    "Digital Jewelry House",
+    "Luxury Jewelry",
+    "Fine Jewelry",
+    "Signature Collection",
+  ],
+  navItems: [
+    { label: "WORLD", href: "#world" },
+    { label: "ARCHIVE", href: "#archive" },
+    { label: "SIGNATURE", href: "#signature" },
+    { label: "LETTERS", href: "#letters" },
+    { label: "ABOUT", href: "#about" },
+    { label: "CONNECT", href: "#connect" },
+  ] as NavItem[],
+  socials: [
+    {
+      platform: "instagram",
+      label: "Instagram",
+      url: "https://instagram.com/azorjewelry",
+    },
+    {
+      platform: "whatsapp",
+      label: "WhatsApp",
+      url: "https://wa.me/1234567890",
+    },
+  ] as SocialLink[],
+  hero: {
+    eyebrow: "A DIGITAL JEWELRY HOUSE",
+    brand: "AZOR",
+    tagline: "A signature worth wearing.",
+    statement1: "More than jewelry.",
+    statement2: "It's a feeling.",
+    ctaScroll: "SCROLL TO EXPLORE",
+    pagination: "01 / 11",
+  },
+};
