@@ -1,4 +1,3 @@
-// src/components/hero/HeroSection.tsx
 import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { HeroScrollIndicator } from "./HeroScrollIndicator";
@@ -13,26 +12,26 @@ export function HeroSection() {
     >
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
-        {/* Mobile Viewport Image (< 768px): Tailored crop for vertical screens */}
+        {/* Mobile Viewport Image (< 768px) */}
         <div className="relative w-full h-full md:hidden">
           <Image
             src={hero.images.mobile.src}
             alt={hero.images.mobile.alt}
             fill
             priority
-            sizes="100vw"
+            sizes="(max-width: 767px) 100vw, 0px"
             className="object-cover object-center select-none pointer-events-none"
           />
         </div>
 
-        {/* Desktop Viewport Image (>= 768px): Cinematic horizontal composition */}
+        {/* Desktop Viewport Image (>= 768px) */}
         <div className="hidden md:block relative w-full h-full">
           <Image
             src={hero.images.desktop.src}
             alt={hero.images.desktop.alt}
             fill
             priority
-            sizes="100vw"
+            sizes="(min-width: 768px) 100vw, 0px"
             className="object-cover object-center select-none pointer-events-none"
           />
         </div>

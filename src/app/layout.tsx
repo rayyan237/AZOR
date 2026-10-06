@@ -1,21 +1,21 @@
-// src/app/layout.tsx
 import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Cormorant_Garamond, Montserrat } from "next/font/google";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 
+// Only load weights that are actively rendered
 const playfair = Playfair_Display({
   variable: "--font-brand-serif",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400"],
   display: "swap",
 });
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-accent-italic",
   subsets: ["latin"],
-  style: ["normal", "italic"],
-  weight: ["300", "400", "500"],
+  style: ["italic"],
+  weight: ["400"],
   display: "swap",
 });
 
