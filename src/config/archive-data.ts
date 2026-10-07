@@ -18,9 +18,15 @@ export const archiveData = {
     eyebrow: "THE AZOR ARCHIVE",
     titleLines: ["PIECES WITH", "A STORY."],
     description: "Explore the pieces that make up the world of Azor.",
-    image: {
-      src: "/images/archive/archive-hero.webp",
-      alt: "Portrait of model wearing fine diamond earrings looking into natural light",
+    images: {
+      desktop: {
+        src: "/images/archive/archive-hero-desktop.webp",
+        alt: "Model wearing Azor fine diamond earrings and delicate rings in atmospheric lighting",
+      },
+      mobile: {
+        src: "/images/archive/archive-hero-mobile.webp",
+        alt: "Model portrait wearing fine jewelry detail",
+      },
     },
   },
   categories: ["ALL", "NECKLACES", "EARRINGS", "RINGS", "BRACELETS"] as ArchiveCategory[],

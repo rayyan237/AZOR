@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function ArchivePage() {
   return (
     <main className="relative min-h-screen bg-[#09111E] text-white">
-      <Navbar />
+      <Navbar activeRoute="/archive" />
       <ArchiveHero />
       <ArchiveGridSection />
       <ArchiveClosingBanner />
