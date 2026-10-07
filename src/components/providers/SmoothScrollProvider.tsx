@@ -12,12 +12,10 @@ import Lenis from "lenis";
 
 interface SmoothScrollContextType {
   lenis: Lenis | null;
-  setScrollFriction: (friction: "normal" | "damped" | "pinned") => void;
 }
 
 const SmoothScrollContext = createContext<SmoothScrollContextType>({
   lenis: null,
-  setScrollFriction: () => {},
 });
 
 export const useLenis = () => useContext(SmoothScrollContext);
@@ -31,14 +29,16 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
   const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
+    // Luxury editorial physics: higher duration, lower lerp for velvety inertia
     const lenis = new Lenis({
-      duration: 1.35, // Deliberate luxury inertia
+      duration: 1.8,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      lerp: 0.075,
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 0.95,
-      touchMultiplier: 1.25,
+      wheelMultiplier: 0.82,
+      touchMultiplier: 1.15,
       infinite: false,
     });
 
@@ -59,28 +59,8 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
     };
   }, []);
 
-  const setScrollFriction = (friction: "normal" | "damped" | "pinned") => {
-    if (!lenisRef.current) return;
-
-    if (friction === "pinned") {
-      // Damped velocity for controlled inspection inside horizontal showcases
-      lenisRef.current.options.wheelMultiplier = 0.65;
-      lenisRef.current.options.touchMultiplier = 0.85;
-    } else if (friction === "damped") {
-      // Gentle cushion during transition boundaries
-      lenisRef.current.options.wheelMultiplier = 0.8;
-      lenisRef.current.options.touchMultiplier = 1.0;
-    } else {
-      // Standard luxury glide across editorial vertical banners
-      lenisRef.current.options.wheelMultiplier = 0.95;
-      lenisRef.current.options.touchMultiplier = 1.25;
-    }
-  };
-
   return (
-    <SmoothScrollContext.Provider
-      value={{ lenis: lenisInstance, setScrollFriction }}
-    >
+    <SmoothScrollContext.Provider value={{ lenis: lenisInstance }}>
       {children}
     </SmoothScrollContext.Provider>
   );

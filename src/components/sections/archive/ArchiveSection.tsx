@@ -8,7 +8,7 @@ import { ArchiveCard } from "./ArchiveCard";
 
 export function ArchiveSection() {
   const { archive } = siteConfig;
-  const { setScrollFriction } = useLenis();
+  const { lenis } = useLenis();
 
   const sectionRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -16,13 +16,19 @@ export function ArchiveSection() {
   const [translateX, setTranslateX] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
-  const updateMeasurements = useCallback(() => {
+  // Targets for lerp interpolation
+  const targetXRef = useRef(0);
+  const currentXRef = useRef(0);
+  const rafIdRef = useRef<number | null>(null);
+
+  const computeLayout = useCallback(() => {
     const isMobileView = window.innerWidth < 1024;
     setIsMobile(isMobileView);
 
     if (!isMobileView || !sectionRef.current || !trackRef.current) {
+      targetXRef.current = 0;
+      currentXRef.current = 0;
       setTranslateX(0);
-      setScrollFriction("normal");
       return;
     }
 
@@ -33,54 +39,76 @@ export function ArchiveSection() {
     const scrollableDistance = sectionHeight - windowHeight;
     if (scrollableDistance <= 0) return;
 
-    const scrolled = -rect.top;
-    const progress = Math.min(Math.max(scrolled / scrollableDistance, 0), 1);
+    // Buffer zones: 8% on entry and 8% on exit for soft transitions
+    const rawProgress = -rect.top / scrollableDistance;
+    const progress = Math.min(Math.max(rawProgress, 0), 1);
 
-    // Dynamic friction management: Dampen speed inside the active card journey
-    if (progress > 0.05 && progress < 0.95) {
-      setScrollFriction("pinned");
-    } else if (progress > 0 && progress < 1) {
-      setScrollFriction("damped");
-    } else {
-      setScrollFriction("normal");
-    }
+    // Ease-in-out smooth progression curve
+    const smoothProgress =
+      progress < 0.5
+        ? 2 * progress * progress
+        : 1 - Math.pow(-2 * progress + 2, 2) / 2;
 
-    // Precise track calculation to display the final card with clean breathing room
     const totalTrackWidth = trackRef.current.scrollWidth;
     const viewportWidth = window.innerWidth;
-    const maxScroll = Math.max(0, totalTrackWidth - viewportWidth + 28);
+    const maxScroll = Math.max(0, totalTrackWidth - viewportWidth + 36);
 
-    setTranslateX(-(progress * maxScroll));
-  }, [setScrollFriction]);
+    targetXRef.current = -(smoothProgress * maxScroll);
+  }, []);
 
+  // Smooth lerp loop running on RAF for silky 60/120fps motion
   useEffect(() => {
-    updateMeasurements();
+    if (!isMobile) return;
 
-    const onScroll = () => {
-      requestAnimationFrame(updateMeasurements);
+    const lerpLoop = () => {
+      // 0.09 lerp factor creates soft, high-luxury inertia
+      currentXRef.current += (targetXRef.current - currentXRef.current) * 0.09;
+
+      if (Math.abs(targetXRef.current - currentXRef.current) > 0.1) {
+        setTranslateX(currentXRef.current);
+      }
+      rafIdRef.current = requestAnimationFrame(lerpLoop);
     };
 
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", updateMeasurements);
-
-    const timer = setTimeout(updateMeasurements, 250);
+    rafIdRef.current = requestAnimationFrame(lerpLoop);
 
     return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", updateMeasurements);
-      clearTimeout(timer);
-      setScrollFriction("normal");
+      if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current);
     };
-  }, [updateMeasurements, setScrollFriction]);
+  }, [isMobile]);
+
+  useEffect(() => {
+    computeLayout();
+
+    if (lenis) {
+      lenis.on("scroll", computeLayout);
+    } else {
+      window.addEventListener("scroll", computeLayout, { passive: true });
+    }
+
+    window.addEventListener("resize", computeLayout);
+    const timer = setTimeout(computeLayout, 300);
+
+    return () => {
+      if (lenis) {
+        lenis.off("scroll", computeLayout);
+      } else {
+        window.removeEventListener("scroll", computeLayout);
+      }
+      window.removeEventListener("resize", computeLayout);
+      clearTimeout(timer);
+    };
+  }, [lenis, computeLayout]);
 
   return (
     <section
       id="archive"
       ref={sectionRef}
       aria-label="The Azor Archive"
+      /* Increased runway to h-[460vh] on mobile to give gradual transition distance */
       className={`relative w-full bg-[#EFECE6] text-[#1B222C] border-b border-[#E2DDD3] selection:bg-[#1B222C] selection:text-white ${
         isMobile
-          ? "h-[380vh]"
+          ? "h-[460vh]"
           : "py-10 sm:py-12 md:py-14 lg:py-16 px-5 xs:px-6 sm:px-8 md:px-10 lg:px-14 xl:px-18 2xl:px-20"
       }`}
     >
@@ -120,10 +148,7 @@ export function ArchiveSection() {
           </div>
         </div>
 
-        {/* 
-          Cards Display:
-          - Mobile card width calibrated to w-[76vw] xs:w-[70vw] sm:w-[50vw] to fill space elegantly without crowding
-        */}
+        {/* Product Cards Track with smooth translate3d */}
         {isMobile ? (
           <div className="relative w-full overflow-visible">
             <div

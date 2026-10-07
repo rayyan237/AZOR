@@ -17,8 +17,8 @@
   --foreground: #f0f2f5;
 }
 
+/* IMPORTANT: Never use scroll-behavior: smooth with Lenis */
 html {
-  scroll-behavior: smooth;
   /* Firefox Scrollbar Styling */
   scrollbar-width: thin;
   scrollbar-color: #2b3441 #090b0e;

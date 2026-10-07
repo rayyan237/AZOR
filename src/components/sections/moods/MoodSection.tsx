@@ -7,7 +7,7 @@ import { MoodCard } from "./MoodCard";
 
 export function MoodSection() {
   const { moods } = siteConfig;
-  const { setScrollFriction } = useLenis();
+  const { lenis } = useLenis();
 
   const sectionRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -15,13 +15,18 @@ export function MoodSection() {
   const [translateX, setTranslateX] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
-  const updateMeasurements = useCallback(() => {
+  const targetXRef = useRef(0);
+  const currentXRef = useRef(0);
+  const rafIdRef = useRef<number | null>(null);
+
+  const computeLayout = useCallback(() => {
     const isMobileView = window.innerWidth < 1024;
     setIsMobile(isMobileView);
 
     if (!isMobileView || !sectionRef.current || !trackRef.current) {
+      targetXRef.current = 0;
+      currentXRef.current = 0;
       setTranslateX(0);
-      setScrollFriction("normal");
       return;
     }
 
@@ -32,44 +37,63 @@ export function MoodSection() {
     const scrollableDistance = sectionHeight - windowHeight;
     if (scrollableDistance <= 0) return;
 
-    const scrolled = -rect.top;
-    const progress = Math.min(Math.max(scrolled / scrollableDistance, 0), 1);
+    const rawProgress = -rect.top / scrollableDistance;
+    const progress = Math.min(Math.max(rawProgress, 0), 1);
 
-    // Friction modulation through the 6-mood gallery
-    if (progress > 0.05 && progress < 0.95) {
-      setScrollFriction("pinned");
-    } else if (progress > 0 && progress < 1) {
-      setScrollFriction("damped");
-    } else {
-      setScrollFriction("normal");
-    }
+    // Ease-in-out smooth progression curve
+    const smoothProgress =
+      progress < 0.5
+        ? 2 * progress * progress
+        : 1 - Math.pow(-2 * progress + 2, 2) / 2;
 
     const totalTrackWidth = trackRef.current.scrollWidth;
     const viewportWidth = window.innerWidth;
-    const maxScroll = Math.max(0, totalTrackWidth - viewportWidth + 32);
+    const maxScroll = Math.max(0, totalTrackWidth - viewportWidth + 36);
 
-    setTranslateX(-(progress * maxScroll));
-  }, [setScrollFriction]);
+    targetXRef.current = -(smoothProgress * maxScroll);
+  }, []);
 
   useEffect(() => {
-    updateMeasurements();
+    if (!isMobile) return;
 
-    const onScroll = () => {
-      requestAnimationFrame(updateMeasurements);
+    const lerpLoop = () => {
+      currentXRef.current += (targetXRef.current - currentXRef.current) * 0.09;
+
+      if (Math.abs(targetXRef.current - currentXRef.current) > 0.1) {
+        setTranslateX(currentXRef.current);
+      }
+      rafIdRef.current = requestAnimationFrame(lerpLoop);
     };
 
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", updateMeasurements);
-
-    const timer = setTimeout(updateMeasurements, 250);
+    rafIdRef.current = requestAnimationFrame(lerpLoop);
 
     return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", updateMeasurements);
-      clearTimeout(timer);
-      setScrollFriction("normal");
+      if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current);
     };
-  }, [updateMeasurements, setScrollFriction]);
+  }, [isMobile]);
+
+  useEffect(() => {
+    computeLayout();
+
+    if (lenis) {
+      lenis.on("scroll", computeLayout);
+    } else {
+      window.addEventListener("scroll", computeLayout, { passive: true });
+    }
+
+    window.addEventListener("resize", computeLayout);
+    const timer = setTimeout(computeLayout, 300);
+
+    return () => {
+      if (lenis) {
+        lenis.off("scroll", computeLayout);
+      } else {
+        window.removeEventListener("scroll", computeLayout);
+      }
+      window.removeEventListener("resize", computeLayout);
+      clearTimeout(timer);
+    };
+  }, [lenis, computeLayout]);
 
   return (
     <section
@@ -78,7 +102,7 @@ export function MoodSection() {
       aria-label="The Azor Mood"
       className={`relative w-full bg-[#07090C] text-white border-b border-white/5 selection:bg-white/20 selection:text-white ${
         isMobile
-          ? "h-[440vh]"
+          ? "h-[500vh]"
           : "py-10 sm:py-12 md:py-14 lg:py-16 px-5 xs:px-6 sm:px-8 md:px-10 lg:px-14 xl:px-18 2xl:px-20"
       }`}
     >
@@ -104,10 +128,7 @@ export function MoodSection() {
           </p>
         </div>
 
-        {/* 
-          6-Card Mood Track:
-          - Calibrated to w-[72vw] xs:w-[66vw] sm:w-[46vw] to minimize dead side space
-        */}
+        {/* 6-Card Mood Track */}
         {isMobile ? (
           <div className="relative w-full overflow-visible">
             <div

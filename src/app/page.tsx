@@ -16,6 +16,14 @@ export default function Home() {
         <BeginningSection />
         <PhilosophySection />
         <ArchiveSection />
+
+        {/* 
+          Mobile Section Transition Cushion:
+          Provides 12vh of vertical pause between horizontal scroll tracks
+          so users can smoothly unhook from Archive before entering Moods.
+        */}
+        <div className="block lg:hidden h-[12vh] bg-[#EFECE6] border-b border-[#E2DDD3]" />
+
         <MoodSection />
       </main>
     </>
