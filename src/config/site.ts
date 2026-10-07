@@ -242,15 +242,6 @@ export const siteConfig = {
           alt: "Timeless mood night skyline architecture with moon",
         },
       },
-      {
-        id: "06",
-        title: "UNAPOLOGETIC",
-        descriptor: "Strong. Expressive. Completely you.",
-        image: {
-          src: "/images/mood-unapologetic.webp",
-          alt: "Unapologetic mood sculptural staircase editorial walk",
-        },
-      },
     ] as MoodItem[],
   },
 };
