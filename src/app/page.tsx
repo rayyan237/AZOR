@@ -8,6 +8,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { AzorGirlSection } from "@/components/sections/girl/AzorGirlSection";
 import { LettersSection } from "@/components/sections/letters/LettersSection";
 import { ClosingSection } from "@/components/sections/closing/ClosingSection";
+import { Footer } from "@/components/navigation/Footer";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
         <AzorGirlSection />
         <LettersSection />
         <ClosingSection />
+        <Footer />
       </main>
     </>
   );

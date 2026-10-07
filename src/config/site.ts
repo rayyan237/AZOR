@@ -374,4 +374,21 @@ export const siteConfig = {
       },
     },
   },
+  footer: {
+    brand: "AZOR.",
+    tagline: "In a world of quiet luxury",
+    copyright: "© 2026 AZOR. All rights reserved.",
+    links: [
+      { label: "INDEX", href: "#" },
+      { label: "ARCHIVE", href: "#archive" },
+      { label: "THE MOOD", href: "#moods" },
+      { label: "LETTERS", href: "#letters-archive" },
+      { label: "ABOUT", href: "#philosophy" },
+      { label: "PRIVACY", href: "#privacy" },
+    ],
+    socials: [
+      { platform: "instagram", href: "https://instagram.com/azorjewelry" },
+      { platform: "whatsapp", href: "https://wa.me/1234567890" },
+    ],
+  },
 };
