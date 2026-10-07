@@ -13,7 +13,7 @@ export function LettersSection() {
         Ultra-slim section height:
         Minimal vertical padding py-7 to py-11 matching reference banner proportions
       */
-      className="relative w-full bg-[#EFECE6] text-[#1B222C] border-b border-[#E2DDD3] py-7 xs:py-8 sm:py-9 md:py-10 lg:py-11 px-5 xs:px-6 sm:px-8 md:px-10 lg:px-14 xl:px-18 2xl:px-20 selection:bg-[#1B222C] selection:text-white"
+      className="relative w-full bg-[#E8EAEB] text-[#1B222C] border-b border-[#E2DDD3] py-7 xs:py-8 sm:py-9 md:py-10 lg:py-11 px-5 xs:px-6 sm:px-8 md:px-10 lg:px-14 xl:px-18 2xl:px-20 selection:bg-[#1B222C] selection:text-white"
     >
       <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-start justify-between gap-6 sm:gap-8 lg:gap-8 xl:gap-12">
         

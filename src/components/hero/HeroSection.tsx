@@ -8,6 +8,7 @@ export function HeroSection() {
   return (
     <section
       aria-label="Hero Showcase"
+      id="hero"
       /* 
         Strict single-screen height lock:
         - 100vh fallback

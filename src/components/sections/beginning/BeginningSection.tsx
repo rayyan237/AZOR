@@ -10,7 +10,7 @@ export function BeginningSection() {
       id="world"
       aria-label="The Beginning"
       /* Warm alabaster canvas with matching subtle structural borders */
-      className="relative w-full bg-[#EFECE6] text-[#1D232C] py-12 sm:py-14 md:py-16 lg:py-20 px-6 sm:px-10 lg:px-14 xl:px-18 selection:bg-[#1D232C] selection:text-white border-y border-[#E2DDD3]"
+      className="relative w-full bg-[#E8EAEB] text-[#1D232C] py-12 sm:py-14 md:py-16 lg:py-20 px-6 sm:px-10 lg:px-14 xl:px-18 selection:bg-[#1D232C] selection:text-white border-y border-[#E2DDD3]"
     >
       <div className="max-w-[1380px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 xl:gap-8 items-center">

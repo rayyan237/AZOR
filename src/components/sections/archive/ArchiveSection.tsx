@@ -106,7 +106,7 @@ export function ArchiveSection() {
       ref={sectionRef}
       aria-label="The Azor Archive"
       /* Increased runway to h-[460vh] on mobile to give gradual transition distance */
-      className={`relative w-full bg-[#EFECE6] text-[#1B222C] border-b border-[#E2DDD3] selection:bg-[#1B222C] selection:text-white ${
+      className={`relative w-full bg-[#E8EAEB] text-[#1B222C] border-b border-[#E2DDD3] selection:bg-[#1B222C] selection:text-white ${
         isMobile
           ? "h-[460vh]"
           : "py-10 sm:py-12 md:py-14 lg:py-16 px-5 xs:px-6 sm:px-8 md:px-10 lg:px-14 xl:px-18 2xl:px-20"

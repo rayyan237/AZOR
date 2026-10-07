@@ -11,7 +11,7 @@ export function AzorGirlSection() {
       id="letters"
       aria-label="The Azor Girl"
       /* Clearly defined bottom divider border (#D5CFBF) separating from Letters */
-      className="relative w-full bg-[#EFECE6] text-[#1B222C] border-b border-[#D5CFBF] py-10 xs:py-12 sm:py-14 md:py-16 lg:py-18 xl:py-20 px-5 xs:px-6 sm:px-8 md:px-10 lg:px-14 xl:px-18 2xl:px-20 selection:bg-[#1B222C] selection:text-white"
+      className="relative w-full bg-[#E8EAEB] text-[#1B222C] border-b border-[#D5CFBF] py-10 xs:py-12 sm:py-14 md:py-16 lg:py-18 xl:py-20 px-5 xs:px-6 sm:px-8 md:px-10 lg:px-14 xl:px-18 2xl:px-20 selection:bg-[#1B222C] selection:text-white"
     >
       <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-center lg:items-center justify-between gap-8 sm:gap-10 lg:gap-8 xl:gap-12">
         
