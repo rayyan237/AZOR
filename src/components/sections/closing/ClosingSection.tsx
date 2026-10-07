@@ -10,10 +10,10 @@ export function ClosingSection() {
       id="connect"
       aria-label="Connect with Azor"
       /* 
-        Slim panoramic section height:
-        Clamped between 320px and 420px on desktop to maintain matching proportions
+        Slimmed panoramic height:
+        Clamped between 240px (mobile) and 340px (desktop)
       */
-      className="relative w-full h-[320px] xs:h-[350px] sm:h-[380px] lg:h-[400px] xl:h-[420px] overflow-hidden flex items-center border-t border-b border-white/5 select-none"
+      className="relative w-full h-[240px] xs:h-[260px] sm:h-[290px] md:h-[320px] lg:h-[340px] overflow-hidden flex items-center border-t border-b border-white/5 select-none"
     >
       {/* Background Image Container — Raw image without artificial darkening filters */}
       <div className="absolute inset-0 z-0">
@@ -42,38 +42,38 @@ export function ClosingSection() {
 
       {/* Content Container */}
       <div className="relative z-10 w-full max-w-[1440px] mx-auto px-5 xs:px-6 sm:px-8 md:px-10 lg:px-14 xl:px-18 2xl:px-20">
-        <div className="max-w-[300px] xs:max-w-[340px] sm:max-w-[420px] md:max-w-[480px] flex flex-col items-start space-y-1.5 xs:space-y-2">
+        <div className="max-w-[280px] xs:max-w-[320px] sm:max-w-[380px] md:max-w-[440px] flex flex-col items-start space-y-1 xs:space-y-1.5">
           
           {/* Eyebrow */}
-          <p className="text-[9px] xs:text-[9.5px] sm:text-[10px] lg:text-[10.5px] font-[family-name:var(--font-sans)] font-medium tracking-[0.24em] uppercase text-[#C5CBD4] leading-tight">
+          <p className="text-[8.5px] xs:text-[9px] sm:text-[9.5px] lg:text-[10px] font-[family-name:var(--font-sans)] font-medium tracking-[0.24em] uppercase text-[#C5CBD4] leading-tight">
             {closing.eyebrow}
           </p>
 
           {/* Display Title: Cormorant Garamond */}
-          <h2 className="text-[28px] xs:text-[32px] sm:text-[36px] md:text-[40px] lg:text-[44px] font-[family-name:var(--font-serif)] font-normal tracking-[0.03em] text-white leading-none pt-0.5">
+          <h2 className="text-[24px] xs:text-[28px] sm:text-[32px] md:text-[36px] lg:text-[38px] font-[family-name:var(--font-serif)] font-normal tracking-[0.03em] text-white leading-none pt-0.5">
             {closing.title}
           </h2>
 
           {/* Subtext Statement */}
-          <p className="text-[11px] xs:text-[11.5px] sm:text-[12px] lg:text-[12.5px] font-[family-name:var(--font-sans)] font-light text-[#94A3B8] tracking-[0.025em] leading-normal pt-0.5 pb-3 xs:pb-4 sm:pb-5">
+          <p className="text-[10px] xs:text-[10.5px] sm:text-[11px] lg:text-[11.5px] font-[family-name:var(--font-sans)] font-light text-[#94A3B8] tracking-[0.025em] leading-normal pt-0.5 pb-2 xs:pb-2.5 sm:pb-3">
             {closing.description}
           </p>
 
-          {/* Interactive Social Actions: Side-by-side on all screens */}
-          <div className="flex items-center gap-5 xs:gap-6 sm:gap-7 pt-1">
+          {/* Interactive Social Actions: Side-by-side */}
+          <div className="flex items-center gap-4 xs:gap-5 sm:gap-6 pt-0.5">
             {/* Instagram Action */}
             <a
               href={closing.actions.instagram.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 text-white/85 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-white/40 rounded-sm py-1"
+              className="group inline-flex items-center gap-1.5 xs:gap-2 text-white/85 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-white/40 rounded-sm py-0.5"
               aria-label="Follow Azor on Instagram"
             >
               <SocialIcon
                 platform="instagram"
-                className="w-4 h-4 text-white/90 group-hover:text-white transition-colors"
+                className="w-3.5 h-3.5 xs:w-4 xs:h-4 text-white/90 group-hover:text-white transition-colors"
               />
-              <span className="text-[9px] xs:text-[9.5px] sm:text-[10px] font-[family-name:var(--font-sans)] font-medium tracking-[0.22em] uppercase border-b border-transparent group-hover:border-white transition-all">
+              <span className="text-[8.5px] xs:text-[9px] sm:text-[9.5px] font-[family-name:var(--font-sans)] font-medium tracking-[0.22em] uppercase border-b border-transparent group-hover:border-white transition-all">
                 {closing.actions.instagram.label}
               </span>
             </a>
@@ -83,14 +83,14 @@ export function ClosingSection() {
               href={closing.actions.whatsapp.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 text-white/85 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-white/40 rounded-sm py-1"
+              className="group inline-flex items-center gap-1.5 xs:gap-2 text-white/85 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-white/40 rounded-sm py-0.5"
               aria-label="Chat with Azor on WhatsApp"
             >
               <SocialIcon
                 platform="whatsapp"
-                className="w-4 h-4 text-white/90 group-hover:text-white transition-colors"
+                className="w-3.5 h-3.5 xs:w-4 xs:h-4 text-white/90 group-hover:text-white transition-colors"
               />
-              <span className="text-[9px] xs:text-[9.5px] sm:text-[10px] font-[family-name:var(--font-sans)] font-medium tracking-[0.22em] uppercase border-b border-transparent group-hover:border-white transition-all">
+              <span className="text-[8.5px] xs:text-[9px] sm:text-[9.5px] font-[family-name:var(--font-sans)] font-medium tracking-[0.22em] uppercase border-b border-transparent group-hover:border-white transition-all">
                 {closing.actions.whatsapp.label}
               </span>
             </a>

@@ -160,7 +160,7 @@ export const siteConfig = {
         id: "001",
         title: "THE SIGNATURE",
         image: {
-          src: "/images/archive-01.jpeg",
+          src: "/images/archive-01.webp",
           alt: "The Signature four-petal pendant necklace by Azor",
         },
         href: "#archive-01",
