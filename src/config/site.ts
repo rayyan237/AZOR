@@ -22,6 +22,7 @@ export interface ArchiveItem {
 export interface MoodItem {
   id: string;
   title: string;
+  descriptor: string;
   image: {
     src: string;
     alt: string;
@@ -192,56 +193,62 @@ export const siteConfig = {
     ] as ArchiveItem[],
   },
   moods: {
-    eyebrow: "04 / THE AZOR MOOD",
+    eyebrow: "THE AZOR MOOD",
     title: "WHAT ARE YOU FEELING?",
     description: "Different moods. Different pieces. Same you.",
     items: [
       {
         id: "01",
         title: "SOFT",
+        descriptor: "Delicate. Quiet. Effortless.",
         image: {
           src: "/images/mood-soft.webp",
-          alt: "Soft mood delicate botanical flower",
+          alt: "Soft mood white flower petals",
         },
       },
       {
         id: "02",
         title: "BOLD",
+        descriptor: "Confident. Distinct. Unapologetic.",
         image: {
           src: "/images/mood-bold.webp",
-          alt: "Bold mood high-fashion silhouette",
+          alt: "Bold mood elegant woman silhouette with sunglasses",
         },
       },
       {
         id: "03",
         title: "ROMANTIC",
+        descriptor: "Tender. Dreamy. Personal.",
         image: {
           src: "/images/mood-romantic.webp",
-          alt: "Romantic mood moon over rippling waters",
+          alt: "Romantic mood deep red rose petals",
         },
       },
       {
         id: "04",
         title: "MYSTERIOUS",
+        descriptor: "Dark. Subtle. Intriguing.",
         image: {
           src: "/images/mood-mysterious.webp",
-          alt: "Mysterious mood intimate close-up gaze",
+          alt: "Mysterious mood evocative close-up gaze",
         },
       },
       {
         id: "05",
         title: "TIMELESS",
+        descriptor: "Elegant. Refined. Enduring.",
         image: {
           src: "/images/mood-timeless.webp",
-          alt: "Timeless mood night skyline architecture",
+          alt: "Timeless mood night skyline architecture with moon",
         },
       },
       {
         id: "06",
         title: "UNAPOLOGETIC",
+        descriptor: "Strong. Expressive. Completely you.",
         image: {
           src: "/images/mood-unapologetic.webp",
-          alt: "Unapologetic mood dramatic staircase editorial portrait",
+          alt: "Unapologetic mood sculptural staircase editorial walk",
         },
       },
     ] as MoodItem[],
