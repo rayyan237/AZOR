@@ -5,11 +5,11 @@
   --font-sans: var(--font-sans), system-ui, -apple-system, sans-serif;
 
   /* Editorial parchment palette from design */
-  --color-parchment-bg: #f5f2ed;
-  --color-parchment-headline: #1e242d;
-  --color-parchment-muted: #535d6a;
-  --color-parchment-subtle: #798492;
-  --color-parchment-border: #d4cdc3;
+  --color-parchment-bg: #efece6;
+  --color-parchment-headline: #1b222c;
+  --color-parchment-muted: #525a67;
+  --color-parchment-subtle: #747b86;
+  --color-parchment-border: #e2ddd3;
 }
 
 :root {
@@ -19,6 +19,9 @@
 
 html {
   scroll-behavior: smooth;
+  /* Firefox Scrollbar Styling */
+  scrollbar-width: thin;
+  scrollbar-color: #2b3441 #090b0e;
 }
 
 body {
@@ -27,4 +30,29 @@ body {
   color: var(--foreground);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Chrome, Edge, Safari WebKit Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090b0e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #232b36;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b4656;
+}
+
+::-webkit-scrollbar-corner {
+  background: #090b0e;
 }

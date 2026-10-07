@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { ArchiveCard } from "./ArchiveCard";
@@ -9,47 +9,61 @@ export function ArchiveSection() {
   const { archive } = siteConfig;
   const sectionRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
+
+  const [translateX, setTranslateX] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    const checkViewport = () => {
-      setIsMobile(window.innerWidth < 1024);
-    };
+  const updateMeasurements = useCallback(() => {
+    const isMobileView = window.innerWidth < 1024;
+    setIsMobile(isMobileView);
 
-    checkViewport();
-    window.addEventListener("resize", checkViewport);
-    return () => window.removeEventListener("resize", checkViewport);
+    if (!isMobileView || !sectionRef.current || !trackRef.current) {
+      setTranslateX(0);
+      return;
+    }
+
+    const rect = sectionRef.current.getBoundingClientRect();
+    const sectionHeight = sectionRef.current.offsetHeight;
+    const windowHeight = window.innerHeight;
+
+    // Total vertical scroll budget allocated for this pinned section
+    const scrollableDistance = sectionHeight - windowHeight;
+    if (scrollableDistance <= 0) return;
+
+    // How far the section has travelled through the pinned viewport
+    const scrolled = -rect.top;
+    const progress = Math.min(Math.max(scrolled / scrollableDistance, 0), 1);
+
+    // Compute the EXACT distance required to bring the 5th card completely into view
+    // totalTrackWidth - visibleViewportWidth + edgePadding
+    const totalTrackWidth = trackRef.current.scrollWidth;
+    const viewportWidth = window.innerWidth;
+    
+    // 24px safety margin ensures card 005 has clean breathing room on the right
+    const maxScroll = Math.max(0, totalTrackWidth - viewportWidth + 24);
+
+    setTranslateX(-(progress * maxScroll));
   }, []);
 
   useEffect(() => {
-    if (!isMobile) return;
+    updateMeasurements();
 
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
-      const rect = sectionRef.current.getBoundingClientRect();
-      const sectionHeight = sectionRef.current.offsetHeight;
-      const windowHeight = window.innerHeight;
-
-      // Calculate how far down the section has scrolled
-      const totalScrollableDistance = sectionHeight - windowHeight;
-      if (totalScrollableDistance <= 0) return;
-
-      const currentScroll = -rect.top;
-      const progress = Math.min(
-        Math.max(currentScroll / totalScrollableDistance, 0),
-        1
-      );
-      setScrollProgress(progress);
+    const onScroll = () => {
+      requestAnimationFrame(updateMeasurements);
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isMobile]);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", updateMeasurements);
 
-  // Compute maximum horizontal translation on mobile
-  const maxTranslate = 100 * (archive.items.length - 1.25);
-  const translateX = -(scrollProgress * maxTranslate);
+    // Re-check after images/fonts settle
+    const timer = setTimeout(updateMeasurements, 300);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", updateMeasurements);
+      clearTimeout(timer);
+    };
+  }, [updateMeasurements]);
 
   return (
     <section
@@ -57,40 +71,37 @@ export function ArchiveSection() {
       ref={sectionRef}
       aria-label="The Azor Archive"
       /*
-        On mobile (< lg): Height is expanded to h-[260vh] to provide scroll depth for the sticky horizontal conversion.
-        On desktop (lg+): Restrained compact banner height py-12 to py-16.
+        Height allocation:
+        - Mobile (< lg): h-[400vh] provides ample down-scroll runway for all 5 cards
+        - Desktop (lg+): compact banner height
       */
       className={`relative w-full bg-[#EFECE6] text-[#1B222C] border-b border-[#E2DDD3] selection:bg-[#1B222C] selection:text-white ${
-        isMobile ? "h-[250vh]" : "py-10 sm:py-12 md:py-14 lg:py-16"
+        isMobile ? "h-[400vh]" : "py-10 sm:py-12 md:py-14 lg:py-16 px-5 xs:px-6 sm:px-8 md:px-10 lg:px-14 xl:px-18 2xl:px-20"
       }`}
     >
       <div
         className={`${
           isMobile
-            ? "sticky top-0 h-screen flex flex-col justify-center overflow-hidden px-5 xs:px-6 sm:px-8 py-6"
-            : "max-w-[1440px] mx-auto px-5 xs:px-6 sm:px-8 md:px-10 lg:px-14 xl:px-18 2xl:px-20"
+            ? "sticky top-0 h-screen h-[100dvh] flex flex-col justify-center overflow-hidden px-5 xs:px-6 sm:px-8"
+            : "max-w-[1440px] mx-auto"
         }`}
       >
-        {/* Header Block */}
+        {/* Header Row */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 sm:gap-6 mb-5 xs:mb-6 sm:mb-8 lg:mb-10 w-full max-w-[1440px] mx-auto">
           <div className="flex flex-col items-start space-y-1">
-            {/* Main Section Title */}
             <h2 className="text-[22px] xs:text-[25px] sm:text-[28px] md:text-[30px] lg:text-[32px] xl:text-[34px] font-[family-name:var(--font-serif)] font-normal tracking-[0.03em] text-[#1B222C] leading-none">
               {archive.title}
             </h2>
 
-            {/* Eyebrow: Darker charcoal tone matching design */}
             <p className="text-[9px] xs:text-[9.5px] sm:text-[10px] font-[family-name:var(--font-sans)] font-semibold tracking-[0.24em] uppercase text-[#2B3441] pt-0.5">
               {archive.subtitle}
             </p>
 
-            {/* Narrative Description */}
             <p className="text-[10.5px] xs:text-[11px] sm:text-[11.5px] font-[family-name:var(--font-sans)] font-light text-[#525A67] tracking-[0.02em] leading-normal pt-0.5">
               {archive.description}
             </p>
           </div>
 
-          {/* Right Action: EXPLORE ALL */}
           <div className="self-start sm:self-end pt-1 sm:pt-0">
             <Link
               href={archive.cta.href}
@@ -104,24 +115,20 @@ export function ArchiveSection() {
           </div>
         </div>
 
-        {/* 
-          Cards Container:
-          - Desktop (lg+): Static 5-card grid
-          - Mobile (< lg): Down-scroll driven horizontal track
-        */}
+        {/* Product Cards Track */}
         {isMobile ? (
           <div className="relative w-full overflow-visible">
             <div
               ref={trackRef}
-              className="flex gap-4 will-change-transform transition-transform duration-75 ease-out"
+              className="flex gap-4 sm:gap-5 will-change-transform"
               style={{
-                transform: `translateX(${translateX}px)`,
+                transform: `translate3d(${translateX}px, 0, 0)`,
               }}
             >
               {archive.items.map((item) => (
                 <div
                   key={item.id}
-                  className="w-[68vw] xs:w-[58vw] sm:w-[42vw] shrink-0"
+                  className="w-[68vw] xs:w-[60vw] sm:w-[42vw] shrink-0"
                 >
                   <ArchiveCard item={item} />
                 </div>
