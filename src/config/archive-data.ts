@@ -17,7 +17,10 @@ export const archiveData = {
   hero: {
     eyebrow: "THE AZOR ARCHIVE",
     titleLines: ["PIECES WITH", "A STORY."],
-    description: "Explore the pieces that make up the world of Azor.",
+    statement1: "Explore the pieces that make up",
+    statement2: "the world of Azor.",
+    ctaScroll: "DISCOVER ARCHIVE",
+    pagination: "01 / 01",
     images: {
       desktop: {
         src: "/images/archive/archive-hero-desktop.webp",
