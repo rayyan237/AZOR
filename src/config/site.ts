@@ -375,16 +375,16 @@ export const siteConfig = {
     },
   },
   footer: {
-    brand: "AZOR.",
+    brand: "AZOR",
     tagline: "A signature worth wearing.",
     copyright: "© 2026 AZOR. All rights reserved.",
     links: [
-      { label: "INDEX", href: "#" },
+      { label: "WORLD", href: "#" },
       { label: "ARCHIVE", href: "#archive" },
-      { label: "THE MOOD", href: "#moods" },
+      { label: "SIGNATURE", href: "#moods" },
       { label: "LETTERS", href: "#letters-archive" },
       { label: "ABOUT", href: "#philosophy" },
-      { label: "PRIVACY", href: "#privacy" },
+      { label: "CONNECT", href: "#connect" },
     ],
     socials: [
       { platform: "instagram", href: "https://instagram.com/azorjewelry" },
