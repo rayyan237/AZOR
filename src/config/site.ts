@@ -29,6 +29,17 @@ export interface MoodItem {
   };
 }
 
+export interface LetterItem {
+  id: string;
+  tag: string;
+  title: string;
+  href: string;
+  image: {
+    src: string;
+    alt: string;
+  };
+}
+
 export const siteConfig = {
   name: "AZOR",
   title: "AZOR — A Digital Jewelry House",
@@ -287,5 +298,55 @@ export const siteConfig = {
         alt: "Editorial woman walking down city street wearing Azor",
       },
     ],
+  },
+  letters: {
+    title: "AZOR LETTERS",
+    description: "Thoughts, stories and little notes from the world of Azor.",
+    cta: {
+      label: "READ ALL",
+      href: "#letters",
+    },
+    items: [
+      {
+        id: "01",
+        tag: "LETTER 01",
+        title: "On becoming unforgettable.",
+        href: "#letter-01",
+        image: {
+          src: "/images/letter-01.webp",
+          alt: "Editorial woman in silhouette wearing Azor jewelry",
+        },
+      },
+      {
+        id: "02",
+        tag: "LETTER 02",
+        title: "Why we believe everyday deserves something beautiful.",
+        href: "#letter-02",
+        image: {
+          src: "/images/letter-02.webp",
+          alt: "White floral botanical close up",
+        },
+      },
+      {
+        id: "03",
+        tag: "LETTER 03",
+        title: "For the girls who wear black.",
+        href: "#letter-03",
+        image: {
+          src: "/images/letter-03.webp",
+          alt: "Moody architectural skyline at dusk",
+        },
+      },
+      {
+        id: "04",
+        tag: "LETTER 04",
+        title: "The art of keeping things simple.",
+        href: "#letter-04",
+        image: {
+          src: "/images/letter-04.webp",
+          alt: "Fine gold necklace laid on neutral folded fabric",
+        },
+      },
+    ] as LetterItem[],
   },
 };

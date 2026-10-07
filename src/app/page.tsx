@@ -6,6 +6,7 @@ import { ArchiveSection } from "@/components/sections/archive/ArchiveSection";
 import { MoodSection } from "@/components/sections/moods/MoodSection";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { AzorGirlSection } from "@/components/sections/girl/AzorGirlSection";
+import { LettersSection } from "@/components/sections/letters/LettersSection";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
 
         <MoodSection />
         <AzorGirlSection />
+        <LettersSection />
       </main>
     </>
   );
