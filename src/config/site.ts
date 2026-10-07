@@ -376,7 +376,7 @@ export const siteConfig = {
   },
   footer: {
     brand: "AZOR.",
-    tagline: "In a world of quiet luxury",
+    tagline: "A signature worth wearing.",
     copyright: "© 2026 AZOR. All rights reserved.",
     links: [
       { label: "INDEX", href: "#" },
