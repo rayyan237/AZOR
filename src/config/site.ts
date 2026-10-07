@@ -22,7 +22,7 @@ export interface ArchiveItem {
 export interface MoodItem {
   id: string;
   title: string;
-  descriptor: string;
+  descriptorLines: [string, string];
   image: {
     src: string;
     alt: string;
@@ -200,7 +200,7 @@ export const siteConfig = {
       {
         id: "01",
         title: "SOFT",
-        descriptor: "Delicate. Quiet. Effortless.",
+        descriptorLines: ["Delicate. Quiet.", "Effortless."],
         image: {
           src: "/images/mood-soft.webp",
           alt: "Soft mood white flower petals",
@@ -209,7 +209,7 @@ export const siteConfig = {
       {
         id: "02",
         title: "BOLD",
-        descriptor: "Confident. Distinct. Unapologetic.",
+        descriptorLines: ["Confident. Distinct.", "Unapologetic."],
         image: {
           src: "/images/mood-bold.webp",
           alt: "Bold mood elegant woman silhouette with sunglasses",
@@ -218,7 +218,7 @@ export const siteConfig = {
       {
         id: "03",
         title: "ROMANTIC",
-        descriptor: "Tender. Dreamy. Personal.",
+        descriptorLines: ["Tender. Dreamy.", "Personal."],
         image: {
           src: "/images/mood-romantic.webp",
           alt: "Romantic mood deep red rose petals",
@@ -227,7 +227,7 @@ export const siteConfig = {
       {
         id: "04",
         title: "MYSTERIOUS",
-        descriptor: "Dark. Subtle. Intriguing.",
+        descriptorLines: ["Dark. Subtle.", "Intriguing."],
         image: {
           src: "/images/mood-mysterious.webp",
           alt: "Mysterious mood evocative close-up gaze",
@@ -236,7 +236,7 @@ export const siteConfig = {
       {
         id: "05",
         title: "TIMELESS",
-        descriptor: "Elegant. Refined. Enduring.",
+        descriptorLines: ["Elegant. Refined.", "Enduring."],
         image: {
           src: "/images/mood-timeless.webp",
           alt: "Timeless mood night skyline architecture with moon",
