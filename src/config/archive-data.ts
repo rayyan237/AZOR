@@ -181,15 +181,22 @@ export const archiveData = {
   ] as ArchivePiece[],
   closingBanner: {
     eyebrow: "THE AZOR ARCHIVE",
-    title: "SOME PIECES AREN'T JUST WORN. THEY STAY.",
-    description: "Explore the full collection and find the one that feels like you.",
-    cta: {
-      label: "EXPLORE ALL",
-      href: "#archive-grid",
-    },
-    image: {
-      src: "/images/archive/archive-box.webp",
-      alt: "Azor luxury embossed jewelry box on black silk",
+    titleLines: ["SOME PIECES AREN'T JUST", "WORN, THEY STAY."],
+    statement1: "Explore the full collection and find the one",
+    statement2: "that feels like you.",
+    // cta: {
+    //   label: "EXPLORE ALL",
+    //   href: "#archive-grid",
+    // },
+    images: {
+      desktop: {
+        src: "/images/archive/archive-closing-desktop.webp",
+        alt: "Azor luxury embossed jewelry box on deep navy dark crushed velvet silk",
+      },
+      mobile: {
+        src: "/images/archive/archive-closing-mobile.webp",
+        alt: "Azor luxury jewelry box detail on silk fabric",
+      },
     },
   },
 };

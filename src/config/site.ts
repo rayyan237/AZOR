@@ -56,7 +56,7 @@ export const siteConfig = {
   ],
   navItems: [
     { label: "WORLD", href: "/" },
-    { label: "ARCHIVE", href: "#archive" },
+    { label: "ARCHIVE", href: "/archive" },
     { label: "SIGNATURE", href: "#signature" },
     { label: "LETTERS", href: "#letters" },
     { label: "ABOUT", href: "#about" },
@@ -379,8 +379,8 @@ export const siteConfig = {
     tagline: "A signature worth wearing.",
     copyright: "© 2026 AZOR. All rights reserved.",
     links: [
-      { label: "WORLD", href: "#hero" },
-      { label: "ARCHIVE", href: "#archive" },
+      { label: "WORLD", href: "/" },
+      { label: "ARCHIVE", href: "/archive" },
       { label: "LETTERS", href: "#letters-archive" },
       { label: "ABOUT", href: "#philosophy" },
       { label: "CONNECT", href: "#connect" },
