@@ -5,6 +5,7 @@ import { PhilosophySection } from "@/components/sections/philosophy/PhilosophySe
 import { ArchiveSection } from "@/components/sections/archive/ArchiveSection";
 import { MoodSection } from "@/components/sections/moods/MoodSection";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { AzorGirlSection } from "@/components/sections/girl/AzorGirlSection";
 
 export default function Home() {
   return (
@@ -17,14 +18,10 @@ export default function Home() {
         <PhilosophySection />
         <ArchiveSection />
 
-        {/* 
-          Mobile Section Transition Cushion:
-          Provides 12vh of vertical pause between horizontal scroll tracks
-          so users can smoothly unhook from Archive before entering Moods.
-        */}
         <div className="block lg:hidden h-[12vh] bg-[#EFECE6] border-b border-[#E2DDD3]" />
 
         <MoodSection />
+        <AzorGirlSection />
       </main>
     </>
   );

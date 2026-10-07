@@ -244,4 +244,48 @@ export const siteConfig = {
       },
     ] as MoodItem[],
   },
+  azorGirl: {
+    eyebrow: "05 / THE AZOR GIRL",
+    titleLines: ["AZOR LIVES", "OUTSIDE THIS SCREEN."],
+    narrative: [
+      "Real people. Real moments.",
+      "Your stories are what make this brand",
+      "what it is.",
+    ],
+    cta: {
+      label: "FOLLOW THE JOURNEY",
+      href: "#connect",
+    },
+    instagram: {
+      label: "FOLLOW US",
+      sublabel: "ON INSTAGRAM",
+      href: "https://instagram.com/azorjewelry",
+    },
+    mosaic: [
+      {
+        src: "/images/girl-01.webp",
+        alt: "Azor diamond drop earring on model close-up",
+      },
+      {
+        src: "/images/girl-02.webp",
+        alt: "Model wearing sunglasses with diamond earrings",
+      },
+      {
+        src: "/images/girl-03.webp",
+        alt: "Atmospheric editorial city architecture towers",
+      },
+      {
+        src: "/images/girl-04.webp",
+        alt: "Fine jewelry layered necklace on model",
+      },
+      {
+        src: "/images/girl-05.webp",
+        alt: "Editorial model portrait in evening sunglasses",
+      },
+      {
+        src: "/images/girl-06.webp",
+        alt: "Editorial woman walking down city street wearing Azor",
+      },
+    ],
+  },
 };
