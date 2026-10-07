@@ -19,6 +19,15 @@ export interface ArchiveItem {
   href: string;
 }
 
+export interface MoodItem {
+  id: string;
+  title: string;
+  image: {
+    src: string;
+    alt: string;
+  };
+}
+
 export const siteConfig = {
   name: "AZOR",
   title: "AZOR — A Digital Jewelry House",
@@ -181,5 +190,60 @@ export const siteConfig = {
         href: "#archive-05",
       },
     ] as ArchiveItem[],
+  },
+  moods: {
+    eyebrow: "04 / THE AZOR MOOD",
+    title: "WHAT ARE YOU FEELING?",
+    description: "Different moods. Different pieces. Same you.",
+    items: [
+      {
+        id: "01",
+        title: "SOFT",
+        image: {
+          src: "/images/mood-soft.webp",
+          alt: "Soft mood delicate botanical flower",
+        },
+      },
+      {
+        id: "02",
+        title: "BOLD",
+        image: {
+          src: "/images/mood-bold.webp",
+          alt: "Bold mood high-fashion silhouette",
+        },
+      },
+      {
+        id: "03",
+        title: "ROMANTIC",
+        image: {
+          src: "/images/mood-romantic.webp",
+          alt: "Romantic mood moon over rippling waters",
+        },
+      },
+      {
+        id: "04",
+        title: "MYSTERIOUS",
+        image: {
+          src: "/images/mood-mysterious.webp",
+          alt: "Mysterious mood intimate close-up gaze",
+        },
+      },
+      {
+        id: "05",
+        title: "TIMELESS",
+        image: {
+          src: "/images/mood-timeless.webp",
+          alt: "Timeless mood night skyline architecture",
+        },
+      },
+      {
+        id: "06",
+        title: "UNAPOLOGETIC",
+        image: {
+          src: "/images/mood-unapologetic.webp",
+          alt: "Unapologetic mood dramatic staircase editorial portrait",
+        },
+      },
+    ] as MoodItem[],
   },
 };
