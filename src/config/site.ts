@@ -349,4 +349,29 @@ export const siteConfig = {
       },
     ] as LetterItem[],
   },
+  closing: {
+    eyebrow: "THIS IS MORE THAN JEWELRY.",
+    title: "THIS IS AZOR.",
+    description: "Find the piece that feels like you.",
+    actions: {
+      instagram: {
+        label: "FOLLOW US",
+        href: "https://instagram.com/azorjewelry",
+      },
+      whatsapp: {
+        label: "CHAT WITH US",
+        href: "https://wa.me/1234567890",
+      },
+    },
+    images: {
+      desktop: {
+        src: "/images/closing-desktop.webp",
+        alt: "Model wearing Azor pendant necklace and delicate ring against natural dark fabric",
+      },
+      mobile: {
+        src: "/images/closing-mobile.webp",
+        alt: "Model wearing Azor pendant necklace vertical detail",
+      },
+    },
+  },
 };
