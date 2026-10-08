@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/navigation/Navbar";
 import { AboutHero } from "@/components/about/AboutHero";
 import { OurStorySection } from "@/components/about/OurStorySection";
+import { PhilosophySection } from "@/components/about/PhilosophySection";
 
 export const metadata: Metadata = {
   title: "About | AZOR Fine Jewelry",
@@ -15,6 +16,7 @@ export default function AboutPage() {
       <Navbar />
       <AboutHero />
       <OurStorySection />
+      <PhilosophySection />
     </main>
   );
 }

@@ -42,4 +42,32 @@ export const aboutData = {
       },
     },
   },
+  philosophy: {
+    eyebrow: "OUR PHILOSOPHY",
+    titleLines: ["MORE THAN", "JUST JEWELRY."],
+    description:
+      "We believe in pieces that feel personal, timeless and effortless. Jewelry should not just complete your look — it should feel like an extension of you.",
+    pillars: [
+      {
+        number: "01",
+        title: "PERSONAL",
+        text: "Your jewelry should feel like yours.",
+      },
+      {
+        number: "02",
+        title: "TIMELESS",
+        text: "Trends change. Your signature doesn't have to.",
+      },
+      {
+        number: "03",
+        title: "EVERYDAY",
+        text: "Beautiful things shouldn't need a special occasion.",
+      },
+      {
+        number: "04",
+        title: "EXPRESSIVE",
+        text: "Sometimes one small detail says everything.",
+      },
+    ],
+  },
 };

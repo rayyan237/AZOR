@@ -43,37 +43,37 @@ export function OurStorySection() {
         {/* ================= RIGHT COLUMN: EDITORIAL COLLAGE ================= */}
         <div className="lg:col-span-7 relative w-full flex items-center justify-center lg:justify-end">
           
-          <div className="relative w-full max-w-[560px] sm:max-w-[650px] lg:max-w-[700px] h-[270px] xs:h-[300px] sm:h-[330px] md:h-[350px] flex items-center">
+          <div className="relative w-full max-w-[560px] sm:max-w-[650px] lg:max-w-[700px] h-[260px] xs:h-[290px] sm:h-[330px] md:h-[350px] flex items-center">
             
-            {/* 1. Main Large Landscape Center Image */}
-            <div className="relative w-[62%] sm:w-[60%] aspect-[1.25/1] overflow-hidden bg-[#070D18] shadow-[0_4px_24px_rgba(0,0,0,0.08)] shrink-0 z-0">
+            {/* 1. Main Landscape Center Image */}
+            <div className="relative w-[56%] xs:w-[58%] sm:w-[60%] aspect-[1.25/1] overflow-hidden bg-[#070D18] shadow-[0_4px_24px_rgba(0,0,0,0.08)] shrink-0 z-0">
               <Image
                 src={ourStory.images.main.src}
                 alt={ourStory.images.main.alt}
                 fill
-                sizes="(max-width: 640px) 62vw, 420px"
+                sizes="(max-width: 640px) 58vw, 420px"
                 className="object-cover object-center pointer-events-none select-none"
               />
             </div>
 
             {/* 2. Overlapping White Polaroid (Pendant) */}
-            <div className="absolute left-[52%] sm:left-[50%] top-2 sm:top-1 w-[26%] sm:w-[25%] aspect-[3.2/4] bg-white p-1 sm:p-1.5 shadow-[0_12px_28px_rgba(0,0,0,0.12)] z-20">
+            <div className="absolute left-[42%] xs:left-[45%] sm:left-[50%] top-2 sm:top-1 w-[28%] xs:w-[26%] sm:w-[25%] aspect-[3.2/4] bg-white p-1 sm:p-1.5 shadow-[0_12px_28px_rgba(0,0,0,0.12)] z-10">
               <div className="relative w-full h-full overflow-hidden bg-[#070D18]">
                 <Image
                   src={ourStory.images.polaroid.src}
                   alt={ourStory.images.polaroid.alt}
                   fill
-                  sizes="(max-width: 640px) 26vw, 170px"
+                  sizes="(max-width: 640px) 28vw, 170px"
                   className="object-cover object-center pointer-events-none select-none"
                 />
               </div>
             </div>
 
-            {/* 3. Note Cardlet + Wildflower */}
-            <div className="absolute right-0 top-[6%] sm:top-[4%] w-[24%] sm:w-[23%] z-10 flex flex-col items-center">
+            {/* 3. Note Cardlet + Wildflower (Higher z-index so it never hides behind the polaroid) */}
+            <div className="absolute right-0 top-[2%] xs:top-[4%] sm:top-[4%] w-[36%] xs:w-[32%] sm:w-[25%] lg:w-[23%] z-20 flex flex-col items-center">
               
               {/* Botanical Wildflower Sketch */}
-              <div className="w-8 xs:w-9 sm:w-10 h-14 xs:h-16 sm:h-18 -mb-1 opacity-60 pointer-events-none">
+              <div className="w-6 xs:w-7 sm:w-9 h-12 xs:h-14 sm:h-18 -mb-1 opacity-60 pointer-events-none">
                 <svg
                   viewBox="0 0 45 80"
                   fill="none"
@@ -97,13 +97,13 @@ export function OurStorySection() {
                 </svg>
               </div>
 
-              {/* Note Cardlet with Increased Font Sizing */}
-              <div className="w-full bg-[#E5DFD4] px-3 sm:px-3.5 py-3 sm:py-4 shadow-[0_2px_12px_rgba(0,0,0,0.04)] border border-[#D8D0C2]">
-                <div className="space-y-1 text-left">
+              {/* Note Cardlet: Positioned cleanly on top */}
+              <div className="w-full bg-[#E5DFD4] px-2.5 xs:px-3 sm:px-3.5 py-2.5 xs:py-3 sm:py-4 shadow-[0_4px_16px_rgba(0,0,0,0.08)] border border-[#D8D0C2]">
+                <div className="space-y-0.5 xs:space-y-1 text-left">
                   {ourStory.noteCard.lines.map((line, idx) => (
                     <p
                       key={idx}
-                      className="text-[12px] xs:text-[13px] sm:text-[14px] md:text-[15px] font-[family-name:var(--font-serif)] italic text-[#2D3540] leading-tight whitespace-nowrap"
+                      className="text-[10px] xs:text-[11px] sm:text-[13px] md:text-[14px] lg:text-[15px] font-[family-name:var(--font-serif)] italic text-[#2D3540] leading-tight sm:whitespace-nowrap"
                     >
                       {line}
                     </p>
