@@ -28,64 +28,27 @@ export function Navbar() {
   return (
     <>
       {/* 
-        Header: Absolute positioning keeps it anchored naturally to the top of the hero
-        Fluid height scaling: h-16 (small mobile) -> h-20 (standard mobile/tablet) -> h-24 (desktop)
+        Header: Absolute positioning anchored to the top of the hero
+        Mobile (< md): 3-column split (Left Menu, Center Logo, Right Socials)
+        Desktop (>= md): Classic editorial layout (Left Logo, Center Nav, Right Socials)
       */}
       <header className="absolute top-0 left-0 right-0 z-50 w-full transition-all duration-300">
         <nav
           aria-label="Main Navigation"
-          className="max-w-[1440px] mx-auto px-5 xs:px-6 sm:px-8 md:px-10 lg:px-14 xl:px-18 2xl:px-20 h-16 xs:h-18 sm:h-20 lg:h-24 flex items-center justify-between"
+          className="relative max-w-[1440px] mx-auto px-5 xs:px-6 sm:px-8 md:px-10 lg:px-14 xl:px-18 2xl:px-20 h-16 xs:h-18 sm:h-20 lg:h-24 flex items-center justify-between"
         >
-          {/* Brand Logo: Fluid font scaling and letter-spacing */}
-          <Link
-            href="/"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="font-[family-name:var(--font-serif)] font-medium text-xl xs:text-2xl sm:text-[25px] lg:text-[26px] tracking-[0.16em] xs:tracking-[0.18em] text-white/95 hover:text-white transition-opacity select-none focus:outline-none focus:ring-1 focus:ring-white/40 rounded-sm"
-          >
-            {siteConfig.name}
-          </Link>
-
-          {/* Desktop Navigation Links: Visible from md (768px) and above */}
-          <div className="hidden md:flex items-center gap-5 lg:gap-8 xl:gap-11">
-            {siteConfig.navItems.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="text-[9.5px] lg:text-[10px] xl:text-[10.5px] font-[family-name:var(--font-sans)] font-medium tracking-[0.2em] lg:tracking-[0.24em] text-white/75 hover:text-white transition-colors duration-200 py-1"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-
-          {/* Right Section: Socials & Mobile Menu Toggle */}
-          <div className="flex items-center gap-3.5 xs:gap-4 sm:gap-5 lg:gap-6">
-            {/* Social Icons */}
-            <div className="flex items-center gap-2.5 xs:gap-3 sm:gap-4 text-white/80">
-              {siteConfig.socials.map((social) => (
-                <a
-                  key={social.platform}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.label}
-                  className="hover:text-white transition-colors p-1.5 focus:outline-none focus:ring-1 focus:ring-white/40 rounded-full"
-                >
-                  <SocialIcon
-                    platform={social.platform}
-                    className="w-4 h-4 sm:w-[17px] sm:h-[17px] lg:w-[18px] lg:h-[18px]"
-                  />
-                </a>
-              ))}
-            </div>
-
-            {/* Mobile Hamburger Trigger: Accessible touch target (min 44x44px) */}
+          {/* 
+            MOBILE LEFT SLOT (< md): Hamburger / Drawer Toggle Button
+            DESKTOP LEFT SLOT (>= md): Brand Logo
+          */}
+          <div className="flex items-center">
+            {/* Mobile Hamburger Trigger */}
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
               aria-expanded={isMobileMenuOpen}
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-              className="md:hidden text-white/90 hover:text-white p-2.5 -mr-1 focus:outline-none focus:ring-1 focus:ring-white/40 rounded z-50 relative"
+              className="md:hidden text-white/90 hover:text-white p-2.5 -ml-2.5 focus:outline-none focus:ring-1 focus:ring-white/40 rounded z-50 relative"
             >
               <div className="w-5 xs:w-6 h-4 xs:h-5 flex flex-col justify-between">
                 <span
@@ -105,6 +68,64 @@ export function Navbar() {
                 />
               </div>
             </button>
+
+            {/* Desktop Brand Logo (Left Aligned on >= md) */}
+            <Link
+              href="/"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="hidden md:inline-block font-[family-name:var(--font-serif)] font-medium text-xl xs:text-2xl sm:text-[25px] lg:text-[26px] tracking-[0.16em] xs:tracking-[0.18em] text-white/95 hover:text-white transition-opacity select-none focus:outline-none focus:ring-1 focus:ring-white/40 rounded-sm"
+            >
+              {siteConfig.name}
+            </Link>
+          </div>
+
+          {/* 
+            MOBILE CENTER SLOT (< md): Brand Logo Centered
+            DESKTOP CENTER SLOT (>= md): Navigation Links
+          */}
+          {/* Mobile Centered Logo */}
+          <div className="md:hidden absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 pointer-events-auto">
+            <Link
+              href="/"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="font-[family-name:var(--font-serif)] font-medium text-xl xs:text-2xl tracking-[0.18em] text-white/95 hover:text-white transition-opacity select-none focus:outline-none focus:ring-1 focus:ring-white/40 rounded-sm"
+            >
+              {siteConfig.name}
+            </Link>
+          </div>
+
+          {/* Desktop Navigation Links */}
+          <div className="hidden md:flex items-center gap-5 lg:gap-8 xl:gap-11">
+            {siteConfig.navItems.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="text-[9.5px] lg:text-[10px] xl:text-[10.5px] font-[family-name:var(--font-sans)] font-medium tracking-[0.2em] lg:tracking-[0.24em] text-white/75 hover:text-white transition-colors duration-200 py-1"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* 
+            RIGHT SLOT (Both Mobile & Desktop): Social Icons
+          */}
+          <div className="flex items-center gap-2.5 xs:gap-3 sm:gap-4 text-white/80">
+            {siteConfig.socials.map((social) => (
+              <a
+                key={social.platform}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                className="hover:text-white transition-colors p-1.5 focus:outline-none focus:ring-1 focus:ring-white/40 rounded-full"
+              >
+                <SocialIcon
+                  platform={social.platform}
+                  className="w-4 h-4 sm:w-[17px] sm:h-[17px] lg:w-[18px] lg:h-[18px]"
+                />
+              </a>
+            ))}
           </div>
         </nav>
       </header>
@@ -113,7 +134,6 @@ export function Navbar() {
         Full-Screen Mobile Drawer:
         - Viewport height lock (100dvh)
         - Backdrop frosted blur
-        - Fluid padding ensuring safe spacing across compact phones & phablets
       */}
       <div
         className={`fixed inset-0 z-40 md:hidden transition-all duration-500 flex flex-col justify-between px-6 xs:px-8 sm:px-12 pt-24 xs:pt-28 pb-8 xs:pb-12 bg-black/90 backdrop-blur-2xl ${
