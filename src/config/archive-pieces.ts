@@ -1,3 +1,5 @@
+// src/config/archive-pieces.ts
+
 export interface ArchivePieceDetail {
   id: string;
   slug: string;
@@ -13,16 +15,23 @@ export interface ArchivePieceDetail {
     titleLines: string[];
     description: string;
   };
-  details: {
-    label: string;
-    value: string;
-  }[];
+  editorial: {
+    headline: string;
+    description: string;
+    stylingTip: string;
+  };
   care: string[];
   gallery: {
     main: { src: string; alt: string };
     thumbnails: { src: string; alt: string }[];
   };
 }
+
+const standardCareInstructions = [
+  "Keep away from water, perfume and harsh chemicals.",
+  "Store in a soft pouch.",
+  "Clean with a soft, dry cloth.",
+];
 
 export const archivePieceDetails: ArchivePieceDetail[] = [
   {
@@ -41,27 +50,32 @@ export const archivePieceDetails: ArchivePieceDetail[] = [
       description:
         "For the days you want to feel put together without trying too hard. The Signature is a reminder that true elegance is always effortless.",
     },
-    details: [
-      { label: "MATERIAL", value: "925 Sterling Silver" },
-      { label: "FINISH", value: "Rhodium Plated" },
-      { label: "STONE", value: "Cubic Zirconia" },
-      { label: "CHAIN LENGTH", value: '16" + 2" Extender' },
-      { label: "WEIGHT", value: "~ 3.2 g" },
-    ],
-    care: [
-      "Keep away from water, perfume and harsh chemicals.",
-      "Store in a soft pouch.",
-      "Clean with a soft, dry cloth.",
-    ],
+    editorial: {
+      headline: "A timeless silhouette, crafted to catch ambient light.",
+      description:
+        "Designed with balanced proportions to rest naturally against the collarbone. Each facet is shaped to offer gentle shimmer without overpowering your personal presence.",
+      stylingTip:
+        "Wear it solitary for an effortless daytime look, or layer it with fine gold chains for evening presence.",
+    },
+    care: standardCareInstructions,
     gallery: {
       main: {
         src: "/images/archive/piece-01.webp",
-        alt: "The Signature necklace on dark velvet",
+        alt: "The Signature cross-shaped diamond pendant necklace",
       },
       thumbnails: [
-        { src: "/images/archive/piece-01-thumb-1.webp", alt: "Worn on collarbone" },
-        { src: "/images/archive/piece-01-thumb-2.webp", alt: "Setting detail" },
-        { src: "/images/archive/piece-01-thumb-3.webp", alt: "Pendant profile" },
+        {
+          src: "/images/archive/piece-01-thumb-1.webp",
+          alt: "Necklace worn on model collarbone",
+        },
+        {
+          src: "/images/archive/piece-01-thumb-2.webp",
+          alt: "Fine diamond setting macro detail",
+        },
+        {
+          src: "/images/archive/piece-01-thumb-3.webp",
+          alt: "Side profile of The Signature pendant",
+        },
       ],
     },
   },
@@ -81,22 +95,18 @@ export const archivePieceDetails: ArchivePieceDetail[] = [
       description:
         "Crafted to move fluidly with your rhythm. Three descending droplets designed to frame the cheekbone with understated luminosity.",
     },
-    details: [
-      { label: "MATERIAL", value: "925 Sterling Silver" },
-      { label: "FINISH", value: "18k Gold Vermeil" },
-      { label: "STONE", value: "Cubic Zirconia" },
-      { label: "DROP LENGTH", value: "38 mm" },
-      { label: "WEIGHT", value: "~ 4.1 g pair" },
-    ],
-    care: [
-      "Keep away from water, perfume and harsh chemicals.",
-      "Store in a soft pouch.",
-      "Clean with a soft, dry cloth.",
-    ],
+    editorial: {
+      headline: "A rhythmic cascade of light with gentle motion.",
+      description:
+        "Engineered with delicate articulation so every turn of the head catches surrounding light. Lightweight and balanced for complete comfort from day to night.",
+      stylingTip:
+        "Pairs seamlessly with swept-back hair and open necklines to highlight the jawline.",
+    },
+    care: standardCareInstructions,
     gallery: {
       main: {
         src: "/images/archive/piece-02.webp",
-        alt: "The Afterglow earrings detail",
+        alt: "The Afterglow triple droplet diamond earrings",
       },
       thumbnails: [
         { src: "/images/archive/piece-02.webp", alt: "Side profile" },
@@ -121,22 +131,18 @@ export const archivePieceDetails: ArchivePieceDetail[] = [
       description:
         "An intentional contrast of deep natural dark stone against hand-polished gold. Built to be worn solitary on the index or stacked with subtle pavé.",
     },
-    details: [
-      { label: "MATERIAL", value: "925 Sterling Silver" },
-      { label: "FINISH", value: "18k Yellow Gold Plated" },
-      { label: "STONE", value: "Black Onyx Cabochon" },
-      { label: "BAND WIDTH", value: "4.5 mm" },
-      { label: "WEIGHT", value: "~ 5.2 g" },
-    ],
-    care: [
-      "Keep away from water, perfume and harsh chemicals.",
-      "Store in a soft pouch.",
-      "Clean with a soft, dry cloth.",
-    ],
+    editorial: {
+      headline: "A quiet anchor of depth and sculpted warmth.",
+      description:
+        "The smooth, domed cabochon creates an intriguing play of shadow and reflection. Weighted comfortably to provide a reassuring, grounded presence on the hand.",
+      stylingTip:
+        "Wear alone on the index finger for a modern architectural statement, or pair with delicate textured bands.",
+    },
+    care: standardCareInstructions,
     gallery: {
       main: {
         src: "/images/archive/piece-03.webp",
-        alt: "The Noir ring on silk",
+        alt: "The Noir gold ring with solitary dark onyx stone",
       },
       thumbnails: [
         { src: "/images/archive/piece-07.webp", alt: "Hand worn" },
@@ -161,22 +167,18 @@ export const archivePieceDetails: ArchivePieceDetail[] = [
       description:
         "Inspired by petals resting on water. A four-stone cluster that delivers tactile softness with architectural structure.",
     },
-    details: [
-      { label: "MATERIAL", value: "925 Sterling Silver" },
-      { label: "FINISH", value: "14k Champagne Gold" },
-      { label: "STONE", value: "Cultured Freshwater Pearls" },
-      { label: "DIMENSIONS", value: "12 mm x 12 mm" },
-      { label: "WEIGHT", value: "~ 2.8 g pair" },
-    ],
-    care: [
-      "Keep away from water, perfume and harsh chemicals.",
-      "Store in a soft pouch.",
-      "Clean with a soft, dry cloth.",
-    ],
+    editorial: {
+      headline: "Soft, organic contours meeting polished geometry.",
+      description:
+        "Lustrous pearl undertones bring warmth to the face. The floral arrangement feels effortless and nostalgic yet distinctly modern.",
+      stylingTip:
+        "Complements soft knitwear and linen tailoring, bringing romantic poise to understated outfits.",
+    },
+    care: standardCareInstructions,
     gallery: {
       main: {
         src: "/images/archive/piece-04.webp",
-        alt: "The Petale earrings",
+        alt: "The Pétale pearl floral stud earrings",
       },
       thumbnails: [
         { src: "/images/archive/piece-04.webp", alt: "Pearl texture" },
@@ -201,22 +203,18 @@ export const archivePieceDetails: ArchivePieceDetail[] = [
       description:
         "The gentle curve of the moon suspended on an ultra-fine diamond-cut chain. Understated enough for morning coffee, striking under candlelight.",
     },
-    details: [
-      { label: "MATERIAL", value: "925 Sterling Silver" },
-      { label: "FINISH", value: "Rhodium Plated" },
-      { label: "STONE", value: "Micro Pavé Zirconia" },
-      { label: "CHAIN LENGTH", value: '15" + 2" Extender' },
-      { label: "WEIGHT", value: "~ 2.9 g" },
-    ],
-    care: [
-      "Keep away from water, perfume and harsh chemicals.",
-      "Store in a soft pouch.",
-      "Clean with a soft, dry cloth.",
-    ],
+    editorial: {
+      headline: "An understated arc that celebrates quiet poise.",
+      description:
+        "Slender and whisper-light against bare skin. The polished curved silhouette catches low light effortlessly without demanding attention.",
+      stylingTip:
+        "Resting right at the collarbone, it is ideal inside an unbuttoned crisp white shirt or paired with silk slips.",
+    },
+    care: standardCareInstructions,
     gallery: {
       main: {
         src: "/images/archive/piece-05.webp",
-        alt: "The Lune pendant necklace",
+        alt: "The Lune crescent moon pendant necklace",
       },
       thumbnails: [
         { src: "/images/archive/piece-08.webp", alt: "Layered view" },
@@ -241,22 +239,18 @@ export const archivePieceDetails: ArchivePieceDetail[] = [
       description:
         "Engineered with a seamless hinge and subtle brushed interior. Designed to be put on and never taken off.",
     },
-    details: [
-      { label: "MATERIAL", value: "Brass Core with 925 Post" },
-      { label: "FINISH", value: "Heavy 18k Gold Plated" },
-      { label: "STONE", value: "Brilliant Cut Zirconia" },
-      { label: "INNER DIAMETER", value: "58 mm x 50 mm" },
-      { label: "WEIGHT", value: "~ 14.5 g" },
-    ],
-    care: [
-      "Keep away from water, perfume and harsh chemicals.",
-      "Store in a soft pouch.",
-      "Clean with a soft, dry cloth.",
-    ],
+    editorial: {
+      headline: "Subtle textural dimension with daily resilience.",
+      description:
+        "A balanced oval profile ensures the cuff contours closely to the wrist rather than spinning, making typing and movement completely frictionless.",
+      stylingTip:
+        "Stands strong on its own next to a leather watch, or stacked adjacent to a delicate chain bracelet.",
+    },
+    care: standardCareInstructions,
     gallery: {
       main: {
         src: "/images/archive/piece-06.webp",
-        alt: "The Solace bangle on stone slab",
+        alt: "The Solace textured gold pave diamond bangle",
       },
       thumbnails: [
         { src: "/images/archive/piece-11.webp", alt: "Wrist stack" },
@@ -281,22 +275,18 @@ export const archivePieceDetails: ArchivePieceDetail[] = [
       description:
         "The eternity ring distilled to its purest essence. Ultra-low profile so it rests weightless alongside your favorite heirloom pieces.",
     },
-    details: [
-      { label: "MATERIAL", value: "925 Sterling Silver" },
-      { label: "FINISH", value: "Platinum Plated" },
-      { label: "STONE", value: "Handset Micro Pavé" },
-      { label: "BAND THICKNESS", value: "1.8 mm" },
-      { label: "WEIGHT", value: "~ 2.1 g" },
-    ],
-    care: [
-      "Keep away from water, perfume and harsh chemicals.",
-      "Store in a soft pouch.",
-      "Clean with a soft, dry cloth.",
-    ],
+    editorial: {
+      headline: "The quintessential eternity ring, refined to perfection.",
+      description:
+        "Low-profile prong settings ensure comfort between fingers while maximizing the continuous facet scintillation from every perspective.",
+      stylingTip:
+        "The ultimate stacking foundation. Pair with solitary gemstones or wear across multiple fingers for refined repetition.",
+    },
+    care: standardCareInstructions,
     gallery: {
       main: {
         src: "/images/archive/piece-07.webp",
-        alt: "The Vérité band on fingers",
+        alt: "The Vérité delicate pavé eternity band on hand",
       },
       thumbnails: [
         { src: "/images/archive/piece-03.webp", alt: "Stacked look" },
@@ -321,22 +311,18 @@ export const archivePieceDetails: ArchivePieceDetail[] = [
       description:
         "The look of effortless layering without the entanglement. Cascading drop proportions calibrated to highlight open collar shirts and evening gowns.",
     },
-    details: [
-      { label: "MATERIAL", value: "925 Sterling Silver" },
-      { label: "FINISH", value: "Rhodium Plated" },
-      { label: "STONE", value: "Pear Cut Zirconia" },
-      { label: "CHAIN LENGTH", value: '14" + 16" Double Chain' },
-      { label: "WEIGHT", value: "~ 3.8 g" },
-    ],
-    care: [
-      "Keep away from water, perfume and harsh chemicals.",
-      "Store in a soft pouch.",
-      "Clean with a soft, dry cloth.",
-    ],
+    editorial: {
+      headline: "Effortless multi-length cascade without the tangling.",
+      description:
+        "Joined at a singular secure clasp, both chains are spaced at proportional intervals to accentuate the throat and décolletage naturally.",
+      stylingTip:
+        "Best showcased with deep V-necks, blazer lapels, or relaxed silk shirts unbuttoned low.",
+    },
+    care: standardCareInstructions,
     gallery: {
       main: {
         src: "/images/archive/piece-08.webp",
-        alt: "The Délice necklace on neckline",
+        alt: "The Délice layered teardrop crystal necklace",
       },
       thumbnails: [
         { src: "/images/archive/piece-01.webp", alt: "Pendant closeup" },
@@ -361,22 +347,18 @@ export const archivePieceDetails: ArchivePieceDetail[] = [
       description:
         "A dance between modernist gold curves and the irregular, organic beauty of the sea. Made for art gallery openings and quiet dinners alike.",
     },
-    details: [
-      { label: "MATERIAL", value: "925 Sterling Silver" },
-      { label: "FINISH", value: "18k Warm Gold Plated" },
-      { label: "STONE", value: "Natural Baroque Pearls" },
-      { label: "DROP LENGTH", value: "32 mm" },
-      { label: "WEIGHT", value: "~ 5.6 g pair" },
-    ],
-    care: [
-      "Keep away from water, perfume and harsh chemicals.",
-      "Store in a soft pouch.",
-      "Clean with a soft, dry cloth.",
-    ],
+    editorial: {
+      headline: "Organic seaside forms embraced by sleek arches.",
+      description:
+        "Each baroque pearl possesses its own natural surface nuances, ensuring every pair is distinct and carries an unmistakable artisanal soul.",
+      stylingTip:
+        "Let them lead your styling alongside minimal, structured monochrome garments like charcoal wool or matte black silk.",
+    },
+    care: standardCareInstructions,
     gallery: {
       main: {
         src: "/images/archive/piece-09.webp",
-        alt: "The Éclat earrings pair",
+        alt: "The Éclat sculptural gold drop earrings with pearl",
       },
       thumbnails: [
         { src: "/images/archive/piece-09.webp", alt: "Earring profile" },
@@ -401,22 +383,18 @@ export const archivePieceDetails: ArchivePieceDetail[] = [
       description:
         "The everyday staple perfected. Sits snugly against the lobe with zero pinch, lightweight enough to sleep in.",
     },
-    details: [
-      { label: "MATERIAL", value: "925 Sterling Silver" },
-      { label: "FINISH", value: "18k Polished Gold" },
-      { label: "INNER DIAMETER", value: "11 mm" },
-      { label: "CLOSURE", value: "Seamless Clicker Huggie" },
-      { label: "WEIGHT", value: "~ 2.4 g pair" },
-    ],
-    care: [
-      "Keep away from water, perfume and harsh chemicals.",
-      "Store in a soft pouch.",
-      "Clean with a soft, dry cloth.",
-    ],
+    editorial: {
+      headline: "Your second-skin hoop, elevated with organic twist detailing.",
+      description:
+        "Designed to sit closely around the earlobe with zero snagging or weight. The subtle ribbon twist reflects ambient warmth across all angles.",
+      stylingTip:
+        "The consummate first or second-piercing anchor. Pairs harmoniously with studs, drops, or worn solo as a timeless uniform.",
+    },
+    care: standardCareInstructions,
     gallery: {
       main: {
         src: "/images/archive/piece-10.webp",
-        alt: "The Minimal huggies on travertine",
+        alt: "The Minimal organic twisted gold huggie hoops",
       },
       thumbnails: [
         { src: "/images/archive/piece-10.webp", alt: "Twist detail" },
@@ -441,22 +419,18 @@ export const archivePieceDetails: ArchivePieceDetail[] = [
       description:
         "A bracelet that moves like liquid water over the wrist. Each stone is individually bezel-set to lay flat and prevent catching on knitwear.",
     },
-    details: [
-      { label: "MATERIAL", value: "925 Sterling Silver" },
-      { label: "FINISH", value: "Rhodium Plated" },
-      { label: "STONE", value: "Round Bezel-Set Zirconia" },
-      { label: "CHAIN LENGTH", value: '6.5" + 1.5" Extender' },
-      { label: "WEIGHT", value: "~ 3.4 g" },
-    ],
-    care: [
-      "Keep away from water, perfume and harsh chemicals.",
-      "Store in a soft pouch.",
-      "Clean with a soft, dry cloth.",
-    ],
+    editorial: {
+      headline: "Liquid drape and smooth bezels that never catch.",
+      description:
+        "Engineered for daily tactile comfort. The enclosed settings shield the stones while giving them a crisp, circular frame of reflective luster.",
+      stylingTip:
+        "Drapes gracefully over shirt cuffs or stacks easily alongside a solid bangle.",
+    },
+    care: standardCareInstructions,
     gallery: {
       main: {
         src: "/images/archive/piece-11.webp",
-        alt: "The Serenity bracelet on silk",
+        alt: "The Serenity fine bezel crystal chain bracelet",
       },
       thumbnails: [
         { src: "/images/archive/piece-06.webp", alt: "Bezel setting" },
@@ -481,22 +455,18 @@ export const archivePieceDetails: ArchivePieceDetail[] = [
       description:
         "When you want your arrival to speak before words are spoken. Long diamond-cut links that catch ambient candlelight with every movement.",
     },
-    details: [
-      { label: "MATERIAL", value: "925 Sterling Silver" },
-      { label: "FINISH", value: "Oxidized Silver & Rhodium" },
-      { label: "DROP LENGTH", value: "65 mm" },
-      { label: "CLOSURE", value: "Post & Butterfly Back" },
-      { label: "WEIGHT", value: "~ 4.8 g pair" },
-    ],
-    care: [
-      "Keep away from water, perfume and harsh chemicals.",
-      "Store in a soft pouch.",
-      "Clean with a soft, dry cloth.",
-    ],
+    editorial: {
+      headline: "An elongated thread of movement and light.",
+      description:
+        "Lightweight fine-chain links deliver dramatic vertical length without weighing down the lobe. Glides fluidly as you move.",
+      stylingTip:
+        "Needs no accompanying necklace. Pair with an off-the-shoulder silhouette or an updo to maximize its vertical impact.",
+    },
+    care: standardCareInstructions,
     gallery: {
       main: {
         src: "/images/archive/piece-12.webp",
-        alt: "The Aura earrings on model",
+        alt: "The Aura statement dangling earrings against evening portrait",
       },
       thumbnails: [
         { src: "/images/archive/piece-12.webp", alt: "Ear drop macro" },

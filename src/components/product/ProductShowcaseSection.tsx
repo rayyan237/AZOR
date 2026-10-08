@@ -6,16 +6,16 @@ interface ProductShowcaseSectionProps {
 }
 
 export function ProductShowcaseSection({ piece }: ProductShowcaseSectionProps) {
-  // Use product details with fallback
-  const details = piece.details || [
-    { label: "MATERIAL", value: "925 Sterling Silver" },
-    { label: "FINISH", value: "Rhodium Plated" },
-    { label: "STONE", value: "Cubic Zirconia" },
-    { label: "LENGTH / FIT", value: '16" + 2" Extender' },
-    { label: "WEIGHT", value: "~ 3.2 g" },
-  ];
+  // Editorial description fallback if not explicitly defined on a piece
+  const editorial = piece.editorial || {
+    headline: "Balanced silhouette, crafted for natural resonance.",
+    description:
+      "Sculpted with comfortable proportions that integrate seamlessly into your day. Subtle facets catch natural light, delivering an understated radiance that complements any look.",
+    stylingTip:
+      "Stunning as a quiet standalone piece or paired effortlessly with your cherished everyday staples.",
+  };
 
-  // Use product care instructions with fallback
+  // Standard luxury jewelry care instructions
   const careInstructions = piece.care || [
     "Keep away from water, perfume and harsh chemicals.",
     "Store in a soft pouch.",
@@ -24,7 +24,7 @@ export function ProductShowcaseSection({ piece }: ProductShowcaseSectionProps) {
 
   return (
     <section
-      aria-label="Piece Aesthetics and Details"
+      aria-label="Piece Aesthetics, Gallery, and Description"
       className="relative w-full bg-[#EFECE6] text-[#1B222C] border-b border-[#D5CFBF] py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24 px-5 xs:px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 2xl:px-20 select-none"
     >
       <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 xl:gap-12 items-center">
@@ -51,6 +51,11 @@ export function ProductShowcaseSection({ piece }: ProductShowcaseSectionProps) {
         </div>
 
         {/* ================= CENTER COLUMN: GALLERY (lg:col-span-6) ================= */}
+        {/*
+          Equal-Height Baseline Lock:
+          Container enforces a unified height so the main showcase and the 3 stacked thumbnails
+          start and end on the identical horizontal baseline.
+        */}
         <div className="lg:col-span-6 w-full flex flex-col sm:flex-row gap-2.5 xs:gap-3 sm:gap-3.5 h-[420px] xs:h-[460px] sm:h-[400px] md:h-[440px] lg:h-[420px] xl:h-[460px]">
           
           {/* Main Large Image */}
@@ -84,32 +89,37 @@ export function ProductShowcaseSection({ piece }: ProductShowcaseSectionProps) {
 
         </div>
 
-        {/* ================= RIGHT COLUMN: DETAILS & CARE (lg:col-span-3) ================= */}
-        <div className="lg:col-span-3 flex flex-col space-y-6 lg:border-l lg:border-[#1B222C]/15 lg:pl-6 xl:pl-8 pt-4 lg:pt-0">
+        {/* ================= RIGHT COLUMN: EDITORIAL DESCRIPTION & CARE (lg:col-span-3) ================= */}
+        <div className="lg:col-span-3 flex flex-col space-y-5 sm:space-y-6 lg:border-l lg:border-[#1B222C]/15 lg:pl-6 xl:pl-8 pt-4 lg:pt-0">
           
-          {/* Details / Product Specs */}
-          <div className="space-y-3.5">
-            <p className="text-[9px] xs:text-[9.5px] font-[family-name:var(--font-sans)] font-medium tracking-[0.24em] uppercase text-[#747B86]">
-              DETAILS
+          {/* Product Narrative & Styling Note (Replacing Material/Specs) */}
+          <div className="space-y-2.5">
+            <p className="text-[9px] xs:text-[9.5px] font-[family-name:var(--font-sans)] font-medium tracking-[0.26em] uppercase text-[#747B86]">
+              THE PIECE
             </p>
 
-            <div className="space-y-3">
-              {details.map((item, idx) => (
-                <div key={idx} className="flex flex-col text-left">
-                  <span className="text-[8.5px] font-[family-name:var(--font-sans)] font-medium tracking-[0.2em] text-[#747B86] uppercase leading-tight">
-                    {item.label}
-                  </span>
-                  <span className="text-[11px] font-[family-name:var(--font-sans)] font-normal text-[#1B222C] tracking-[0.02em] mt-0.5 leading-tight">
-                    {item.value}
-                  </span>
-                </div>
-              ))}
+            <h3 className="text-[15px] xs:text-[16px] sm:text-[17px] font-[family-name:var(--font-serif)] font-normal tracking-[0.02em] leading-snug text-[#1B222C]">
+              {editorial.headline}
+            </h3>
+
+            <p className="text-[11px] xs:text-[11.5px] font-[family-name:var(--font-sans)] font-light leading-[1.65] text-[#525A67] tracking-[0.015em] pt-0.5">
+              {editorial.description}
+            </p>
+
+            {/* Styling Tip Cardlet */}
+            <div className="bg-[#E7E3DC] p-3 rounded-none border-l-2 border-[#1B222C]/30 mt-2">
+              <span className="text-[8.5px] font-[family-name:var(--font-sans)] font-semibold tracking-[0.2em] text-[#747B86] uppercase block mb-1">
+                STYLING NOTE
+              </span>
+              <p className="text-[10px] xs:text-[10.5px] font-[family-name:var(--font-sans)] font-light italic leading-relaxed text-[#454D59]">
+                &ldquo;{editorial.stylingTip}&rdquo;
+              </p>
             </div>
           </div>
 
           {/* Care Instructions */}
           <div className="space-y-3 pt-3 border-t border-[#1B222C]/10">
-            <p className="text-[9px] xs:text-[9.5px] font-[family-name:var(--font-sans)] font-medium tracking-[0.24em] uppercase text-[#747B86]">
+            <p className="text-[9px] xs:text-[9.5px] font-[family-name:var(--font-sans)] font-medium tracking-[0.26em] uppercase text-[#747B86]">
               CARE
             </p>
 
