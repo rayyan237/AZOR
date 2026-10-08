@@ -9,12 +9,6 @@ interface ProductShowcaseSectionProps {
 }
 
 export function ProductShowcaseSection({ piece }: ProductShowcaseSectionProps) {
-  // Available images: 3 thumbnails + main
-  const allImages = [
-    ...(piece.gallery.thumbnails || []),
-    piece.gallery.main,
-  ].filter(Boolean);
-
   // Set the first thumbnail as active by default
   const [selectedImage, setSelectedImage] = useState(
     piece.gallery.thumbnails?.[0] || piece.gallery.main
@@ -66,7 +60,7 @@ export function ProductShowcaseSection({ piece }: ProductShowcaseSectionProps) {
         <div className="lg:col-span-6 w-full flex flex-col sm:flex-row gap-2.5 xs:gap-3 sm:gap-3.5 h-[420px] xs:h-[460px] sm:h-[400px] md:h-[440px] lg:h-[420px] xl:h-[460px]">
           
           {/* Main Large Display Image */}
-          <div className="relative w-full sm:w-[70%] h-[72%] sm:h-full overflow-hidden bg-[#070D18] shadow-[0_4px_20px_rgba(0,0,0,0.1)] border border-black/5">
+          <div className="relative w-full sm:w-[70%] h-[72%] sm:h-full overflow-hidden bg-[#070D18] shadow-[0_4px_20px_rgba(0,0,0,0.1)]">
             <Image
               key={selectedImage.src}
               src={selectedImage.src}
@@ -78,33 +72,25 @@ export function ProductShowcaseSection({ piece }: ProductShowcaseSectionProps) {
             />
           </div>
 
-          {/* 3 Interactive Clickable Thumbnails */}
+          {/* 3 Clickable Thumbnails (Raw, zero filters, zero focus rings or border highlights) */}
           <div className="flex sm:flex-col gap-2.5 xs:gap-3 sm:gap-3.5 w-full sm:w-[30%] h-[28%] sm:h-full">
-            {piece.gallery.thumbnails.slice(0, 3).map((thumb, index) => {
-              const isActive = selectedImage.src === thumb.src;
-
-              return (
-                <button
-                  key={index}
-                  type="button"
-                  onClick={() => setSelectedImage(thumb)}
-                  aria-label={`View photo angle ${index + 1}`}
-                  className={`relative flex-1 w-full h-full overflow-hidden bg-[#070D18] cursor-pointer transition-all duration-200 focus:outline-none ${
-                    isActive
-                      ? "ring-2 ring-[#1B222C] ring-offset-2 ring-offset-[#EFECE6] opacity-100"
-                      : "opacity-70 hover:opacity-100 border border-black/10"
-                  }`}
-                >
-                  <Image
-                    src={thumb.src}
-                    alt={thumb.alt}
-                    fill
-                    sizes="(max-width: 640px) 33vw, 140px"
-                    className="object-cover object-center pointer-events-none select-none"
-                  />
-                </button>
-              );
-            })}
+            {piece.gallery.thumbnails.slice(0, 3).map((thumb, index) => (
+              <button
+                key={index}
+                type="button"
+                onClick={() => setSelectedImage(thumb)}
+                aria-label={`View photo angle ${index + 1}`}
+                className="relative flex-1 w-full h-full overflow-hidden bg-[#070D18] cursor-pointer focus:outline-none select-none p-0 border-0"
+              >
+                <Image
+                  src={thumb.src}
+                  alt={thumb.alt}
+                  fill
+                  sizes="(max-width: 640px) 33vw, 140px"
+                  className="object-cover object-center pointer-events-none select-none"
+                />
+              </button>
+            ))}
           </div>
 
         </div>
