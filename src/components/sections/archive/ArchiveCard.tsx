@@ -10,6 +10,7 @@ export function ArchiveCard({ item }: ArchiveCardProps) {
   return (
     <Link
       href={item.href}
+      scroll={true}
       className="group relative block w-full aspect-[4/5] overflow-hidden bg-[#0A0D12] select-none transition-transform duration-300 hover:opacity-95 focus:outline-none focus:ring-1 focus:ring-neutral-400 shadow-[0_4px_20px_rgba(0,0,0,0.06)]"
       aria-label={`${item.id} ${item.title}`}
     >

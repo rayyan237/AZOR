@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import { siteConfig } from "@/config/site";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 import "./globals.css";
+import { ScrollReset } from "@/components/providers/ScrollReset";
 
 // Primary Editorial Serif (Headings, Logo, Taglines)
 const cormorant = Cormorant_Garamond({
@@ -73,7 +74,10 @@ export default function RootLayout({
       <body
         className={`${cormorant.variable} ${montserrat.variable} antialiased selection:bg-neutral-800 selection:text-white`}
       >
-        <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        <SmoothScrollProvider>
+          <ScrollReset />
+          {children}
+          </SmoothScrollProvider>
       </body>
     </html>
   );
