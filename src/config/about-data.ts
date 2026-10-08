@@ -82,7 +82,7 @@ export const aboutData = {
       alt: "Azor embossed luxury presentation box with flower crystal ring on natural travertine stone with dried white florals",
     },
     epigram: {
-      lines: ["Timeless", "pieces for", "modern", "women."],
+      lines: ["Timeless pieces", "for modern women."],
     },
   },
 };
