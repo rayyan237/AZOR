@@ -10,8 +10,14 @@ export const connectData = {
       "Or simply want to say hello?",
     ],
     image: {
-      src: "/images/connect/connect-hero.webp",
-      alt: "Side portrait of a woman looking upward in gentle light wearing Azor diamond earrings and rings",
+      desktop: {
+        src: "/images/connect/connect-hero.webp",
+        alt: "Raw editorial side profile portrait of a woman looking upward in natural cinematic shadows wearing Azor fine diamond earrings and stack rings",
+      },
+      mobile: {
+        src: "/images/connect/connect-hero-mobile.webp",
+        alt: "Detail portrait of a woman wearing Azor fine jewelry in natural light",
+      },
     },
   },
   channels: [
@@ -27,7 +33,7 @@ export const connectData = {
         src: "/images/connect/channel-instagram.webp",
         alt: "Crystal flower necklace resting on folded black velvet",
       },
-      imagePosition: "right", // Desktop layout: Text on left, image on right
+      imagePosition: "right",
     },
     {
       id: "whatsapp",
@@ -41,7 +47,7 @@ export const connectData = {
         src: "/images/connect/channel-whatsapp.webp",
         alt: "Hands holding smartphone wearing delicate Azor stack rings",
       },
-      imagePosition: "left", // Desktop layout: Image on left, text on right
+      imagePosition: "left",
     },
     {
       id: "email",
@@ -55,7 +61,7 @@ export const connectData = {
         src: "/images/connect/channel-email.webp",
         alt: "Azor luxury embossed card placed beside dried delicate florals",
       },
-      imagePosition: "right", // Desktop layout: Text on left, image on right
+      imagePosition: "right",
     },
   ],
   closing: {
