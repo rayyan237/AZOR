@@ -48,7 +48,7 @@ export function PhilosophySection() {
             >
               {/* Row 1: Number */}
               <div className="pb-3 sm:pb-4 flex items-center">
-                <span className="text-[15px] xs:text-[16px] sm:text-[17px] font-[family-name:var(--font-serif)] italic text-zinc-400">
+                <span className="text-[22px] xs:text-[22px] sm:text-[22px] font-[family-name:var(--font-serif)] italic text-zinc-400">
                   {pillar.number}
                 </span>
               </div>
