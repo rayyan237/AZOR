@@ -31,7 +31,7 @@ export function ProductShowcaseSection({ piece }: ProductShowcaseSectionProps) {
   return (
     <section
       aria-label="Piece Aesthetics, Gallery, and Description"
-      className="relative w-full bg-[#EFECE6] text-[#1B222C] border-b border-[#D5CFBF] py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24 px-5 xs:px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 2xl:px-20 select-none"
+      className="relative w-full bg-[#E8EAEB] text-[#1B222C] border-b border-[#D5CFBF] py-12 xs:py-14 sm:py-16 md:py-20 lg:py-24 px-5 xs:px-6 sm:px-8 md:px-10 lg:px-12 xl:px-16 2xl:px-20 select-none"
     >
       <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 xl:gap-12 items-center">
         

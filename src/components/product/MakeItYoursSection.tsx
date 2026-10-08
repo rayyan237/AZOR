@@ -6,7 +6,7 @@ export function MakeItYoursSection() {
     <section
       id="make-it-yours"
       aria-label="Acquire and Inquire"
-      className="relative w-full bg-[#EFECE6] text-[#1B222C] border-b border-[#D5CFBF] py-10 xs:py-12 sm:py-14 px-5 xs:px-6 sm:px-8 md:px-10 lg:px-14 xl:px-18 2xl:px-20 select-none"
+      className="relative w-full bg-[#E8EAEB] text-[#1B222C] border-b border-[#D5CFBF] py-10 xs:py-12 sm:py-14 px-5 xs:px-6 sm:px-8 md:px-10 lg:px-14 xl:px-18 2xl:px-20 select-none"
     >
       <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6 sm:gap-8">
         
