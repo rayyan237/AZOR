@@ -8,6 +8,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 
 interface SmoothScrollContextType {
@@ -27,9 +28,15 @@ interface SmoothScrollProviderProps {
 export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
   const [lenisInstance, setLenisInstance] = useState<Lenis | null>(null);
   const lenisRef = useRef<Lenis | null>(null);
+  const pathname = usePathname();
 
+  // 1. Initialize Lenis with your luxury editorial physics
   useEffect(() => {
-    // Luxury editorial physics: higher duration, lower lerp for velvety inertia
+    // Disable browser default scroll restoration so it doesn't fight Lenis
+    if (typeof window !== "undefined" && "scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+
     const lenis = new Lenis({
       duration: 1.8,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -58,6 +65,31 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
       lenisRef.current = null;
     };
   }, []);
+
+  // 2. Guaranteed instant scroll-to-top on route changes
+  useEffect(() => {
+    // Immediate reset
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true, force: true });
+    }
+
+    // Secondary frame check after Next.js finishes DOM reconciliation
+    const rafId = requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+
+      if (lenisRef.current) {
+        lenisRef.current.scrollTo(0, { immediate: true, force: true });
+      }
+    });
+
+    return () => cancelAnimationFrame(rafId);
+  }, [pathname]);
 
   return (
     <SmoothScrollContext.Provider value={{ lenis: lenisInstance }}>
