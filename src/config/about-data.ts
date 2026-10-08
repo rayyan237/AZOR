@@ -70,4 +70,19 @@ export const aboutData = {
       },
     ],
   },
+  whyAzor: {
+    eyebrow: "WHY AZOR",
+    titleLines: ["A DIFFERENT", "KIND OF BRAND."],
+    stanzas: [
+      "We're not just here to sell jewelry.\nWe're here to create a feeling —\na sense of confidence, softness and self.",
+      "Azor is for the dreamers, the doers, the ones who find beauty in the in-between.\nFor the girls who wear their story, not just their style.",
+    ],
+    image: {
+      src: "/images/about/why-azor-still.webp",
+      alt: "Azor embossed luxury presentation box with flower crystal ring on natural travertine stone with dried white florals",
+    },
+    epigram: {
+      lines: ["Timeless", "pieces for", "modern", "women."],
+    },
+  },
 };

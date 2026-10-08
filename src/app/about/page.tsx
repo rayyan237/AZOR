@@ -3,6 +3,7 @@ import { Navbar } from "@/components/navigation/Navbar";
 import { AboutHero } from "@/components/about/AboutHero";
 import { OurStorySection } from "@/components/about/OurStorySection";
 import { PhilosophySection } from "@/components/about/PhilosophySection";
+import { WhyAzorSection } from "@/components/about/WhyAzorSection";
 
 export const metadata: Metadata = {
   title: "About | AZOR Fine Jewelry",
@@ -17,6 +18,7 @@ export default function AboutPage() {
       <AboutHero />
       <OurStorySection />
       <PhilosophySection />
+      <WhyAzorSection />
     </main>
   );
 }
