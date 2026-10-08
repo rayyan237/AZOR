@@ -2,7 +2,10 @@ export const aboutData = {
   hero: {
     eyebrow: "ABOUT AZOR",
     titleLines: ["JEWELRY SHOULD", "FEEL PERSONAL."],
-    italicQuoteLines: ["Not just something you wear,", "but something you feel."],
+    italicQuoteLines: [
+      "Not just something you wear,",
+      "but something you feel.",
+    ],
     description:
       "Azor is a modern jewelry brand for the girls who find beauty in the little things, and meaning in the details.",
     ctaScroll: "SCROLL",
@@ -30,11 +33,11 @@ export const aboutData = {
     },
     images: {
       main: {
-        src: "/images/about/story-hands.webp",
+        src: "/images/about/story-01.webp",
         alt: "Hands clasped wearing delicate minimal fine gold and diamond rings",
       },
       polaroid: {
-        src: "/images/about/story-pendant.webp",
+        src: "/images/about/story-02.webp",
         alt: "Model wearing Azor cross diamond pendant necklace",
       },
     },
