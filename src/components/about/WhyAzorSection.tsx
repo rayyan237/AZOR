@@ -42,36 +42,36 @@ export function WhyAzorSection() {
           </div>
         </div>
 
-        {/* ================= CENTER COLUMN: WIDE STILL PHOTOGRAPHY (lg:col-span-6) ================= */}
-        <div className="lg:col-span-6 relative w-full flex items-center justify-center">
+        {/* ================= CENTER COLUMN: WIDE STILL PHOTOGRAPHY (lg:col-span-5) ================= */}
+        <div className="lg:col-span-5 relative w-full flex items-center justify-center">
           <div className="relative w-full aspect-[1.75/1] sm:aspect-[1.8/1] overflow-hidden bg-[#070D18] shadow-[0_6px_28px_rgba(0,0,0,0.08)]">
             <Image
               src={whyAzor.image.src}
               alt={whyAzor.image.alt}
               fill
-              sizes="(max-width: 1024px) 100vw, 620px"
+              sizes="(max-width: 1024px) 100vw, 540px"
               className="object-cover object-center pointer-events-none select-none hover:scale-[1.02] transition-transform duration-700 ease-out"
             />
           </div>
         </div>
 
-        {/* ================= RIGHT COLUMN: ITALIC SERIF EPIGRAM (lg:col-span-2) ================= */}
-        <div className="lg:col-span-2 flex flex-col items-start lg:items-center justify-center pt-2 lg:pt-0">
-          <div className="flex flex-col items-start lg:items-center space-y-3">
-            <div className="space-y-0.5 text-left lg:text-center">
+        {/* ================= RIGHT COLUMN: ITALIC SERIF EPIGRAM (lg:col-span-3) ================= */}
+        <div className="lg:col-span-3 flex flex-col items-start justify-center pt-2 lg:pt-0 lg:pl-4 xl:pl-6">
+          <div className="flex flex-col items-start space-y-3 sm:space-y-4">
+            <div className="space-y-0.5 text-left">
               {whyAzor.epigram.lines.map((line, idx) => (
                 <p
                   key={idx}
-                  className="text-[14px] xs:text-[15px] sm:text-[16px] md:text-[17px] font-[family-name:var(--font-serif)] italic text-[#2D3540] leading-snug tracking-wide"
+                  className="text-[18px] xs:text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] font-[family-name:var(--font-serif)] italic text-[#2D3540] leading-[1.12] tracking-wide"
                 >
                   {line}
                 </p>
               ))}
             </div>
 
-            {/* Subtle hairline tick */}
+            {/* Left-aligned subtle hairline tick */}
             <div
-              className="w-6 h-[1px] bg-[#1B222C]/30 pt-0.5"
+              className="w-8 h-[1px] bg-[#1B222C]/30 pt-0.5"
               aria-hidden="true"
             />
           </div>
