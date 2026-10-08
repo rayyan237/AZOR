@@ -1,6 +1,7 @@
+// src/app/archive/[slug]/page.tsx
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { archivePieces, getPieceBySlug } from "@/config/archive-data";
+import { archivePieceDetails, getPieceBySlug } from "@/config/archive-pieces";
 import { Navbar } from "@/components/navigation/Navbar";
 import { ProductHero } from "@/components/product/ProductHero";
 import { ProductShowcaseSection } from "@/components/product/ProductShowcaseSection";
@@ -14,7 +15,7 @@ interface ProductPageProps {
 }
 
 export async function generateStaticParams() {
-  return archivePieces.map((piece) => ({
+  return archivePieceDetails.map((piece) => ({
     slug: piece.slug,
   }));
 }
@@ -33,7 +34,7 @@ export async function generateMetadata({
 
   return {
     title: `${piece.name} | AZOR Archive`,
-    description: `${piece.descriptor} Handcrafted fine jewelry from the AZOR archive.`,
+    description: `${piece.tagline} Handcrafted fine jewelry from the AZOR archive.`,
   };
 }
 

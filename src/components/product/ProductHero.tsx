@@ -1,17 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArchivePiece } from "@/config/archive-data";
+import { ArchivePieceDetail } from "@/config/archive-pieces";
 
 interface ProductHeroProps {
-  piece: ArchivePiece;
+  piece: ArchivePieceDetail;
 }
 
 export function ProductHero({ piece }: ProductHeroProps) {
+  // Safe image paths directly matching ArchivePieceDetail structure
+  const mobileImg = piece.heroImages.mobile || piece.gallery.main.src;
+  const desktopImg = piece.heroImages.desktop || piece.gallery.main.src;
+
   return (
     <section
       aria-label={`${piece.name} Showcase`}
       id="product-hero"
-      /* Strict 100dvh viewport lock matching homepage hero */
+      /* Strict single-screen height lock matching homepage hero */
       className="relative w-full h-screen h-[100dvh] overflow-hidden flex flex-col justify-between pt-16 xs:pt-20 sm:pt-24 md:pt-26 lg:pt-28 pb-6 xs:pb-7 sm:pb-8 lg:pb-10 px-5 xs:px-6 sm:px-8 md:px-10 lg:px-14 xl:px-18 2xl:px-20 bg-[#09111E] select-none"
     >
       {/* Background Image Container — Raw photography without artificial filters */}
@@ -19,8 +23,8 @@ export function ProductHero({ piece }: ProductHeroProps) {
         {/* Mobile Viewport Image (< 768px) */}
         <div className="relative w-full h-full md:hidden">
           <Image
-            src={piece.heroImages.mobile || piece.image.src}
-            alt={piece.image.alt}
+            src={mobileImg}
+            alt={piece.name}
             fill
             priority
             sizes="(max-width: 767px) 100vw, 0px"
@@ -31,8 +35,8 @@ export function ProductHero({ piece }: ProductHeroProps) {
         {/* Desktop Viewport Image (>= 768px) */}
         <div className="hidden md:block relative w-full h-full">
           <Image
-            src={piece.heroImages.desktop || piece.image.src}
-            alt={piece.image.alt}
+            src={desktopImg}
+            alt={piece.name}
             fill
             priority
             sizes="(min-width: 768px) 100vw, 0px"
@@ -72,7 +76,7 @@ export function ProductHero({ piece }: ProductHeroProps) {
         </div>
       </div>
 
-      {/* Hero Bottom Meta Controls: Back to Archive & Piece Index */}
+      {/* Hero Bottom Meta Controls */}
       <div className="relative z-10 w-full max-w-[1440px] mx-auto flex items-end justify-between select-none">
         <Link
           href="/archive"
