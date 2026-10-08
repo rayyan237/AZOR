@@ -57,7 +57,6 @@ export const siteConfig = {
   navItems: [
     { label: "WORLD", href: "/" },
     { label: "ARCHIVE", href: "/archive" },
-    { label: "SIGNATURE", href: "#signature" },
     { label: "LETTERS", href: "#letters" },
     { label: "ABOUT", href: "#about" },
     { label: "CONNECT", href: "#connect" },
@@ -66,7 +65,7 @@ export const siteConfig = {
     {
       platform: "instagram",
       label: "Instagram",
-      url: "https://instagram.com/azorjewelry",
+      url: "https://instagram.com/azorjewel",
     },
     {
       platform: "whatsapp",
@@ -105,7 +104,7 @@ export const siteConfig = {
     ],
     cta: {
       label: "DISCOVER AZOR",
-      href: "#archive",
+      href: "/archive",
     },
     images: {
       necklace: {
@@ -134,7 +133,7 @@ export const siteConfig = {
     ],
     cta: {
       label: "THE AZOR PHILOSOPHY",
-      href: "#about",
+      href: "/about",
     },
     images: {
       desktop: {
@@ -153,7 +152,7 @@ export const siteConfig = {
     description: "Explore the pieces that make up the world of Azor.",
     cta: {
       label: "EXPLORE ALL",
-      href: "#signature",
+      href: "/archive",
     },
     items: [
       {
@@ -163,7 +162,7 @@ export const siteConfig = {
           src: "/images/archive-01.webp",
           alt: "The Signature four-petal pendant necklace by Azor",
         },
-        href: "#archive-01",
+        href: "/archive/the-signature",
       },
       {
         id: "002",
@@ -172,7 +171,7 @@ export const siteConfig = {
           src: "/images/archive-02.webp",
           alt: "The Afterglow diamond drop earring worn on model by Azor",
         },
-        href: "#archive-02",
+        href: "/archive/the-afterglow",
       },
       {
         id: "003",
@@ -181,7 +180,7 @@ export const siteConfig = {
           src: "/images/archive-03.webp",
           alt: "The Noir black gemstone ring by Azor",
         },
-        href: "#archive-03",
+        href: "/archive/the-noir",
       },
       {
         id: "004",
@@ -190,7 +189,7 @@ export const siteConfig = {
           src: "/images/archive-04.webp",
           alt: "The Petal floral sculptural ring by Azor",
         },
-        href: "#archive-04",
+        href: "/archive/the-petal",
       },
       {
         id: "005",
@@ -199,7 +198,7 @@ export const siteConfig = {
           src: "/images/archive-05.webp",
           alt: "The Lune crescent moon pendant necklace by Azor",
         },
-        href: "#archive-05",
+        href: "/archive/the-lune",
       },
     ] as ArchiveItem[],
   },
@@ -265,12 +264,12 @@ export const siteConfig = {
     ],
     cta: {
       label: "FOLLOW THE JOURNEY",
-      href: "#connect",
+      href: "/connect",
     },
     instagram: {
       label: "FOLLOW US",
       sublabel: "ON INSTAGRAM",
-      href: "https://instagram.com/azorjewelry",
+      href: "https://instagram.com/azorjewel",
     },
     mosaic: [
       {
@@ -304,14 +303,14 @@ export const siteConfig = {
     description: "Thoughts, stories and little notes from the world of Azor.",
     cta: {
       label: "READ ALL",
-      href: "#letters",
+      href: "/letters",
     },
     items: [
       {
         id: "01",
         tag: "LETTER 01",
         title: "On becoming unforgettable.",
-        href: "#letter-01",
+        href: "/letters/letter-01",
         image: {
           src: "/images/letter-01.webp",
           alt: "Editorial woman in silhouette wearing Azor jewelry",
@@ -321,7 +320,7 @@ export const siteConfig = {
         id: "02",
         tag: "LETTER 02",
         title: "Why we believe everyday deserves something beautiful.",
-        href: "#letter-02",
+        href: "/letters/letter-02",
         image: {
           src: "/images/letter-02.webp",
           alt: "White floral botanical close up",
@@ -331,7 +330,7 @@ export const siteConfig = {
         id: "03",
         tag: "LETTER 03",
         title: "For the girls who wear black.",
-        href: "#letter-03",
+        href: "/letters/letter-03",
         image: {
           src: "/images/letter-03.webp",
           alt: "Moody architectural skyline at dusk",
@@ -341,7 +340,7 @@ export const siteConfig = {
         id: "04",
         tag: "LETTER 04",
         title: "The art of keeping things simple.",
-        href: "#letter-04",
+        href: "/letters/letter-04",
         image: {
           src: "/images/letter-04.webp",
           alt: "Fine gold necklace laid on neutral folded fabric",
@@ -356,7 +355,7 @@ export const siteConfig = {
     actions: {
       instagram: {
         label: "FOLLOW US",
-        href: "https://instagram.com/azorjewelry",
+        href: "https://instagram.com/azorjewel",
       },
       whatsapp: {
         label: "CHAT WITH US",
@@ -381,12 +380,12 @@ export const siteConfig = {
     links: [
       { label: "WORLD", href: "/" },
       { label: "ARCHIVE", href: "/archive" },
-      { label: "LETTERS", href: "#letters-archive" },
-      { label: "ABOUT", href: "#philosophy" },
-      { label: "CONNECT", href: "#connect" },
+      { label: "LETTERS", href: "/letters-archive" },
+      { label: "ABOUT", href: "/about" },
+      { label: "CONNECT", href: "/connect" },
     ],
     socials: [
-      { platform: "instagram", href: "https://instagram.com/azorjewelry" },
+      { platform: "instagram", href: "https://instagram.com/azorjewel" },
       { platform: "whatsapp", href: "https://wa.me/1234567890" },
     ],
   },
