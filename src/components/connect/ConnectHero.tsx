@@ -60,7 +60,7 @@ export function ConnectHero() {
           </h1>
 
           {/* 3-Line Italic Prompt */}
-          <div className="space-y-1 sm:space-y-1.5 text-[13px] xs:text-[14px] sm:text-[15px] font-[family-name:var(--font-serif)] italic text-zinc-300/95 leading-snug">
+          <div className="space-y-1 sm:space-y-1.5 text-[14px] xs:text-[16px] sm:text-[18px] font-[family-name:var(--font-serif)] italic text-zinc-300/95 leading-snug">
             {hero.prompts.map((line, idx) => (
               <p key={idx}>{line}</p>
             ))}

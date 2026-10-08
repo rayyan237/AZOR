@@ -18,7 +18,6 @@ export default function ConnectPage() {
       <Navbar />
       <ConnectHero />
       <ConnectChannels />
-      <ConnectClosing />
       <Footer />
     </main>
   );

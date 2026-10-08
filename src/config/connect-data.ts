@@ -27,7 +27,7 @@ export const connectData = {
       titleLines: ["FOLLOW THE", "WORLD OF AZOR."],
       description: "Behind the scenes, new pieces, moods and more.",
       actionLabel: "@AZOR",
-      href: "https://instagram.com/azor",
+      href: "https://instagram.com/azorjewel",
       type: "instagram",
       image: {
         src: "/images/connect/channel-instagram.webp",
