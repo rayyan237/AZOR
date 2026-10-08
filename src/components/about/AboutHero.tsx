@@ -23,9 +23,9 @@ export function AboutHero() {
     <section
       id="about-hero"
       aria-label="About Azor Hero"
-      className="relative w-full h-screen h-[100dvh] overflow-hidden flex flex-col justify-between pt-16 xs:pt-20 sm:pt-24 md:pt-26 lg:pt-28 pb-6 xs:pb-7 sm:pb-8 lg:pb-10 px-5 xs:px-6 sm:px-8 md:px-10 lg:px-14 xl:px-18 2xl:px-20 bg-[#04070D] select-none"
+      className="relative w-full h-screen h-[100dvh] overflow-hidden flex flex-col justify-between pt-16 xs:pt-18 sm:pt-20 md:pt-24 lg:pt-26 pb-5 xs:pb-6 sm:pb-8 lg:pb-9 px-5 xs:px-6 sm:px-8 md:px-10 lg:px-14 xl:px-18 2xl:px-20 bg-[#04070D] select-none"
     >
-      {/* Background Image Container — Raw photography without artificial filters */}
+      {/* Background Image Container — Raw photography without artificial darkening filters */}
       <div className="absolute inset-0 z-0">
         {/* Mobile Viewport Image (< 768px) */}
         <div className="relative w-full h-full md:hidden">
@@ -54,14 +54,14 @@ export function AboutHero() {
 
       {/* Main Content Area: Vertically Centered */}
       <div className="relative z-10 my-auto w-full max-w-[1440px] mx-auto">
-        <div className="max-w-[320px] xs:max-w-[380px] sm:max-w-[500px] md:max-w-[580px] lg:max-w-[680px] flex flex-col items-start select-none">
+        <div className="max-w-[310px] xs:max-w-[360px] sm:max-w-[460px] md:max-w-[540px] lg:max-w-[620px] flex flex-col items-start select-none">
           {/* Eyebrow */}
-          <p className="text-[9px] xs:text-[9.5px] sm:text-[10px] md:text-[10.5px] tracking-[0.26em] uppercase text-zinc-300 font-[family-name:var(--font-sans)] font-medium mb-2.5 xs:mb-3 sm:mb-4">
+          <p className="text-[8.5px] xs:text-[9px] sm:text-[9.5px] md:text-[10px] tracking-[0.26em] uppercase text-zinc-300 font-[family-name:var(--font-sans)] font-medium mb-2 xs:mb-2.5 sm:mb-3">
             {hero.eyebrow}
           </p>
 
-          {/* Display Title: Cormorant Garamond */}
-          <h1 className="text-[38px] xs:text-[46px] sm:text-[58px] md:text-[68px] lg:text-[76px] xl:text-[84px] font-[family-name:var(--font-serif)] font-normal tracking-[0.04em] leading-[0.96] text-white">
+          {/* Display Title: Reduced by 1 tier to prevent vertical viewport overflow */}
+          <h1 className="text-[32px] xs:text-[38px] sm:text-[48px] md:text-[56px] lg:text-[64px] xl:text-[72px] font-[family-name:var(--font-serif)] font-normal tracking-[0.04em] leading-[0.98] text-white">
             {hero.titleLines.map((line, idx) => (
               <span key={idx} className="block">
                 {line}
@@ -70,7 +70,7 @@ export function AboutHero() {
           </h1>
 
           {/* Italic Quote Lines */}
-          <div className="mt-3 xs:mt-3.5 sm:mt-4 text-[15px] xs:text-[17px] sm:text-[20px] md:text-[23px] font-[family-name:var(--font-serif)] italic font-normal tracking-wide text-zinc-100 leading-tight">
+          <div className="mt-2.5 xs:mt-3 sm:mt-3.5 text-[14px] xs:text-[16px] sm:text-[18px] md:text-[20px] font-[family-name:var(--font-serif)] italic font-normal tracking-wide text-zinc-100 leading-tight">
             {hero.italicQuoteLines.map((line, idx) => (
               <p key={idx}>{line}</p>
             ))}
@@ -78,12 +78,12 @@ export function AboutHero() {
 
           {/* Hairline Divider Accent */}
           <div
-            className="w-8 xs:w-10 sm:w-12 h-[1px] bg-white/40 my-3 xs:my-3.5 sm:my-4 lg:my-5"
+            className="w-8 xs:w-10 sm:w-12 h-[1px] bg-white/40 my-2.5 xs:my-3 sm:my-3.5 lg:my-4"
             aria-hidden="true"
           />
 
           {/* Narrative Body Copy */}
-          <p className="text-[11px] xs:text-[11.5px] sm:text-xs md:text-[12.5px] font-[family-name:var(--font-sans)] font-light tracking-[0.025em] text-zinc-300 leading-relaxed max-w-[340px] xs:max-w-[400px]">
+          <p className="text-[10.5px] xs:text-[11px] sm:text-[11.5px] md:text-[12px] font-[family-name:var(--font-sans)] font-light tracking-[0.025em] text-zinc-300 leading-relaxed max-w-[320px] xs:max-w-[380px]">
             {hero.description}
           </p>
         </div>

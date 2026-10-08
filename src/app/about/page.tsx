@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/navigation/Navbar";
 import { AboutHero } from "@/components/about/AboutHero";
+import { OurStorySection } from "@/components/about/OurStorySection";
 
 export const metadata: Metadata = {
   title: "About | AZOR Fine Jewelry",
@@ -11,8 +12,9 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main className="relative min-h-screen bg-[#04070D] text-white">
-      <Navbar activeRoute="/about" />
+      <Navbar />
       <AboutHero />
+      <OurStorySection />
     </main>
   );
 }

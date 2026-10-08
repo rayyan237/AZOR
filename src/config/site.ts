@@ -57,9 +57,9 @@ export const siteConfig = {
   navItems: [
     { label: "WORLD", href: "/" },
     { label: "ARCHIVE", href: "/archive" },
-    { label: "LETTERS", href: "#letters" },
-    { label: "ABOUT", href: "#about" },
-    { label: "CONNECT", href: "#connect" },
+    { label: "LETTERS", href: "/letters" },
+    { label: "ABOUT", href: "/about" },
+    { label: "CONNECT", href: "/connect" },
   ] as NavItem[],
   socials: [
     {

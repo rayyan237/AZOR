@@ -17,4 +17,26 @@ export const aboutData = {
       },
     },
   },
+  ourStory: {
+    eyebrow: "OUR STORY",
+    titleLines: ["IT STARTED", "WITH A FEELING."],
+    stanzas: [
+      "Azor was born from a simple idea — that jewelry should feel like you.",
+      "Not just an accessory, but a part of your story. A quiet reminder of who you are, what you love, and the moments that matter.",
+      "We sell pieces for the everyday, the in-between, and the unforgettable.",
+    ],
+    noteCard: {
+      lines: ["A small piece.", "A big part", "of your story."],
+    },
+    images: {
+      main: {
+        src: "/images/about/story-hands.webp",
+        alt: "Hands clasped wearing delicate minimal fine gold and diamond rings",
+      },
+      polaroid: {
+        src: "/images/about/story-pendant.webp",
+        alt: "Model wearing Azor cross diamond pendant necklace",
+      },
+    },
+  },
 };
