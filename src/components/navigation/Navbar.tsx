@@ -2,11 +2,30 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { siteConfig } from "@/config/site";
 import { SocialIcon } from "./SocialIcon";
 
-export function Navbar() {
+interface NavbarProps {
+  activeRoute?: string;
+}
+
+export function Navbar({ activeRoute }: NavbarProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Determine active state supporting path matching, prop override, and nested archive routes
+  const checkIsActive = (href: string) => {
+    const current = activeRoute || pathname;
+
+    // Direct match (e.g., exact "/archive" or root "/")
+    if (current === href) return true;
+
+    // Nested route match (e.g. "/archive/[slug]" activates "/archive")
+    if (href !== "/" && current.startsWith(href)) return true;
+
+    return false;
+  };
 
   // Prevent background scroll when mobile drawer is open
   useEffect(() => {
@@ -48,7 +67,7 @@ export function Navbar() {
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
               aria-expanded={isMobileMenuOpen}
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-              className="md:hidden text-white/90 hover:text-white p-2.5 -ml-2.5 focus:outline-none focus:ring-1 focus:ring-white/40 rounded z-50 relative"
+              className="md:hidden text-white/90 hover:text-white p-2.5 -ml-2.5 focus:outline-none rounded z-50 relative"
             >
               <div className="w-5 xs:w-6 h-4 xs:h-5 flex flex-col justify-between">
                 <span
@@ -73,7 +92,7 @@ export function Navbar() {
             <Link
               href="/"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="hidden md:inline-block font-[family-name:var(--font-serif)] font-medium text-xl xs:text-2xl sm:text-[25px] lg:text-[26px] tracking-[0.16em] xs:tracking-[0.18em] text-white/95 hover:text-white transition-opacity select-none focus:outline-none focus:ring-1 focus:ring-white/40 rounded-sm"
+              className="hidden md:inline-block font-[family-name:var(--font-serif)] font-medium text-xl xs:text-2xl sm:text-[25px] lg:text-[26px] tracking-[0.16em] xs:tracking-[0.18em] text-white/95 hover:text-white transition-opacity select-none focus:outline-none"
             >
               {siteConfig.name}
             </Link>
@@ -83,33 +102,42 @@ export function Navbar() {
             MOBILE CENTER SLOT (< md): Brand Logo Centered
             DESKTOP CENTER SLOT (>= md): Navigation Links
           */}
-          {/* Mobile Centered Logo */}
           <div className="md:hidden absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 pointer-events-auto">
             <Link
               href="/"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="font-[family-name:var(--font-serif)] font-medium text-xl xs:text-2xl tracking-[0.18em] text-white/95 hover:text-white transition-opacity select-none focus:outline-none focus:ring-1 focus:ring-white/40 rounded-sm"
+              className="font-[family-name:var(--font-serif)] font-medium text-xl xs:text-2xl tracking-[0.18em] text-white/95 hover:text-white transition-opacity select-none focus:outline-none"
             >
               {siteConfig.name}
             </Link>
           </div>
 
-          {/* Desktop Navigation Links */}
+          {/* Desktop Navigation Links with Active Indicator */}
           <div className="hidden md:flex items-center gap-5 lg:gap-8 xl:gap-11">
-            {siteConfig.navItems.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="text-[9.5px] lg:text-[10px] xl:text-[10.5px] font-[family-name:var(--font-sans)] font-medium tracking-[0.2em] lg:tracking-[0.24em] text-white/75 hover:text-white transition-colors duration-200 py-1"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {siteConfig.navItems.map((item) => {
+              const isActive = checkIsActive(item.href);
+
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className={`relative text-[9.5px] lg:text-[10px] xl:text-[10.5px] font-[family-name:var(--font-sans)] font-medium tracking-[0.2em] lg:tracking-[0.24em] transition-colors duration-200 py-1 ${
+                    isActive ? "text-white" : "text-white/70 hover:text-white"
+                  }`}
+                >
+                  {item.label}
+                  {isActive && (
+                    <span
+                      className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-white transition-all duration-300"
+                      aria-hidden="true"
+                    />
+                  )}
+                </Link>
+              );
+            })}
           </div>
 
-          {/* 
-            RIGHT SLOT (Both Mobile & Desktop): Social Icons
-          */}
+          {/* RIGHT SLOT (Both Mobile & Desktop): Social Icons */}
           <div className="flex items-center gap-2.5 xs:gap-3 sm:gap-4 text-white/80">
             {siteConfig.socials.map((social) => (
               <a
@@ -118,7 +146,7 @@ export function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="hover:text-white transition-colors p-1.5 focus:outline-none focus:ring-1 focus:ring-white/40 rounded-full"
+                className="hover:text-white transition-colors p-1.5 focus:outline-none"
               >
                 <SocialIcon
                   platform={social.platform}
@@ -143,27 +171,36 @@ export function Navbar() {
         }`}
         style={{ minHeight: "100dvh" }}
       >
-        {/* Navigation Links with Staggered Fade */}
+        {/* Navigation Links with Active State */}
         <div className="flex flex-col gap-4 xs:gap-5 sm:gap-6 my-auto overflow-y-auto py-4">
-          {siteConfig.navItems.map((item, index) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={`text-xl xs:text-2xl sm:text-3xl font-[family-name:var(--font-serif)] font-medium tracking-[0.18em] xs:tracking-[0.22em] text-white/90 hover:text-white transition-all duration-300 transform ${
-                isMobileMenuOpen
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-4 opacity-0"
-              }`}
-              style={{
-                transitionDelay: isMobileMenuOpen
-                  ? `${index * 40 + 80}ms`
-                  : "0ms",
-              }}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {siteConfig.navItems.map((item, index) => {
+            const isActive = checkIsActive(item.href);
+
+            return (
+              <Link
+                key={item.label}
+                href={item.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`text-xl xs:text-2xl sm:text-3xl font-[family-name:var(--font-serif)] font-medium tracking-[0.18em] xs:tracking-[0.22em] transition-all duration-300 transform inline-flex items-center gap-3 ${
+                  isActive ? "text-white" : "text-white/60 hover:text-white"
+                } ${
+                  isMobileMenuOpen
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-4 opacity-0"
+                }`}
+                style={{
+                  transitionDelay: isMobileMenuOpen
+                    ? `${index * 40 + 80}ms`
+                    : "0ms",
+                }}
+              >
+                {isActive && (
+                  <span className="w-1.5 h-1.5 rounded-full bg-white block" aria-hidden="true" />
+                )}
+                <span>{item.label}</span>
+              </Link>
+            );
+          })}
         </div>
 
         {/* Mobile Drawer Bottom Footer */}
