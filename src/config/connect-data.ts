@@ -12,11 +12,11 @@ export const connectData = {
     image: {
       desktop: {
         src: "/images/connect/connect-hero.webp",
-        alt: "Raw editorial side profile portrait of a woman looking upward in natural cinematic shadows wearing Azor fine diamond earrings and stack rings",
+        alt: "Side portrait of a woman looking upward in gentle light wearing Azor diamond earrings and rings",
       },
       mobile: {
         src: "/images/connect/connect-hero-mobile.webp",
-        alt: "Detail portrait of a woman wearing Azor fine jewelry in natural light",
+        alt: "Detail portrait of a woman wearing Azor fine jewelry",
       },
     },
   },
@@ -27,13 +27,19 @@ export const connectData = {
       titleLines: ["FOLLOW THE", "WORLD OF AZOR."],
       description: "Behind the scenes, new pieces, moods and more.",
       actionLabel: "@AZOR",
-      href: "https://instagram.com/azorjewel",
-      type: "instagram",
+      href: "https://instagram.com/azor",
+      type: "instagram" as const,
       image: {
-        src: "/images/connect/channel-instagram.webp",
-        alt: "Crystal flower necklace resting on folded black velvet",
+        desktop: {
+          src: "/images/connect/channel-instagram.webp",
+          alt: "Crystal flower necklace resting on folded black velvet",
+        },
+        mobile: {
+          src: "/images/connect/channel-instagram-mobile.webp",
+          alt: "Crystal flower necklace detail for mobile screens",
+        },
       },
-      imagePosition: "right",
+      imagePosition: "right" as const,
     },
     {
       id: "whatsapp",
@@ -42,12 +48,18 @@ export const connectData = {
       description: "We're here to help, answer your questions and guide you.",
       actionLabel: "CHAT WITH AZOR",
       href: "https://wa.me/yourwhatsappnumber",
-      type: "whatsapp",
+      type: "whatsapp" as const,
       image: {
-        src: "/images/connect/channel-whatsapp.webp",
-        alt: "Hands holding smartphone wearing delicate Azor stack rings",
+        desktop: {
+          src: "/images/connect/channel-whatsapp.webp",
+          alt: "Hands holding smartphone wearing delicate Azor stack rings",
+        },
+        mobile: {
+          src: "/images/connect/channel-whatsapp-mobile.webp",
+          alt: "Hands holding smartphone ring detail on mobile",
+        },
       },
-      imagePosition: "left",
+      imagePosition: "left" as const,
     },
     {
       id: "email",
@@ -56,12 +68,18 @@ export const connectData = {
       description: "For collaborations, press, or general inquiries.",
       actionLabel: "hello@azor.co",
       href: "mailto:hello@azor.co",
-      type: "email",
+      type: "email" as const,
       image: {
-        src: "/images/connect/channel-email.webp",
-        alt: "Azor luxury embossed card placed beside dried delicate florals",
+        desktop: {
+          src: "/images/connect/channel-email.webp",
+          alt: "Azor luxury embossed card placed beside dried delicate florals",
+        },
+        mobile: {
+          src: "/images/connect/channel-email-mobile.webp",
+          alt: "Azor luxury stationery detail on mobile",
+        },
       },
-      imagePosition: "right",
+      imagePosition: "right" as const,
     },
   ],
   closing: {
