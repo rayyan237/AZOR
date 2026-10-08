@@ -85,4 +85,17 @@ export const aboutData = {
       lines: ["Timeless pieces", "for modern women."],
     },
   },
+  closingCta: {
+    eyebrow: "THE AZOR WORLD",
+    titleLines: ["DISCOVER", "OUR COLLECTION"],
+    description: "Explore the pieces, the moods and the stories that make up Azor.",
+    cta: {
+      label: "EXPLORE ARCHIVE",
+      href: "/archive",
+    },
+    image: {
+      src: "/images/about/about-closing-bg.webp",
+      alt: "Azor teardrop diamond pendant on dark draped velvet with luxury Azor embossed box",
+    },
+  },
 };

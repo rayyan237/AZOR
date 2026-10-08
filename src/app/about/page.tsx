@@ -4,6 +4,8 @@ import { AboutHero } from "@/components/about/AboutHero";
 import { OurStorySection } from "@/components/about/OurStorySection";
 import { PhilosophySection } from "@/components/about/PhilosophySection";
 import { WhyAzorSection } from "@/components/about/WhyAzorSection";
+import { AboutClosingSection } from "@/components/about/AboutClosingSection";
+import { Footer } from "@/components/navigation/Footer";
 
 export const metadata: Metadata = {
   title: "About | AZOR Fine Jewelry",
@@ -19,6 +21,8 @@ export default function AboutPage() {
       <OurStorySection />
       <PhilosophySection />
       <WhyAzorSection />
+      <AboutClosingSection />
+      <Footer />
     </main>
   );
 }
