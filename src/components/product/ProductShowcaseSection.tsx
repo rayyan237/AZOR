@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import { ArchivePieceDetail } from "@/config/archive-pieces";
 
@@ -6,7 +9,17 @@ interface ProductShowcaseSectionProps {
 }
 
 export function ProductShowcaseSection({ piece }: ProductShowcaseSectionProps) {
-  // Editorial description fallback if not explicitly defined on a piece
+  // Available images: 3 thumbnails + main
+  const allImages = [
+    ...(piece.gallery.thumbnails || []),
+    piece.gallery.main,
+  ].filter(Boolean);
+
+  // Set the first thumbnail as active by default
+  const [selectedImage, setSelectedImage] = useState(
+    piece.gallery.thumbnails?.[0] || piece.gallery.main
+  );
+
   const editorial = piece.editorial || {
     headline: "Balanced silhouette, crafted for natural resonance.",
     description:
@@ -15,7 +28,6 @@ export function ProductShowcaseSection({ piece }: ProductShowcaseSectionProps) {
       "Stunning as a quiet standalone piece or paired effortlessly with your cherished everyday staples.",
   };
 
-  // Standard luxury jewelry care instructions
   const careInstructions = piece.care || [
     "Keep away from water, perfume and harsh chemicals.",
     "Store in a soft pouch.",
@@ -50,41 +62,49 @@ export function ProductShowcaseSection({ piece }: ProductShowcaseSectionProps) {
           </p>
         </div>
 
-        {/* ================= CENTER COLUMN: GALLERY (lg:col-span-6) ================= */}
-        {/*
-          Equal-Height Baseline Lock:
-          Container enforces a unified height so the main showcase and the 3 stacked thumbnails
-          start and end on the identical horizontal baseline.
-        */}
+        {/* ================= CENTER COLUMN: INTERACTIVE GALLERY (lg:col-span-6) ================= */}
         <div className="lg:col-span-6 w-full flex flex-col sm:flex-row gap-2.5 xs:gap-3 sm:gap-3.5 h-[420px] xs:h-[460px] sm:h-[400px] md:h-[440px] lg:h-[420px] xl:h-[460px]">
           
-          {/* Main Large Image */}
-          <div className="relative w-full sm:w-[70%] h-[72%] sm:h-full overflow-hidden bg-[#070D18] shadow-[0_4px_20px_rgba(0,0,0,0.1)]">
+          {/* Main Large Display Image */}
+          <div className="relative w-full sm:w-[70%] h-[72%] sm:h-full overflow-hidden bg-[#070D18] shadow-[0_4px_20px_rgba(0,0,0,0.1)] border border-black/5">
             <Image
-              src={piece.gallery.main.src}
-              alt={piece.gallery.main.alt}
+              key={selectedImage.src}
+              src={selectedImage.src}
+              alt={selectedImage.alt}
               fill
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px"
-              className="object-cover object-center pointer-events-none select-none hover:scale-105 transition-transform duration-700"
+              className="object-cover object-center pointer-events-none select-none transition-opacity duration-300"
+              priority
             />
           </div>
 
-          {/* 3 Vertically Stacked Thumbnails */}
+          {/* 3 Interactive Clickable Thumbnails */}
           <div className="flex sm:flex-col gap-2.5 xs:gap-3 sm:gap-3.5 w-full sm:w-[30%] h-[28%] sm:h-full">
-            {piece.gallery.thumbnails.slice(0, 3).map((thumb, index) => (
-              <div
-                key={index}
-                className="relative flex-1 w-full h-full overflow-hidden bg-[#070D18] shadow-[0_2px_10px_rgba(0,0,0,0.06)]"
-              >
-                <Image
-                  src={thumb.src}
-                  alt={thumb.alt}
-                  fill
-                  sizes="(max-width: 640px) 33vw, 140px"
-                  className="object-cover object-center pointer-events-none select-none hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-            ))}
+            {piece.gallery.thumbnails.slice(0, 3).map((thumb, index) => {
+              const isActive = selectedImage.src === thumb.src;
+
+              return (
+                <button
+                  key={index}
+                  type="button"
+                  onClick={() => setSelectedImage(thumb)}
+                  aria-label={`View photo angle ${index + 1}`}
+                  className={`relative flex-1 w-full h-full overflow-hidden bg-[#070D18] cursor-pointer transition-all duration-200 focus:outline-none ${
+                    isActive
+                      ? "ring-2 ring-[#1B222C] ring-offset-2 ring-offset-[#EFECE6] opacity-100"
+                      : "opacity-70 hover:opacity-100 border border-black/10"
+                  }`}
+                >
+                  <Image
+                    src={thumb.src}
+                    alt={thumb.alt}
+                    fill
+                    sizes="(max-width: 640px) 33vw, 140px"
+                    className="object-cover object-center pointer-events-none select-none"
+                  />
+                </button>
+              );
+            })}
           </div>
 
         </div>
@@ -92,7 +112,6 @@ export function ProductShowcaseSection({ piece }: ProductShowcaseSectionProps) {
         {/* ================= RIGHT COLUMN: EDITORIAL DESCRIPTION & CARE (lg:col-span-3) ================= */}
         <div className="lg:col-span-3 flex flex-col space-y-5 sm:space-y-6 lg:border-l lg:border-[#1B222C]/15 lg:pl-6 xl:pl-8 pt-4 lg:pt-0">
           
-          {/* Product Narrative & Styling Note (Replacing Material/Specs) */}
           <div className="space-y-2.5">
             <p className="text-[9px] xs:text-[9.5px] font-[family-name:var(--font-sans)] font-medium tracking-[0.26em] uppercase text-[#747B86]">
               THE PIECE
@@ -106,7 +125,6 @@ export function ProductShowcaseSection({ piece }: ProductShowcaseSectionProps) {
               {editorial.description}
             </p>
 
-            {/* Styling Tip Cardlet */}
             <div className="bg-[#E7E3DC] p-3 rounded-none border-l-2 border-[#1B222C]/30 mt-2">
               <span className="text-[8.5px] font-[family-name:var(--font-sans)] font-semibold tracking-[0.2em] text-[#747B86] uppercase block mb-1">
                 STYLING NOTE
@@ -117,7 +135,6 @@ export function ProductShowcaseSection({ piece }: ProductShowcaseSectionProps) {
             </div>
           </div>
 
-          {/* Care Instructions */}
           <div className="space-y-3 pt-3 border-t border-[#1B222C]/10">
             <p className="text-[9px] xs:text-[9.5px] font-[family-name:var(--font-sans)] font-medium tracking-[0.26em] uppercase text-[#747B86]">
               CARE

@@ -7,7 +7,6 @@ interface ProductHeroProps {
 }
 
 export function ProductHero({ piece }: ProductHeroProps) {
-  // Safe image paths directly matching ArchivePieceDetail structure
   const mobileImg = piece.heroImages.mobile || piece.gallery.main.src;
   const desktopImg = piece.heroImages.desktop || piece.gallery.main.src;
 
@@ -15,10 +14,9 @@ export function ProductHero({ piece }: ProductHeroProps) {
     <section
       aria-label={`${piece.name} Showcase`}
       id="product-hero"
-      /* Strict single-screen height lock matching homepage hero */
       className="relative w-full h-screen h-[100dvh] overflow-hidden flex flex-col justify-between pt-16 xs:pt-20 sm:pt-24 md:pt-26 lg:pt-28 pb-6 xs:pb-7 sm:pb-8 lg:pb-10 px-5 xs:px-6 sm:px-8 md:px-10 lg:px-14 xl:px-18 2xl:px-20 bg-[#09111E] select-none"
     >
-      {/* Background Image Container — Raw photography without artificial filters */}
+      {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
         {/* Mobile Viewport Image (< 768px) */}
         <div className="relative w-full h-full md:hidden">
@@ -45,47 +43,56 @@ export function ProductHero({ piece }: ProductHeroProps) {
         </div>
       </div>
 
-      {/* Main Content Area: Centered vertically */}
+      {/* Main Content Area */}
       <div className="relative z-10 my-auto w-full max-w-[1440px] mx-auto">
         <div className="max-w-[320px] xs:max-w-[380px] sm:max-w-[500px] md:max-w-[580px] lg:max-w-[680px] flex flex-col items-start select-none">
-          {/* Eyebrow: Item Number & Name */}
           <p className="text-[9px] xs:text-[9.5px] sm:text-[10px] md:text-[10.5px] tracking-[0.26em] uppercase text-zinc-300 font-[family-name:var(--font-sans)] font-medium mb-2 xs:mb-2.5 sm:mb-3.5">
             {piece.number} / {piece.name}
           </p>
 
-          {/* Piece Display Title: Cormorant Garamond */}
           <h1 className="text-[40px] xs:text-[50px] sm:text-[64px] md:text-[74px] lg:text-[84px] xl:text-[92px] font-[family-name:var(--font-serif)] font-normal tracking-[0.05em] leading-[0.94] text-white">
             {piece.name}
           </h1>
 
-          {/* Tagline Statement */}
           <p className="mt-2.5 xs:mt-3 sm:mt-4 text-[15px] xs:text-[18px] sm:text-[22px] md:text-[26px] font-[family-name:var(--font-serif)] italic font-normal tracking-wide text-zinc-100 leading-tight">
             {piece.tagline}
           </p>
 
-          {/* Hairline Accent */}
           <div
             className="w-8 xs:w-10 sm:w-12 h-[1px] bg-white/40 my-3 xs:my-3.5 sm:my-4 lg:my-5"
             aria-hidden="true"
           />
 
-          {/* Poetic Story Stanza */}
           <p className="text-[11px] xs:text-[11.5px] sm:text-xs md:text-[12.5px] font-[family-name:var(--font-sans)] font-light tracking-[0.03em] text-zinc-300 leading-relaxed max-w-[360px] xs:max-w-[420px]">
             {piece.story}
           </p>
         </div>
       </div>
 
-      {/* Hero Bottom Meta Controls */}
+      {/* Hero Bottom Meta Controls: Perfectly Aligned Arrow */}
       <div className="relative z-10 w-full max-w-[1440px] mx-auto flex items-end justify-between select-none">
         <Link
           href="/archive"
-          className="group inline-flex items-center gap-2.5 text-white/80 hover:text-white transition-colors duration-300 focus:outline-none focus:ring-1 focus:ring-white/40"
+          className="group inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors duration-300 focus:outline-none focus:ring-1 focus:ring-white/40"
+          aria-label="Back to Archive catalog"
         >
-          <span className="text-xs transition-transform duration-300 group-hover:-translate-x-1">
-            ←
+          {/* Centered SVG arrow */}
+          <span className="flex items-center justify-center shrink-0 w-3.5 h-3.5 transition-transform duration-300 group-hover:-translate-x-1">
+            <svg
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="w-3.5 h-3.5"
+              aria-hidden="true"
+            >
+              <line x1="13" y1="8" x2="3" y2="8" />
+              <polyline points="7 4 3 8 7 12" />
+            </svg>
           </span>
-          <span className="text-[9.5px] xs:text-[10px] sm:text-[10.5px] font-[family-name:var(--font-sans)] font-medium tracking-[0.24em] uppercase border-b border-transparent group-hover:border-white transition-all pb-0.5">
+          <span className="text-[9.5px] xs:text-[10px] sm:text-[10.5px] font-[family-name:var(--font-sans)] font-medium tracking-[0.24em] uppercase border-b border-transparent group-hover:border-white transition-all pb-0.5 leading-none">
             BACK TO ARCHIVE
           </span>
         </Link>
