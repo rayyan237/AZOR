@@ -32,7 +32,7 @@ export function PhilosophySection() {
           </h2>
 
           {/* Narrative Body Copy */}
-          <p className="text-[11px] xs:text-[11.5px] sm:text-[12px] font-[family-name:var(--font-sans)] font-light leading-[1.75] text-zinc-300 tracking-[0.015em]">
+          <p className="text-[11.5px] xs:text-[12px] sm:text-[12.5px] font-[family-name:var(--font-sans)] font-light leading-[1.75] text-zinc-300 tracking-[0.015em]">
             {philosophy.description}
           </p>
         </div>
@@ -46,18 +46,18 @@ export function PhilosophySection() {
                 index !== 0 ? "lg:border-l lg:border-white/15 lg:pl-6 xl:pl-7" : ""
               } pr-2 sm:pr-4`}
             >
-              {/* Pillar Number */}
-              <span className="text-[13px] xs:text-[14px] font-[family-name:var(--font-serif)] italic text-zinc-400">
+              {/* Pillar Number: Scaled Up */}
+              <span className="text-[15px] xs:text-[16px] sm:text-[17px] font-[family-name:var(--font-serif)] italic text-zinc-400">
                 {pillar.number}
               </span>
 
-              {/* Pillar Title */}
-              <h3 className="text-[13px] xs:text-[14px] sm:text-[15px] font-[family-name:var(--font-serif)] tracking-[0.08em] font-normal text-white uppercase">
+              {/* Pillar Title: Scaled Up */}
+              <h3 className="text-[15px] xs:text-[16px] sm:text-[17px] md:text-[18px] font-[family-name:var(--font-serif)] tracking-[0.08em] font-normal text-white uppercase">
                 {pillar.title}
               </h3>
 
-              {/* Pillar Statement */}
-              <p className="text-[10px] xs:text-[10.5px] sm:text-[11px] font-[family-name:var(--font-sans)] font-light leading-relaxed text-zinc-300">
+              {/* Pillar Statement / Content: Scaled Up */}
+              <p className="text-[11.5px] xs:text-[12px] sm:text-[12.5px] font-[family-name:var(--font-sans)] font-light leading-relaxed text-zinc-300">
                 {pillar.text}
               </p>
 
