@@ -53,6 +53,10 @@ export interface MoodHeroData {
 }
 
 export interface MoodData extends MoodHeroData {
+  thumbnail: {
+    src: string;
+    alt: string;
+  };
   edit: {
     eyebrow: string;
     titleLines: string[];
@@ -84,6 +88,10 @@ export const moodsData: Record<string, MoodData> = {
       "Subtle silhouettes that rest like second skin,",
       "designed for quiet everyday grace.",
     ],
+    thumbnail: {
+      src: "/images/moods/soft-thumb.webp",
+      alt: "Delicate white flower bloom in soft mood lighting",
+    },
     images: {
       desktop: {
         src: "/images/moods/soft-hero.webp",
@@ -147,6 +155,10 @@ export const moodsData: Record<string, MoodData> = {
       "Sculpted forms that command attention,",
       "unafraid to redefine modern luxury.",
     ],
+    thumbnail: {
+      src: "/images/moods/bold-thumb.webp",
+      alt: "Dramatic low-key portrait of woman in bold luxury jewelry",
+    },
     images: {
       desktop: {
         src: "/images/moods/bold-hero.webp",
@@ -210,6 +222,10 @@ export const moodsData: Record<string, MoodData> = {
       "Floral motifs and heirloom warmth,",
       "crafted to celebrate tender connections.",
     ],
+    thumbnail: {
+      src: "/images/moods/romantic-thumb.webp",
+      alt: "Deep crimson velvety roses in romantic lighting",
+    },
     images: {
       desktop: {
         src: "/images/moods/romantic-hero.webp",
@@ -273,6 +289,10 @@ export const moodsData: Record<string, MoodData> = {
       "For the ones who move in silence,",
       "and leave a lasting impression.",
     ],
+    thumbnail: {
+      src: "/images/moods/mysterious-thumb.webp",
+      alt: "Gothic nocturnal towers enveloped in mysterious evening mist",
+    },
     images: {
       desktop: {
         src: "/images/moods/mysterious-hero.webp",
@@ -336,6 +356,10 @@ export const moodsData: Record<string, MoodData> = {
       "Enduring forms passed across generations,",
       "rooted in precision craftsmanship.",
     ],
+    thumbnail: {
+      src: "/images/moods/timeless-thumb.webp",
+      alt: "Minimal back silhouette showcasing fine gold drop chain",
+    },
     images: {
       desktop: {
         src: "/images/moods/timeless-hero.webp",

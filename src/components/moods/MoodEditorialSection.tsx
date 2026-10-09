@@ -49,8 +49,8 @@ export function MoodEditorialSection({ mood }: MoodEditorialSectionProps) {
           </div>
         </div>
 
-        {/* ================= CENTER COLUMN: WIDE PHOTOGRAPHY (lg:col-span-6) ================= */}
-        <div className="lg:col-span-6 flex items-center justify-center">
+        {/* ================= CENTER COLUMN: WIDE PHOTOGRAPHY (lg:col-span-5 xl:col-span-6) ================= */}
+        <div className="lg:col-span-5 xl:col-span-6 flex items-center justify-center">
           <div className="relative w-full aspect-[2/1] sm:aspect-[2.1/1] overflow-hidden bg-[#0D121A] border border-[#DDD9D0] shadow-[0_4px_24px_rgba(0,0,0,0.04)]">
             <Image
               src={edit.image.src}
@@ -62,22 +62,17 @@ export function MoodEditorialSection({ mood }: MoodEditorialSectionProps) {
           </div>
         </div>
 
-        {/* ================= RIGHT COLUMN: PLACARD WITH VERTICAL RULE (lg:col-span-2) ================= */}
-        <div className="lg:col-span-2 flex items-center lg:border-l lg:border-[#CBC6BC] lg:pl-6 xl:pl-8">
-          <div className="w-full flex flex-col justify-center items-center lg:items-start py-4">
-            {/* Textured Parchment Card */}
-            <div className="w-full max-w-[210px] lg:max-w-none bg-[#EDEAE4]/85 border border-[#DFDAD0] px-5 py-8 sm:py-9 shadow-[0_2px_14px_rgba(0,0,0,0.02)] flex flex-col items-center text-center">
-              <div className="space-y-4 sm:space-y-5">
-                {plaqueLines.map((line, idx) => (
-                  <p
-                    key={idx}
-                    className="text-[10px] xs:text-[10.5px] sm:text-[11px] font-[family-name:var(--font-sans)] font-medium tracking-[0.24em] uppercase text-[#474F5A] leading-tight"
-                  >
-                    {line}
-                  </p>
-                ))}
-              </div>
-            </div>
+        {/* ================= RIGHT COLUMN: CLEAN BOLD SANS TEXT (lg:col-span-3 xl:col-span-2) ================= */}
+        <div className="lg:col-span-3 xl:col-span-2 flex items-center lg:border-l lg:border-[#CBC6BC] lg:pl-6 xl:pl-8 py-4 lg:py-0">
+          <div className="w-full flex flex-col items-center justify-center lg:items-start text-center lg:text-left space-y-3.5 sm:space-y-4">
+            {plaqueLines.map((line, idx) => (
+              <p
+                key={idx}
+                className="text-[10px] xs:text-[10.5px] sm:text-[11px] font-[family-name:var(--font-sans)] font-medium tracking-[0.24em] uppercase text-[#474F5A] leading-relaxed"
+              >
+                {line}
+              </p>
+            ))}
           </div>
         </div>
 
