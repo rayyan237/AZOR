@@ -71,7 +71,7 @@ export function JournalClosingBanner({ data }: JournalClosingBannerProps) {
           </p>
 
           {/* CTA Link */}
-          <Link
+          {/* <Link
             href={data.ctaHref}
             className="group inline-flex items-center gap-2 text-[10px] xs:text-[10.5px] sm:text-[11px] font-[family-name:var(--font-sans)] font-medium tracking-[0.24em] uppercase text-white hover:text-zinc-300 transition-colors focus:outline-none"
           >
@@ -82,7 +82,7 @@ export function JournalClosingBanner({ data }: JournalClosingBannerProps) {
             >
               →
             </span>
-          </Link>
+          </Link> */}
 
         </div>
       </div>
