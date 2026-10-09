@@ -6,6 +6,7 @@ import { Navbar } from "@/components/navigation/Navbar";
 import { MoodHero } from "@/components/moods/MoodHero";
 import { MoodEditorialSection } from "@/components/moods/MoodEditorialSection";
 import { MoodPiecesSection } from "@/components/moods/MoodPiecesSection";
+import { MoodClosingBanner } from "@/components/moods/MoodClosingBanner";
 import { Footer } from "@/components/navigation/Footer";
 
 interface MoodPageProps {
@@ -44,6 +45,7 @@ export default async function MoodPage({ params }: MoodPageProps) {
       <MoodHero mood={mood} />
       <MoodEditorialSection mood={mood} />
       <MoodPiecesSection mood={mood} />
+      <MoodClosingBanner mood={mood} />
       <Footer />
     </main>
   );

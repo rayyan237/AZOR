@@ -1,5 +1,25 @@
 // src/config/moods-data.ts
 
+export const CANONICAL_MOODS = [
+  { slug: "soft", label: "SOFT" },
+  { slug: "bold", label: "BOLD" },
+  { slug: "romantic", label: "ROMANTIC" },
+  { slug: "mysterious", label: "MYSTERIOUS" },
+  { slug: "timeless", label: "TIMELESS" },
+] as const;
+
+export type CanonicalMoodSlug = (typeof CANONICAL_MOODS)[number]["slug"];
+
+export interface MoodBannerData {
+  eyebrow: string;
+  titleLines: string[];
+  description: string;
+  image: {
+    src: string;
+    alt: string;
+  };
+}
+
 export interface MoodHeroData {
   slug: string;
   number: string;
@@ -39,6 +59,7 @@ export interface MoodData extends MoodHeroData {
   piecesSection: {
     eyebrow: string;
   };
+  banner: MoodBannerData;
 }
 
 export const moodsData: Record<string, MoodData> = {
@@ -87,6 +108,15 @@ export const moodsData: Record<string, MoodData> = {
     piecesSection: {
       eyebrow: "PIECES IN THIS MOOD",
     },
+    banner: {
+      eyebrow: "MOOD COLLECTION",
+      titleLines: ["SOFTNESS", "ISN'T A LOOK.", "IT'S A FEELING."],
+      description: "Explore more pieces that match your mood, or discover a new one.",
+      image: {
+        src: "/images/moods/soft-banner.webp",
+        alt: "Model wearing delicate drop earrings and fine chain necklace",
+      },
+    },
   },
 
   // ==========================================
@@ -133,6 +163,15 @@ export const moodsData: Record<string, MoodData> = {
     },
     piecesSection: {
       eyebrow: "PIECES IN THIS MOOD",
+    },
+    banner: {
+      eyebrow: "MOOD COLLECTION",
+      titleLines: ["BOLDNESS", "ISN'T A LOOK.", "IT'S A FEELING."],
+      description: "Explore more pieces that match your mood, or discover a new one.",
+      image: {
+        src: "/images/moods/bold-banner.webp",
+        alt: "Model wearing statement sculpted gold cuff and geometric collar",
+      },
     },
   },
 
@@ -181,6 +220,15 @@ export const moodsData: Record<string, MoodData> = {
     piecesSection: {
       eyebrow: "PIECES IN THIS MOOD",
     },
+    banner: {
+      eyebrow: "MOOD COLLECTION",
+      titleLines: ["ROMANCE", "ISN'T A LOOK.", "IT'S A FEELING."],
+      description: "Explore more pieces that match your mood, or discover a new one.",
+      image: {
+        src: "/images/moods/romantic-banner.webp",
+        alt: "Close profile of model wearing pearl floral drop earrings and locket",
+      },
+    },
   },
 
   // ==========================================
@@ -228,6 +276,15 @@ export const moodsData: Record<string, MoodData> = {
     piecesSection: {
       eyebrow: "PIECES IN THIS MOOD",
     },
+    banner: {
+      eyebrow: "MOOD COLLECTION",
+      titleLines: ["MYSTERIOUS", "ISN'T A LOOK.", "IT'S A FEELING."],
+      description: "Explore more pieces that match your mood, or discover a new one.",
+      image: {
+        src: "/images/moods/mysterious-banner.webp",
+        alt: "Model wearing collarbone gemstone pendant necklace and fine rings",
+      },
+    },
   },
 
   // ==========================================
@@ -274,6 +331,15 @@ export const moodsData: Record<string, MoodData> = {
     },
     piecesSection: {
       eyebrow: "PIECES IN THIS MOOD",
+    },
+    banner: {
+      eyebrow: "MOOD COLLECTION",
+      titleLines: ["TIMELESS", "ISN'T A LOOK.", "IT'S A FEELING."],
+      description: "Explore more pieces that match your mood, or discover a new one.",
+      image: {
+        src: "/images/moods/timeless-banner.webp",
+        alt: "Model wearing solitaire diamond pendant and clean gold ring",
+      },
     },
   },
 };
