@@ -125,7 +125,7 @@ export function ConnectChannels() {
                   </h2>
 
                   {/* Description */}
-                  <p className="text-[11.5px] xs:text-[12px] sm:text-[12.5px] font-[family-name:var(--font-sans)] font-light leading-relaxed text-zinc-300/90 mb-6 sm:mb-7">
+                  <p className="text-[11.5px] xs:text-[12px] sm:text-[12.5px] font-[family-name:var(--font-sans)] font-light leading-relaxed text-zinc mb-6 sm:mb-7">
                     {channel.description}
                   </p>
 

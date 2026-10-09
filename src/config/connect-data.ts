@@ -27,7 +27,7 @@ export const connectData = {
       titleLines: ["FOLLOW THE", "WORLD OF AZOR."],
       description: "Behind the scenes, new pieces, moods and more.",
       actionLabel: "@AZOR",
-      href: "https://instagram.com/azor",
+      href: "https://instagram.com/azorjewel",
       type: "instagram" as const,
       image: {
         desktop: {
@@ -35,7 +35,7 @@ export const connectData = {
           alt: "Crystal flower necklace resting on folded black velvet",
         },
         mobile: {
-          src: "/images/connect/channel-instagram-mobile.webp",
+          src: "/images/connect/channel-instagram-mobile.jpg",
           alt: "Crystal flower necklace detail for mobile screens",
         },
       },
@@ -55,7 +55,7 @@ export const connectData = {
           alt: "Hands holding smartphone wearing delicate Azor stack rings",
         },
         mobile: {
-          src: "/images/connect/channel-whatsapp-mobile.webp",
+          src: "/images/connect/channel-whatsapp-mobile.jpg",
           alt: "Hands holding smartphone ring detail on mobile",
         },
       },
@@ -75,7 +75,7 @@ export const connectData = {
           alt: "Azor luxury embossed card placed beside dried delicate florals",
         },
         mobile: {
-          src: "/images/connect/channel-email-mobile.webp",
+          src: "/images/connect/channel-email-mobile.jpg",
           alt: "Azor luxury stationery detail on mobile",
         },
       },
