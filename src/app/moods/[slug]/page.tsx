@@ -46,8 +46,8 @@ export default async function MoodPage({ params }: MoodPageProps) {
       <MoodHero mood={mood} />
       <MoodEditorialSection mood={mood} />
       <MoodPiecesSection mood={mood} />
-      <MoodsExploreStrip currentSlug={slug} />
       <MoodClosingBanner mood={mood} />
+      {/* <MoodsExploreStrip currentSlug={slug} /> */}
       <Footer />
     </main>
   );

@@ -80,11 +80,7 @@ export function MoodsExploreStrip({ currentSlug }: MoodsExploreStripProps) {
                     {item.label}
                   </span>
 
-                  {isActive && (
-                    <span className="text-[9px] font-[family-name:var(--font-sans)] uppercase tracking-wider text-[#737A84]">
-                      CURRENT
-                    </span>
-                  )}
+                  
                 </div>
               </Link>
             );

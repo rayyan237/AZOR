@@ -1,4 +1,5 @@
 // src/components/sections/moods/MoodSection.tsx
+import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { MoodCard } from "./MoodCard";
 
@@ -38,6 +39,7 @@ export function MoodSection() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-4 xs:gap-x-5 sm:gap-x-6 lg:gap-x-3.5 xl:gap-x-4 gap-y-7 xs:gap-y-8 sm:gap-y-9 lg:gap-y-0 w-full items-start">
           {moods.items.map((item, index) => {
             const isLastOnMobile = index === moods.items.length - 1;
+            const slug = item.title.toLowerCase().trim();
 
             return (
               <div
@@ -55,7 +57,9 @@ export function MoodSection() {
                       : "w-full"
                   }
                 >
-                  <MoodCard item={item} />
+                  <Link href={`/moods/${slug}`} className="block w-full focus:outline-none">
+                    <MoodCard item={item} />
+                  </Link>
                 </div>
               </div>
             );
