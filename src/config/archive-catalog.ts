@@ -1,4 +1,7 @@
+// src/config/archive-catalog.ts
+
 export type ArchiveCategory = "ALL" | "NECKLACES" | "EARRINGS" | "RINGS" | "BRACELETS";
+export type MoodType = "soft" | "bold" | "romantic" | "mysterious" | "timeless";
 
 export interface ArchiveCardItem {
   id: string;
@@ -6,6 +9,7 @@ export interface ArchiveCardItem {
   number: string;
   name: string;
   category: "NECKLACES" | "EARRINGS" | "RINGS" | "BRACELETS";
+  mood: MoodType | MoodType[];
   descriptor: string;
   href: string;
   image: {
@@ -41,6 +45,7 @@ export const archiveCatalogData = {
       number: "001",
       name: "THE SIGNATURE",
       category: "NECKLACES",
+      mood: ["timeless", "mysterious"],
       descriptor: "A quiet statement. A daily reminder of your own kind of magic.",
       href: "/archive/the-signature",
       image: {
@@ -54,6 +59,7 @@ export const archiveCatalogData = {
       number: "002",
       name: "THE AFTERGLOW",
       category: "EARRINGS",
+      mood: ["romantic", "soft"],
       descriptor: "Softness, with a little more sparkle.",
       href: "/archive/the-afterglow",
       image: {
@@ -67,6 +73,7 @@ export const archiveCatalogData = {
       number: "003",
       name: "THE NOIR",
       category: "RINGS",
+      mood: ["mysterious", "bold"],
       descriptor: "For evenings that don't need an occasion.",
       href: "/archive/the-noir",
       image: {
@@ -80,6 +87,7 @@ export const archiveCatalogData = {
       number: "004",
       name: "THE PÉTALE",
       category: "EARRINGS",
+      mood: ["soft", "romantic"],
       descriptor: "Delicate by nature. Bold in presence.",
       href: "/archive/the-petale",
       image: {
@@ -93,6 +101,7 @@ export const archiveCatalogData = {
       number: "005",
       name: "THE LUNE",
       category: "NECKLACES",
+      mood: ["soft", "mysterious"],
       descriptor: "Made for softer moments.",
       href: "/archive/the-lune",
       image: {
@@ -106,6 +115,7 @@ export const archiveCatalogData = {
       number: "006",
       name: "THE SOLACE",
       category: "BRACELETS",
+      mood: ["timeless", "bold"],
       descriptor: "Quiet strength, in every detail.",
       href: "/archive/the-solace",
       image: {
@@ -119,6 +129,7 @@ export const archiveCatalogData = {
       number: "007",
       name: "THE VÉRITÉ",
       category: "RINGS",
+      mood: ["timeless", "romantic"],
       descriptor: "Because the truth always looks good on you.",
       href: "/archive/the-verite",
       image: {
@@ -132,6 +143,7 @@ export const archiveCatalogData = {
       number: "008",
       name: "THE DÉLICE",
       category: "NECKLACES",
+      mood: ["romantic", "soft"],
       descriptor: "A little sweetness. Always.",
       href: "/archive/the-delice",
       image: {
@@ -145,6 +157,7 @@ export const archiveCatalogData = {
       number: "009",
       name: "THE ÉCLAT",
       category: "EARRINGS",
+      mood: ["bold", "mysterious"],
       descriptor: "For the ones who shine effortlessly.",
       href: "/archive/the-eclat",
       image: {
@@ -158,6 +171,7 @@ export const archiveCatalogData = {
       number: "010",
       name: "THE MINIMAL",
       category: "EARRINGS",
+      mood: ["soft", "timeless"],
       descriptor: "Less, but never ordinary.",
       href: "/archive/the-minimal",
       image: {
@@ -171,6 +185,7 @@ export const archiveCatalogData = {
       number: "011",
       name: "THE SERENITY",
       category: "BRACELETS",
+      mood: ["romantic", "timeless", "mysterious"],
       descriptor: "Calm. Glossy. Timeless.",
       href: "/archive/the-serenity",
       image: {
@@ -184,6 +199,7 @@ export const archiveCatalogData = {
       number: "012",
       name: "THE AURA",
       category: "EARRINGS",
+      mood: ["mysterious", "bold"],
       descriptor: "Not just a piece. A presence.",
       href: "/archive/the-aura",
       image: {

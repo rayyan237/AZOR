@@ -1,16 +1,5 @@
 // src/config/moods-data.ts
 
-export interface MoodPieceItem {
-  id: string;
-  slug: string;
-  title: string;
-  descriptors: string[];
-  image: {
-    src: string;
-    alt: string;
-  };
-}
-
 export interface MoodHeroData {
   slug: string;
   number: string;
@@ -46,15 +35,9 @@ export interface MoodData extends MoodHeroData {
       src: string;
       alt: string;
     };
-    plaqueLines: string[];
   };
   piecesSection: {
     eyebrow: string;
-    cta: {
-      label: string;
-      href: string;
-    };
-    pieces: MoodPieceItem[];
   };
 }
 
@@ -100,66 +83,9 @@ export const moodsData: Record<string, MoodData> = {
         src: "/images/moods/soft-edit-ring.webp",
         alt: "Delicate thin gold diamond band resting on porous limestone",
       },
-      plaqueLines: ["QUIETER TONES.", "GENTLE LIGHT.", "PURER YOU."],
     },
     piecesSection: {
       eyebrow: "PIECES IN THIS MOOD",
-      cta: {
-        label: "EXPLORE ALL SOFT PIECES",
-        href: "/archive?mood=soft",
-      },
-      pieces: [
-        {
-          id: "the-aura",
-          slug: "the-aura-studs",
-          title: "THE AURA",
-          descriptors: ["Barely there.", "Pure luminosity."],
-          image: {
-            src: "/images/archive/the-aura-studs.webp",
-            alt: "Micro diamond bezel solitaire stud earrings",
-          },
-        },
-        {
-          id: "the-petal",
-          slug: "the-petal-choker",
-          title: "THE PETAL",
-          descriptors: ["Fluid chain.", "Gentle contour."],
-          image: {
-            src: "/images/archive/the-petal-choker.webp",
-            alt: "Delicate fine chain choker resting on satin",
-          },
-        },
-        {
-          id: "the-whisper",
-          slug: "the-whisper-ring",
-          title: "THE WHISPER",
-          descriptors: ["Micro pave.", "Second skin."],
-          image: {
-            src: "/images/archive/the-whisper-ring.webp",
-            alt: "Fine micro-pave eternity band on alabaster stone",
-          },
-        },
-        {
-          id: "the-lune",
-          slug: "the-lune-bracelet",
-          title: "THE LUNE",
-          descriptors: ["Silken movement.", "Daily staple."],
-          image: {
-            src: "/images/archive/the-lune-bracelet.webp",
-            alt: "Fine curb-chain bracelet with mini bezel crystal",
-          },
-        },
-        {
-          id: "the-serenity",
-          slug: "the-serenity-ring",
-          title: "THE SERENITY",
-          descriptors: ["Softness in strength.", "Always."],
-          image: {
-            src: "/images/archive/the-serenity-ring.webp",
-            alt: "Pearl and gold floral clover ring on dark stone",
-          },
-        },
-      ],
     },
   },
 
@@ -204,66 +130,9 @@ export const moodsData: Record<string, MoodData> = {
         src: "/images/moods/bold-edit-ring.webp",
         alt: "Heavy faceted gold signet ring on matte basalt stone",
       },
-      plaqueLines: ["SHARPER FORMS.", "CLEARER VISION.", "FIERCER YOU."],
     },
     piecesSection: {
       eyebrow: "PIECES IN THIS MOOD",
-      cta: {
-        label: "EXPLORE ALL BOLD PIECES",
-        href: "/archive?mood=bold",
-      },
-      pieces: [
-        {
-          id: "the-monolith",
-          slug: "the-monolith-ring",
-          title: "THE MONOLITH",
-          descriptors: ["Heavy silhouette.", "Solid yellow gold."],
-          image: {
-            src: "/images/archive/the-monolith-ring.webp",
-            alt: "Substantial architectural square signet ring",
-          },
-        },
-        {
-          id: "the-vanguard",
-          slug: "the-vanguard-choker",
-          title: "THE VANGUARD",
-          descriptors: ["Solid collar.", "Striking contour."],
-          image: {
-            src: "/images/archive/the-vanguard-choker.webp",
-            alt: "Polished heavy gold neck torque collar",
-          },
-        },
-        {
-          id: "the-sovereign",
-          slug: "the-sovereign-cuff",
-          title: "THE SOVEREIGN",
-          descriptors: ["Chiseled geometry.", "Defiant poise."],
-          image: {
-            src: "/images/archive/the-sovereign-cuff.webp",
-            alt: "Wide open cuff bracelet in brushed finish gold",
-          },
-        },
-        {
-          id: "the-prism",
-          slug: "the-prism-hoops",
-          title: "THE PRISM",
-          descriptors: ["Beveled edge.", "High reflection."],
-          image: {
-            src: "/images/archive/the-prism-hoops.webp",
-            alt: "Thick faceted modern geometric hoop earrings",
-          },
-        },
-        {
-          id: "the-solis",
-          slug: "the-solis-signet",
-          title: "THE SOLIS",
-          descriptors: ["Solar carving.", "Commanding presence."],
-          image: {
-            src: "/images/archive/the-solis-signet.webp",
-            alt: "Engraved center stone signet ring on slate",
-          },
-        },
-      ],
     },
   },
 
@@ -308,66 +177,9 @@ export const moodsData: Record<string, MoodData> = {
         src: "/images/moods/romantic-edit-ring.webp",
         alt: "Floral crystal ring surrounded by baby's breath florals on warm travertine",
       },
-      plaqueLines: ["WARMER HEARTS.", "DEEPER BONDS.", "KINDER YOU."],
     },
     piecesSection: {
       eyebrow: "PIECES IN THIS MOOD",
-      cta: {
-        label: "EXPLORE ALL ROMANTIC PIECES",
-        href: "/archive?mood=romantic",
-      },
-      pieces: [
-        {
-          id: "the-florence",
-          slug: "the-florence-pendant",
-          title: "THE FLORENCE",
-          descriptors: ["Petal motif.", "Brilliant center crystal."],
-          image: {
-            src: "/images/archive/the-florence-pendant.webp",
-            alt: "Five-petal crystal flower pendant on delicate cable chain",
-          },
-        },
-        {
-          id: "the-coeur",
-          slug: "the-coeur-locket",
-          title: "THE COEUR",
-          descriptors: ["Vintage latch.", "Keepsake vault."],
-          image: {
-            src: "/images/archive/the-coeur-locket.webp",
-            alt: "Hand-engraved gold heart locket resting on silk",
-          },
-        },
-        {
-          id: "the-rosier",
-          slug: "the-rosier-band",
-          title: "THE ROSIER",
-          descriptors: ["Engraved vine.", "Warm rose tone."],
-          image: {
-            src: "/images/archive/the-rosier-band.webp",
-            alt: "Botanical engraved floral motif wedding band",
-          },
-        },
-        {
-          id: "the-blush",
-          slug: "the-blush-earrings",
-          title: "THE BLUSH",
-          descriptors: ["Freshwater pearl.", "Subtle drop."],
-          image: {
-            src: "/images/archive/the-blush-earrings.webp",
-            alt: "Natural baroque pearl drop earrings in yellow gold",
-          },
-        },
-        {
-          id: "the-tender",
-          slug: "the-tender-chain",
-          title: "THE TENDER",
-          descriptors: ["Interlocking heart.", "Enduring link."],
-          image: {
-            src: "/images/archive/the-tender-chain.webp",
-            alt: "Fine rope chain necklace with miniature heart bead",
-          },
-        },
-      ],
     },
   },
 
@@ -412,66 +224,9 @@ export const moodsData: Record<string, MoodData> = {
         src: "/images/moods/mysterious-edit-ring.webp",
         alt: "Azor black gemstone solitaire ring resting on textured rugged stone",
       },
-      plaqueLines: ["DARKER TONES.", "SOFTER LIGHT.", "BOLDER YOU."],
     },
     piecesSection: {
       eyebrow: "PIECES IN THIS MOOD",
-      cta: {
-        label: "EXPLORE ALL MYSTERIOUS PIECES",
-        href: "/archive?mood=mysterious",
-      },
-      pieces: [
-        {
-          id: "the-noir",
-          slug: "the-noir-pendant",
-          title: "THE NOIR",
-          descriptors: ["Mysterious. Confident.", "Unforgettable."],
-          image: {
-            src: "/images/archive/the-noir-pendant.webp",
-            alt: "Teardrop diamond halo pendant on black silk",
-          },
-        },
-        {
-          id: "the-velvet",
-          slug: "the-velvet-earrings",
-          title: "THE VELVET",
-          descriptors: ["Quiet luxury.", "Bold presence."],
-          image: {
-            src: "/images/archive/the-velvet-earrings.webp",
-            alt: "Onyx and diamond halo drop earrings on velvet",
-          },
-        },
-        {
-          id: "the-obscura",
-          slug: "the-obscura-ring",
-          title: "THE OBSCURA",
-          descriptors: ["Subtle. Sharp.", "Always."],
-          image: {
-            src: "/images/archive/the-obscura-ring.webp",
-            alt: "Black gemstone ring on travertine pedestal",
-          },
-        },
-        {
-          id: "the-eclipse",
-          slug: "the-eclipse-bracelet",
-          title: "THE ECLIPSE",
-          descriptors: ["Understated. Powerful.", "Timeless."],
-          image: {
-            src: "/images/archive/the-eclipse-bracelet.webp",
-            alt: "Diamond line tennis bracelet on dark fabric",
-          },
-        },
-        {
-          id: "the-serenity",
-          slug: "the-serenity-ring",
-          title: "THE SERENITY",
-          descriptors: ["Softness in strength.", "Always."],
-          image: {
-            src: "/images/archive/the-serenity-ring.webp",
-            alt: "Pearl and gold floral clover ring on dark stone",
-          },
-        },
-      ],
     },
   },
 
@@ -516,66 +271,9 @@ export const moodsData: Record<string, MoodData> = {
         src: "/images/moods/timeless-edit-ring.webp",
         alt: "Brilliant cut diamond engagement ring resting on cream marble plinth",
       },
-      plaqueLines: ["CLEARER CUTS.", "ENDURING FORM.", "TRUEST YOU."],
     },
     piecesSection: {
       eyebrow: "PIECES IN THIS MOOD",
-      cta: {
-        label: "EXPLORE ALL TIMELESS PIECES",
-        href: "/archive?mood=timeless",
-      },
-      pieces: [
-        {
-          id: "the-solitaire",
-          slug: "the-solitaire-ring",
-          title: "THE SOLITAIRE",
-          descriptors: ["Four-prong crown.", "Perfect clarity."],
-          image: {
-            src: "/images/archive/the-solitaire-ring.webp",
-            alt: "Classic 4-prong diamond solitaire ring in white gold",
-          },
-        },
-        {
-          id: "the-eternity",
-          slug: "the-eternity-band",
-          title: "THE ETERNITY",
-          descriptors: ["Seamless halo.", "Unbroken circle."],
-          image: {
-            src: "/images/archive/the-eternity-band.webp",
-            alt: "Channel set round diamond eternity band",
-          },
-        },
-        {
-          id: "the-heritage",
-          slug: "the-heritage-pendant",
-          title: "THE HERITAGE",
-          descriptors: ["Single stone drop.", "Everyday gold."],
-          image: {
-            src: "/images/archive/the-heritage-pendant.webp",
-            alt: "Bezel set floating diamond solitaire pendant",
-          },
-        },
-        {
-          id: "the-linea",
-          slug: "the-linea-tennis",
-          title: "THE LINEA",
-          descriptors: ["Articulated link.", "Timeless glow."],
-          image: {
-            src: "/images/archive/the-linea-tennis.webp",
-            alt: "Diamond line tennis bracelet in 18k yellow gold",
-          },
-        },
-        {
-          id: "the-classic-hoop",
-          slug: "the-classic-hoop",
-          title: "THE CLASSIC HOOP",
-          descriptors: ["Balanced curvature.", "Subtle click."],
-          image: {
-            src: "/images/archive/the-classic-hoop.webp",
-            alt: "Polished medium round gold tube hoop earrings",
-          },
-        },
-      ],
     },
   },
 };
