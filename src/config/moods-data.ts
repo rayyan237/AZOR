@@ -61,6 +61,7 @@ export interface MoodData extends MoodHeroData {
       src: string;
       alt: string;
     };
+    plaqueLines: string[];
   };
   piecesSection: {
     eyebrow: string;
@@ -110,6 +111,7 @@ export const moodsData: Record<string, MoodData> = {
         src: "/images/moods/soft-edit-ring.webp",
         alt: "Delicate thin gold diamond band resting on porous limestone",
       },
+      plaqueLines: ["QUIETER TONES.", "GENTLE LIGHT.", "PURER YOU."],
     },
     piecesSection: {
       eyebrow: "PIECES IN THIS MOOD",
@@ -172,6 +174,7 @@ export const moodsData: Record<string, MoodData> = {
         src: "/images/moods/bold-edit-ring.webp",
         alt: "Heavy faceted gold signet ring on matte basalt stone",
       },
+      plaqueLines: ["SHARPER FORMS.", "CLEARER VISION.", "FIERCER YOU."],
     },
     piecesSection: {
       eyebrow: "PIECES IN THIS MOOD",
@@ -234,6 +237,7 @@ export const moodsData: Record<string, MoodData> = {
         src: "/images/moods/romantic-edit-ring.webp",
         alt: "Floral crystal ring surrounded by baby's breath florals on warm travertine",
       },
+      plaqueLines: ["WARMER HEARTS.", "DEEPER BONDS.", "KINDER YOU."],
     },
     piecesSection: {
       eyebrow: "PIECES IN THIS MOOD",
@@ -296,6 +300,7 @@ export const moodsData: Record<string, MoodData> = {
         src: "/images/moods/mysterious-edit-ring.webp",
         alt: "Azor black gemstone solitaire ring resting on textured rugged stone",
       },
+      plaqueLines: ["DARKER TONES.", "SOFTER LIGHT.", "BOLDER YOU."],
     },
     piecesSection: {
       eyebrow: "PIECES IN THIS MOOD",
@@ -358,6 +363,7 @@ export const moodsData: Record<string, MoodData> = {
         src: "/images/moods/timeless-edit-ring.webp",
         alt: "Brilliant cut diamond engagement ring resting on cream marble plinth",
       },
+      plaqueLines: ["CLEARER CUTS.", "ENDURING FORM.", "TRUEST YOU."],
     },
     piecesSection: {
       eyebrow: "PIECES IN THIS MOOD",
