@@ -4,6 +4,9 @@ import type { Metadata } from "next";
 import { moodsData } from "@/config/moods-data";
 import { Navbar } from "@/components/navigation/Navbar";
 import { MoodHero } from "@/components/moods/MoodHero";
+import { MoodEditorialSection } from "@/components/moods/MoodEditorialSection";
+import { MoodPiecesSection } from "@/components/moods/MoodPiecesSection";
+import { Footer } from "@/components/navigation/Footer";
 
 interface MoodPageProps {
   params: Promise<{ slug: string }>;
@@ -39,6 +42,9 @@ export default async function MoodPage({ params }: MoodPageProps) {
     <main className="relative min-h-screen bg-[#04070D] text-white">
       <Navbar />
       <MoodHero mood={mood} />
+      <MoodEditorialSection mood={mood} />
+      <MoodPiecesSection mood={mood} />
+      <Footer />
     </main>
   );
 }
