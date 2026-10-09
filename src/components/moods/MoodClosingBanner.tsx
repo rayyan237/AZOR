@@ -9,6 +9,7 @@ interface MoodClosingBannerProps {
 
 export function MoodClosingBanner({ mood }: MoodClosingBannerProps) {
   const currentSlug = mood.slug.toLowerCase();
+  const { banner } = mood;
 
   return (
     <section
@@ -16,17 +17,35 @@ export function MoodClosingBanner({ mood }: MoodClosingBannerProps) {
       aria-label="Mood Collection Navigator"
       className="relative w-full h-[320px] xs:h-[350px] sm:h-[380px] md:h-[420px] overflow-hidden flex items-center bg-[#04070D] text-white select-none border-t border-b border-white/10"
     >
-      {/* Background Raw Editorial Asset */}
+      {/* Background Raw Editorial Assets (Desktop & Mobile) */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src={mood.edit?.image?.src || "/images/moods/mysterious-banner.webp"}
-          alt={mood.title}
-          fill
-          priority={false}
-          sizes="100vw"
-          className="object-cover object-[65%_center] md:object-center select-none pointer-events-none"
-        />
-        {/* Crisp text contrast gradient on the left edge */}
+        {/* Desktop Image (>= sm) */}
+        <div className="hidden sm:block absolute inset-0">
+          <Image
+            src={banner.images.desktop.src}
+            alt={banner.images.desktop.alt}
+            fill
+            quality={95}
+            priority={false}
+            sizes="100vw"
+            className="object-cover object-[65%_center] md:object-center select-none pointer-events-none"
+          />
+        </div>
+
+        {/* Mobile Image (< sm) */}
+        <div className="block sm:hidden absolute inset-0">
+          <Image
+            src={banner.images.mobile?.src || banner.images.desktop.src}
+            alt={banner.images.mobile?.alt || banner.images.desktop.alt}
+            fill
+            quality={95}
+            priority={false}
+            sizes="100vw"
+            className="object-cover object-[70%_center] select-none pointer-events-none"
+          />
+        </div>
+
+        {/* Edge contrast gradient strictly to preserve narrative legibility */}
         <div
           className="absolute inset-0 bg-gradient-to-r from-[#04070D]/90 via-[#04070D]/40 to-transparent pointer-events-none"
           aria-hidden="true"
@@ -40,14 +59,16 @@ export function MoodClosingBanner({ mood }: MoodClosingBannerProps) {
         <div className="max-w-[340px] xs:max-w-[380px] sm:max-w-[440px] flex flex-col items-start">
           {/* Eyebrow */}
           <p className="text-[10px] xs:text-[10.5px] sm:text-[11px] font-[family-name:var(--font-sans)] font-medium tracking-[0.24em] uppercase text-zinc-400 mb-2.5 sm:mb-3">
-            MOOD COLLECTION
+            {banner.eyebrow}
           </p>
 
           {/* Heading */}
           <h2 className="text-[26px] xs:text-[30px] sm:text-[34px] md:text-[38px] lg:text-[40px] font-[family-name:var(--font-serif)] font-normal tracking-[0.03em] leading-[1.05] text-white mb-3 sm:mb-4">
-            <span className="block">{mood.title.replace(".", "")}</span>
-            <span className="block">ISN&apos;T A LOOK.</span>
-            <span className="block">IT&apos;S A FEELING.</span>
+            {banner.titleLines.map((line, idx) => (
+              <span key={idx} className="block">
+                {line}
+              </span>
+            ))}
           </h2>
 
           {/* Hairline Separator */}
@@ -55,11 +76,11 @@ export function MoodClosingBanner({ mood }: MoodClosingBannerProps) {
 
           {/* Description */}
           <p className="text-[12px] xs:text-[12.5px] sm:text-[13px] font-[family-name:var(--font-sans)] font-light leading-relaxed text-zinc-300 tracking-[0.015em] max-w-[320px]">
-            Explore more pieces that match your mood, or discover a new one.
+            {banner.description}
           </p>
         </div>
 
-        {/* Right Moods Navigation Rail (Only 5 canonical moods) */}
+        {/* Right Moods Navigation Rail (Only 5 canonical moods with active indicator) */}
         <div className="hidden sm:flex flex-col items-start border-l border-white/20 pl-6 md:pl-8 lg:pl-10 space-y-3 md:space-y-3.5">
           {CANONICAL_MOODS.map((item) => {
             const isActive = item.slug === currentSlug;

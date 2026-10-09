@@ -14,9 +14,15 @@ export interface MoodBannerData {
   eyebrow: string;
   titleLines: string[];
   description: string;
-  image: {
-    src: string;
-    alt: string;
+  images: {
+    desktop: {
+      src: string;
+      alt: string;
+    };
+    mobile: {
+      src: string;
+      alt: string;
+    };
   };
 }
 
@@ -112,9 +118,15 @@ export const moodsData: Record<string, MoodData> = {
       eyebrow: "MOOD COLLECTION",
       titleLines: ["SOFTNESS", "ISN'T A LOOK.", "IT'S A FEELING."],
       description: "Explore more pieces that match your mood, or discover a new one.",
-      image: {
-        src: "/images/moods/soft-banner.webp",
-        alt: "Model wearing delicate drop earrings and fine chain necklace",
+      images: {
+        desktop: {
+          src: "/images/moods/soft-banner-desktop.webp",
+          alt: "Model wearing delicate drop earrings and fine chain necklace",
+        },
+        mobile: {
+          src: "/images/moods/soft-banner-mobile.webp",
+          alt: "Model wearing delicate drop earrings and fine chain necklace on mobile",
+        },
       },
     },
   },
@@ -168,9 +180,15 @@ export const moodsData: Record<string, MoodData> = {
       eyebrow: "MOOD COLLECTION",
       titleLines: ["BOLDNESS", "ISN'T A LOOK.", "IT'S A FEELING."],
       description: "Explore more pieces that match your mood, or discover a new one.",
-      image: {
-        src: "/images/moods/bold-banner.webp",
-        alt: "Model wearing statement sculpted gold cuff and geometric collar",
+      images: {
+        desktop: {
+          src: "/images/moods/bold-banner-desktop.webp",
+          alt: "Model wearing statement sculpted gold cuff and geometric collar",
+        },
+        mobile: {
+          src: "/images/moods/bold-banner-mobile.webp",
+          alt: "Model wearing statement sculpted gold cuff on mobile",
+        },
       },
     },
   },
@@ -224,9 +242,15 @@ export const moodsData: Record<string, MoodData> = {
       eyebrow: "MOOD COLLECTION",
       titleLines: ["ROMANCE", "ISN'T A LOOK.", "IT'S A FEELING."],
       description: "Explore more pieces that match your mood, or discover a new one.",
-      image: {
-        src: "/images/moods/romantic-banner.webp",
-        alt: "Close profile of model wearing pearl floral drop earrings and locket",
+      images: {
+        desktop: {
+          src: "/images/moods/romantic-banner-desktop.webp",
+          alt: "Close profile of model wearing pearl floral drop earrings and locket",
+        },
+        mobile: {
+          src: "/images/moods/romantic-banner-mobile.webp",
+          alt: "Close profile of model wearing pearl floral drop earrings on mobile",
+        },
       },
     },
   },
@@ -280,9 +304,15 @@ export const moodsData: Record<string, MoodData> = {
       eyebrow: "MOOD COLLECTION",
       titleLines: ["MYSTERIOUS", "ISN'T A LOOK.", "IT'S A FEELING."],
       description: "Explore more pieces that match your mood, or discover a new one.",
-      image: {
-        src: "/images/moods/mysterious-banner.webp",
-        alt: "Model wearing collarbone gemstone pendant necklace and fine rings",
+      images: {
+        desktop: {
+          src: "/images/moods/mysterious-banner-desktop.webp",
+          alt: "Model wearing collarbone gemstone pendant necklace and fine rings",
+        },
+        mobile: {
+          src: "/images/moods/mysterious-banner-mobile.webp",
+          alt: "Model wearing collarbone gemstone pendant necklace on mobile",
+        },
       },
     },
   },
@@ -336,9 +366,15 @@ export const moodsData: Record<string, MoodData> = {
       eyebrow: "MOOD COLLECTION",
       titleLines: ["TIMELESS", "ISN'T A LOOK.", "IT'S A FEELING."],
       description: "Explore more pieces that match your mood, or discover a new one.",
-      image: {
-        src: "/images/moods/timeless-banner.webp",
-        alt: "Model wearing solitaire diamond pendant and clean gold ring",
+      images: {
+        desktop: {
+          src: "/images/moods/timeless-banner-desktop.webp",
+          alt: "Model wearing solitaire diamond pendant and clean gold ring",
+        },
+        mobile: {
+          src: "/images/moods/timeless-banner-mobile.webp",
+          alt: "Model wearing solitaire diamond pendant on mobile",
+        },
       },
     },
   },
