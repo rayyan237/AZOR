@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/navigation/Navbar";
 import { JournalHero } from "@/components/journal/JournalHero";
+import { JournalGrid } from "@/components/journal/JournalGrid";
 import { journalHeroData } from "@/config/journal-data";
 import { Footer } from "@/components/navigation/Footer";
 
@@ -13,10 +14,10 @@ export const metadata: Metadata = {
 
 export default function JournalPage() {
   return (
-    <main className="relative min-h-screen bg-[#F7F5F1] text-[#171D26]">
-      {/* Light navigation variant for sun-drenched editorial */}
+    <main className="relative min-h-screen bg-[#04070D] text-white">
       <Navbar />
       <JournalHero data={journalHeroData} />
+      <JournalGrid />
       <Footer />
     </main>
   );
