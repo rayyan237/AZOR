@@ -497,11 +497,11 @@ export const makeItYoursData = {
   actions: {
     instagram: {
       label: "DM ON INSTAGRAM",
-      href: "https://instagram.com/azorjewelry",
+      href: "https://instagram.com/azorjewel",
     },
     whatsapp: {
       label: "CHAT ON WHATSAPP",
-      href: "https://wa.me/1234567890",
+      href: "https://wa.me/03399966026",
     },
   },
 };

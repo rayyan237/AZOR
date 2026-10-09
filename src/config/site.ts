@@ -45,8 +45,8 @@ export const siteConfig = {
   title: "AZOR — A Digital Jewelry House",
   description:
     "AZOR is a contemporary digital jewelry house. Explore our signature collection, bespoke archives, and timeless craftsmanship.",
-  url: "https://azorjewelry.com",
-  ogImage: "https://azorjewelry.com/og.jpg",
+  url: "https://azorjewel.com",
+  ogImage: "https://azorjewel.com/og.jpg",
   keywords: [
     "Azor",
     "Digital Jewelry House",
@@ -70,7 +70,7 @@ export const siteConfig = {
     {
       platform: "whatsapp",
       label: "WhatsApp",
-      url: "https://wa.me/1234567890",
+      url: "https://wa.me/03399966026",
     },
   ] as SocialLink[],
   hero: {
@@ -303,16 +303,16 @@ export const siteConfig = {
     description: "Thoughts, stories and little notes from the world of Azor.",
     cta: {
       label: "READ ALL",
-      href: "/letters",
+      href: "/journal",
     },
     items: [
       {
         id: "01",
         tag: "LETTER 01",
         title: "On becoming unforgettable.",
-        href: "/letters/letter-01",
+        href: "/journal/on-becoming-unforgettable",
         image: {
-          src: "/images/letter-01.webp",
+          src: "/images/journal/letter-01.webp",
           alt: "Editorial woman in silhouette wearing Azor jewelry",
         },
       },
@@ -320,9 +320,9 @@ export const siteConfig = {
         id: "02",
         tag: "LETTER 02",
         title: "Why we believe everyday deserves something beautiful.",
-        href: "/letters/letter-02",
+        href: "/journal/why-we-believe-everyday-deserves-something-beautiful",
         image: {
-          src: "/images/letter-02.webp",
+          src: "/images/journal/letter-02.webp",
           alt: "White floral botanical close up",
         },
       },
@@ -330,9 +330,9 @@ export const siteConfig = {
         id: "03",
         tag: "LETTER 03",
         title: "For the girls who wear black.",
-        href: "/letters/letter-03",
+        href: "/journal/for-the-girls-who-wear-black",
         image: {
-          src: "/images/letter-03.webp",
+          src: "/images/journal/letter-03.webp",
           alt: "Moody architectural skyline at dusk",
         },
       },
@@ -340,9 +340,9 @@ export const siteConfig = {
         id: "04",
         tag: "LETTER 04",
         title: "The art of keeping things simple.",
-        href: "/letters/letter-04",
+        href: "/journal/the-art-of-keeping-things-simple",
         image: {
-          src: "/images/letter-04.webp",
+          src: "/images/journal/letter-04.webp",
           alt: "Fine gold necklace laid on neutral folded fabric",
         },
       },
@@ -359,7 +359,7 @@ export const siteConfig = {
       },
       whatsapp: {
         label: "CHAT WITH US",
-        href: "https://wa.me/1234567890",
+        href: "https://wa.me/03399966026",
       },
     },
     images: {
@@ -386,7 +386,7 @@ export const siteConfig = {
     ],
     socials: [
       { platform: "instagram", href: "https://instagram.com/azorjewel" },
-      { platform: "whatsapp", href: "https://wa.me/1234567890" },
+      { platform: "whatsapp", href: "https://wa.me/03399966026" },
     ],
   },
 };

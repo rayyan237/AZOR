@@ -47,7 +47,7 @@ export const connectData = {
       titleLines: ["TALK TO US", "DIRECTLY."],
       description: "We're here to help, answer your questions and guide you.",
       actionLabel: "CHAT WITH AZOR",
-      href: "https://wa.me/yourwhatsappnumber",
+      href: "https://wa.me/03399966026",
       type: "whatsapp" as const,
       image: {
         desktop: {
@@ -66,8 +66,8 @@ export const connectData = {
       platform: "EMAIL",
       titleLines: ["DROP US A LINE."],
       description: "For collaborations, press, or general inquiries.",
-      actionLabel: "hello@azor.co",
-      href: "mailto:hello@azor.co",
+      actionLabel: "azorofficial@gmail.com",
+      href: "mailto:azorofficial@gmail.com",
       type: "email" as const,
       image: {
         desktop: {
@@ -87,8 +87,8 @@ export const connectData = {
     title: "THIS IS AZOR.",
     description: "A signature worth wearing.",
     actions: [
-      { label: "FOLLOW US", href: "https://instagram.com/azor", icon: "instagram" },
-      { label: "CHAT WITH US", href: "https://wa.me/yourwhatsappnumber", icon: "whatsapp" },
+      { label: "FOLLOW US", href: "https://instagram.com/azorjewel", icon: "instagram" },
+      { label: "CHAT WITH US", href: "https://wa.me/03399966026", icon: "whatsapp" },
     ],
     image: {
       src: "/images/connect/connect-closing-bg.webp",

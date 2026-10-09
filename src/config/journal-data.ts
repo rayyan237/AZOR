@@ -201,11 +201,11 @@ export const lettersDetailData: Record<string, LetterArticleData> = {
     signature: "— AZOR",
     image: {
       desktop: {
-        src: "/images/journal/letter-01-detail.webp",
+        src: "/images/journal/letter-01.webp",
         alt: "Model wearing crystal floral pendant caught in warm natural sunlight",
       },
       mobile: {
-        src: "/images/journal/letter-01-detail-mobile.webp",
+        src: "/images/journal/letter-01.webp",
         alt: "Detail portrait of woman wearing fine necklace on mobile",
       },
     },

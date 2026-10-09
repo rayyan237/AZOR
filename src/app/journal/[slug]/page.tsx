@@ -39,7 +39,7 @@ export default async function LetterPage({ params }: LetterPageProps) {
 
   return (
     <main className="relative min-h-screen bg-[#04070D] text-white">
-      <Navbar />
+      {/* <Navbar /> */}
       <LetterDetailView letter={letter} />
       <LetterDetailBanner />
       <Footer />
