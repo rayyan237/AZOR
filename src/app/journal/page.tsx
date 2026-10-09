@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/navigation/Navbar";
 import { JournalHero } from "@/components/journal/JournalHero";
 import { JournalGrid } from "@/components/journal/JournalGrid";
-import { journalHeroData } from "@/config/journal-data";
+import { JournalClosingBanner } from "@/components/journal/JournalClosingBanner";
+import { journalHeroData, journalBannerData } from "@/config/journal-data";
 import { Footer } from "@/components/navigation/Footer";
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function JournalPage() {
       <Navbar />
       <JournalHero data={journalHeroData} />
       <JournalGrid />
+      <JournalClosingBanner data={journalBannerData} />
       <Footer />
     </main>
   );

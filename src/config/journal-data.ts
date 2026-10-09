@@ -123,3 +123,42 @@ export const comingSoonCard = {
     alt: "Gentle floral stems casting soft shadows on warm linen wall",
   },
 };
+
+export interface JournalBannerData {
+  titleLines: string[];
+  description: string;
+  ctaText: string;
+  ctaHref: string;
+  images: {
+    desktop: {
+      src: string;
+      alt: string;
+    };
+    mobile: {
+      src: string;
+      alt: string;
+    };
+  };
+}
+
+export const journalBannerData: JournalBannerData = {
+  titleLines: [
+    "A JOURNAL",
+    "OF FEELINGS, MOMENTS",
+    "AND MEANING.",
+  ],
+  description:
+    "Because at Azor, every piece comes with a story — and every story deserves to be told.",
+  ctaText: "READ ALL LETTERS",
+  ctaHref: "#journal-letters",
+  images: {
+    desktop: {
+      src: "/images/journal/journal-envelope-banner-desktop.webp",
+      alt: "Black envelope sealed with bronze Azor wax stamp on black silk drapery with white florals",
+    },
+    mobile: {
+      src: "/images/journal/journal-envelope-banner-mobile.webp",
+      alt: "Azor bronze wax stamp on black envelope on mobile",
+    },
+  },
+};
