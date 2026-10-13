@@ -80,7 +80,7 @@ export const siteConfig = {
     statement1: "More than jewelry.",
     statement2: "It's a feeling.",
     ctaScroll: "SCROLL TO EXPLORE",
-    pagination: "01 / 11",
+    pagination: "AZOR",
     images: {
       desktop: {
         src: "/images/hero-desktop.webp",
@@ -93,7 +93,7 @@ export const siteConfig = {
     },
   },
   beginning: {
-    eyebrow: "01 / THE BEGINNING",
+    eyebrow: "THE BEGINNING",
     titleLine1: "IT STARTS",
     titleLine2: "WITH A DETAIL.",
     narrative: [
@@ -108,12 +108,12 @@ export const siteConfig = {
     },
     images: {
       necklace: {
-        src: "/images/beginning-necklace.jpg",
-        alt: "Close-up detail of handcrafted four-petal diamond pendant necklace by Azor",
+        src: "/images/beginning-necklace.webp",
+        alt: "Azor Aura openwork pave crystal teardrop necklace and drop earrings on model",
       },
       rings: {
-        src: "/images/beginning-rings.jpg",
-        alt: "Close-up view of delicate diamond bands and fine rings on elegant hands by Azor",
+        src: "/images/beginning-rings.webp",
+        alt: "Azor Solace rings on model hand",
       },
     },
     rightTaglines: [
@@ -123,7 +123,7 @@ export const siteConfig = {
     ],
   },
   philosophy: {
-    eyebrow: "02 / OUR PHILOSOPHY",
+    eyebrow: "OUR PHILOSOPHY",
     titleLines: ["JEWELRY", "SHOULD FEEL", "PERSONAL."],
     narrative: [
       "Not just for special occasions.",
@@ -159,46 +159,46 @@ export const siteConfig = {
         id: "001",
         title: "THE SIGNATURE",
         image: {
-          src: "/images/archive-01.webp",
-          alt: "The Signature four-petal pendant necklace by Azor",
+          src: "/images/archive/catalog/The SignatureB.webp",
+          alt: "The Signature necklace Set with pear-cut sapphire and pave crystal by Azor",
         },
         href: "/archive/the-signature",
       },
       {
         id: "002",
-        title: "THE AFTERGLOW",
+        title: "THE CELESTE",
         image: {
-          src: "/images/archive-02.webp",
-          alt: "The Afterglow diamond drop earring worn on model by Azor",
+          src: "/images/archive/catalog/The CelesteB.webp",
+          alt: "The Celeste starburst gold pendant necklace and matching stud earrings by Azor",
         },
-        href: "/archive/the-afterglow",
+        href: "/archive/the-celeste",
       },
       {
         id: "003",
         title: "THE NOIR",
         image: {
-          src: "/images/archive-03.webp",
-          alt: "The Noir black gemstone ring by Azor",
+          src: "/images/archive/catalog/The NoirA.webp",
+          alt: "The Noir Bracelet with emerald-cut dark sapphire halo and pave leafy links by Azor",
         },
         href: "/archive/the-noir",
       },
       {
         id: "004",
-        title: "THE PETAL",
+        title: "THE JARDIN",
         image: {
-          src: "/images/archive-04.webp",
-          alt: "The Petal floral sculptural ring by Azor",
+          src: "/images/archive/catalog/The JardinA.webp",
+          alt: "The Jardin gold wrap ring with pave butterfly and baguette floral bloom by Azor",
         },
-        href: "/archive/the-petal",
+        href: "/archive/the-jardin",
       },
       {
         id: "005",
-        title: "THE LUNE",
+        title: "THE AURA",
         image: {
-          src: "/images/archive-05.webp",
-          alt: "The Lune crescent moon pendant necklace by Azor",
+          src: "/images/archive/catalog/The AuraA.webp",
+          alt: "The Aura openwork pave crystal teardrop necklace and drop earrings by Azor",
         },
-        href: "/archive/the-lune",
+        href: "/archive/the-aura",
       },
     ] as ArchiveItem[],
   },
@@ -255,7 +255,7 @@ export const siteConfig = {
     ] as MoodItem[],
   },
   azorGirl: {
-    eyebrow: "05 / THE AZOR GIRL",
+    eyebrow: "THE AZOR GIRL",
     titleLines: ["AZOR LIVES", "OUTSIDE THIS SCREEN."],
     narrative: [
       "Real people. Real moments.",
@@ -273,27 +273,27 @@ export const siteConfig = {
     },
     mosaic: [
       {
-        src: "/images/girl-01.webp",
+        src: "/images/archive/catalog/The CelesteB.webp",
         alt: "Azor diamond drop earring on model close-up",
       },
       {
-        src: "/images/girl-02.webp",
+        src: "/images/beginning-rings.webp",
         alt: "Model wearing sunglasses with diamond earrings",
       },
       {
-        src: "/images/girl-03.webp",
+        src: "/images/archive/catalog/The CelesteC.webp",
         alt: "Atmospheric editorial city architecture towers",
       },
       {
-        src: "/images/girl-04.webp",
+        src: "/images/archive/catalog/The SolaceD.webp",
         alt: "Fine jewelry layered necklace on model",
       },
       {
-        src: "/images/girl-05.webp",
+        src: "/images/beginning-necklace.webp",
         alt: "Editorial model portrait in evening sunglasses",
       },
       {
-        src: "/images/girl-06.webp",
+        src: "/images/archive/catalog/The StellaB.webp",
         alt: "Editorial woman walking down city street wearing Azor",
       },
     ],

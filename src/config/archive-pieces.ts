@@ -39,187 +39,187 @@ export const archivePieceDetails: ArchivePieceDetail[] = [
     slug: "the-signature",
     number: "001",
     name: "THE SIGNATURE",
-    tagline: "A quiet statement of your own kind of magic.",
-    story: "A timeless piece, designed for the moments that feel like you.",
+    tagline: "A quiet statement of deep blue allure.",
+    story: "A regal piece, designed for evenings that linger long after midnight.",
     heroImages: {
-      desktop: "/images/archive/piece-01-hero-desktop.webp",
-      mobile: "/images/archive/piece-01-hero-mobile.webp",
+      desktop: "/images/archive/archive-hero-desktop.webp",
+      mobile: "/images/archive/archive-hero-mobile.webp",
     },
     mood: {
-      titleLines: ["ELEGANT.", "PERSONAL.", "TIMELESS."],
+      titleLines: ["TIMELESS.", "BOLD.", "MYSTERIOUS."],
       description:
-        "For the days you want to feel put together without trying too hard. The Signature is a reminder that true elegance is always effortless.",
+        "For evenings that call for quiet intrigue. The Signature pairs deep sapphire tones with radiant pavé crystal to command attention without saying a word.",
     },
     editorial: {
-      headline: "A timeless silhouette, crafted to catch ambient light.",
+      headline: "Faceted teardrop sapphires, framed by luminous crystal petals.",
       description:
-        "Designed with balanced proportions to rest naturally against the collarbone. Each facet is shaped to offer gentle shimmer without overpowering your personal presence.",
+        "Contoured along the collarbone with pavé-set links, culminating in a marquise bloom and pear-cut drop. Designed with fluid drop earrings to catch low evening light.",
       stylingTip:
-        "Wear it solitary for an effortless daytime look, or layer it with fine gold chains for evening presence.",
+        "Pair with an open neckline or rich velvet eveningwear to let the royal blue centerpiece take focus.",
     },
     care: standardCareInstructions,
     gallery: {
       main: {
-        src: "/images/archive/piece-01.webp",
+        src: "/images/archive/catalog/The SignatureA.webp",
         alt: "The Signature cross-shaped diamond pendant necklace",
       },
       thumbnails: [
         {
-          src: "/images/archive/piece-01-thumb-1.webp",
+          src: "/images/archive/catalog/The SignatureA.webp",
           alt: "Necklace worn on model collarbone",
         },
         {
-          src: "/images/archive/piece-01-thumb-2.webp",
+          src: "/images/archive/catalog/The SignatureB.webp",
           alt: "Fine diamond setting macro detail",
         },
         {
-          src: "/images/archive/piece-01-thumb-3.webp",
+          src: "/images/archive/catalog/The SignatureC.webp",
           alt: "Side profile of The Signature pendant",
         },
       ],
     },
   },
   {
-    id: "02",
-    slug: "the-afterglow",
-    number: "002",
-    name: "THE AFTERGLOW",
-    tagline: "Softness, with a little more sparkle.",
-    story: "Sculpted to catch late-afternoon sunlight and whisper in evening shadows.",
+    id: "03",
+    slug: "the-jardin",
+    number: "003",
+    name: "THE JARDIN",
+    tagline: "A delicate dance of petals and golden wings.",
+    story: "A whimsical piece, designed for days that invite lighthearted beauty.",
     heroImages: {
-      desktop: "/images/archive/piece-02.webp",
-      mobile: "/images/archive/piece-02.webp",
+      desktop: "/images/archive/archive-hero-desktop.webp",
+      mobile: "/images/archive/archive-hero-mobile.webp",
     },
     mood: {
-      titleLines: ["RADIANT.", "SUBTLE.", "EVENING."],
+      titleLines: ["ROMANTIC.", "SOFT.", "TIMELESS."],
       description:
-        "Crafted to move fluidly with your rhythm. Three descending droplets designed to frame the cheekbone with understated luminosity.",
+        "For moments that celebrate effortless charm. The Jardin pairs a baguette-cut floral bloom with a pavé butterfly in a graceful, open-silhouette embrace.",
     },
     editorial: {
-      headline: "A rhythmic cascade of light with gentle motion.",
+      headline: "An open wrap silhouette crowned in nature-inspired brilliance.",
       description:
-        "Engineered with delicate articulation so every turn of the head catches surrounding light. Lightweight and balanced for complete comfort from day to night.",
+        "Crafted with a sparkling pavé band that spirals into an offset butterfly and radiating daisy motif. Designed to catch golden-hour light with playful ease.",
       stylingTip:
-        "Pairs seamlessly with swept-back hair and open necklines to highlight the jawline.",
+        "Wear it solo on the index finger or stack with simple bands for a delicate, sunlit statement.",
     },
     care: standardCareInstructions,
     gallery: {
       main: {
-        src: "/images/archive/piece-02.webp",
-        alt: "The Afterglow triple droplet diamond earrings",
+        src: "/images/archive/catalog/The JardinA.webp",
+        alt: "The Jardin Ring",
       },
       thumbnails: [
-        { src: "/images/archive/piece-02.webp", alt: "Side profile" },
-        { src: "/images/archive/piece-04.webp", alt: "Setting detail" },
-        { src: "/images/archive/piece-12.webp", alt: "Worn look" },
+        { src: "/images/archive/catalog/The JardinA.webp", alt: "The Jardin Ring" },
+        { src: "/images/archive/catalog/The JardinB.webp", alt: "The Jardin Ring" },
+        { src: "/images/archive/catalog/The JardinC.webp", alt: "The Jardin Ring" },
       ],
     },
   },
   {
-    id: "03",
-    slug: "the-noir",
-    number: "003",
-    name: "THE NOIR",
-    tagline: "For evenings that don't need an occasion.",
-    story: "A solitary cabochon stone embedded in a weighted brushed gold band.",
+    id: "02",
+    slug: "the-aura",
+    number: "002",
+    name: "THE AURA",
+    tagline: "A luminous glow of modern, sculpted grace.",
+    story: "A radiant piece, designed to surround you in a soft halo of light.",
     heroImages: {
-      desktop: "/images/archive/piece-03.webp",
-      mobile: "/images/archive/piece-03.webp",
+      desktop: "/images/archive/archive-hero-desktop.webp",
+      mobile: "/images/archive/archive-hero-mobile.webp",
     },
     mood: {
-      titleLines: ["MYSTERIOUS.", "GROUNDED.", "BOLD."],
+      titleLines: ["SOFT.", "ROMANTIC.", "TIMELESS."],
       description:
-        "An intentional contrast of deep natural dark stone against hand-polished gold. Built to be worn solitary on the index or stacked with subtle pavé.",
+        "For moments when you want your presence to gently shine. The Aura reflects ambient light with open, pavé-encrusted silhouettes that feel effortlessly ethereal.",
     },
     editorial: {
-      headline: "A quiet anchor of depth and sculpted warmth.",
+      headline: "Openwork marquise pendants layered with pavé brilliance.",
       description:
-        "The smooth, domed cabochon creates an intriguing play of shadow and reflection. Weighted comfortably to provide a reassuring, grounded presence on the hand.",
+        "Floral-inspired links flow naturally along the décolletage, centering on a dual teardrop focal point. Paired with sculpted statement drops that mirror every movement.",
       stylingTip:
-        "Wear alone on the index finger for a modern architectural statement, or pair with delicate textured bands.",
+        "Style with strapless gowns or monochromatic tailoring to let its sculpted, luminous glow take the lead.",
     },
     care: standardCareInstructions,
     gallery: {
       main: {
-        src: "/images/archive/piece-03.webp",
-        alt: "The Noir gold ring with solitary dark onyx stone",
+        src: "/images/archive/catalog/The AuraA.webp",
+        alt: "The Aura Necklace set",
       },
       thumbnails: [
-        { src: "/images/archive/piece-07.webp", alt: "Hand worn" },
-        { src: "/images/archive/piece-03.webp", alt: "Stone facet" },
-        { src: "/images/archive/piece-10.webp", alt: "Side view" },
+        { src: "/images/archive/catalog/The AuraA.webp", alt: "The Aura Necklace Set" },
+        { src: "/images/archive/catalog/The AuraB.webp", alt: "The Aura Necklace Closeup" },
+        { src: "/images/archive/catalog/The AuraC.webp", alt: "The Aura Earrings Closeup" },
       ],
     },
   },
   {
     id: "04",
-    slug: "the-petale",
+    slug: "the-celeste",
     number: "004",
-    name: "THE PÉTALE",
-    tagline: "Delicate by nature. Bold in presence.",
-    story: "Organic floral silhouettes reimagined in freshwater pearls and gold.",
+    name: "THE CELESTE",
+    tagline: "A nocturnal spark caught in radiant celestial gold.",
+    story: "An enchanting set, designed for nights illuminated by quiet celestial wonder.",
     heroImages: {
-      desktop: "/images/archive/piece-04.webp",
-      mobile: "/images/archive/piece-04.webp",
+      desktop: "/images/archive/archive-hero-desktop.webp",
+      mobile: "/images/archive/archive-hero-mobile.webp",
     },
     mood: {
-      titleLines: ["ORGANIC.", "GENTLE.", "POETIC."],
+      titleLines: ["MYSTERIOUS.", "BOLD.", "TIMELESS."],
       description:
-        "Inspired by petals resting on water. A four-stone cluster that delivers tactile softness with architectural structure.",
+        "For evenings that invite a touch of midnight intrigue. The Celeste balances deep onyx-toned centers with radiating crystal beams in warm, polished gold[cite: 10, 12].",
     },
     editorial: {
-      headline: "Soft, organic contours meeting polished geometry.",
+      headline: "Radiant starburst pendants framed by contrasting midnight centers[cite: 10].",
       description:
-        "Lustrous pearl undertones bring warmth to the face. The floral arrangement feels effortless and nostalgic yet distinctly modern.",
+        "Crafted with baguette and pavé crystal rays surrounding a cluster of dark center stones. Paired with coordinating celestial studs designed to catch flickering ambient light.",
       stylingTip:
-        "Complements soft knitwear and linen tailoring, bringing romantic poise to understated outfits.",
+        "Wear together for refined evening radiance, or let the pendant stand alone over deep necklines or dark silk.",
     },
     care: standardCareInstructions,
     gallery: {
       main: {
-        src: "/images/archive/piece-04.webp",
-        alt: "The Pétale pearl floral stud earrings",
+        src: "/images/archive/catalog/The CelesteA.webp",
+        alt: "The Celeste Necklace Set",
       },
       thumbnails: [
-        { src: "/images/archive/piece-04.webp", alt: "Pearl texture" },
-        { src: "/images/archive/piece-09.webp", alt: "Worn earring" },
-        { src: "/images/archive/piece-02.webp", alt: "Scale detail" },
+        { src: "/images/archive/catalog/The CelesteA.webp", alt: "The Celeste Necklace Set" },
+        { src: "/images/archive/catalog/The CelesteB.webp", alt: "The Celeste Necklace Closeup" },
+        { src: "/images/archive/catalog/The CelesteC.webp", alt: "The Celeste Earrings Detail" },
       ],
     },
   },
   {
     id: "05",
-    slug: "the-lune",
+    slug: "the-noir",
     number: "005",
-    name: "THE LUNE",
-    tagline: "Made for softer moments.",
-    story: "A curved crescent motif that rests against the hollow of the neck.",
+    name: "THE NOIR",
+    tagline: "A deep midnight gemstone bound in sharp brilliance.",
+    story: "An evocative piece, designed for the quiet power of evening shadows.",
     heroImages: {
-      desktop: "/images/archive/piece-05.webp",
-      mobile: "/images/archive/piece-05.webp",
+      desktop: "/images/archive/archive-hero-desktop.webp",
+      mobile: "/images/archive/archive-hero-mobile.webp",
     },
     mood: {
-      titleLines: ["INTIMATE.", "NOCTURNAL.", "POETIC."],
+      titleLines: ["MYSTERIOUS.", "BOLD.", "TIMELESS."],
       description:
-        "The gentle curve of the moon suspended on an ultra-fine diamond-cut chain. Understated enough for morning coffee, striking under candlelight.",
+        "For occasions that belong entirely to the night. The Noir centers an emerald-cut dark sapphire stone within a brilliant halo for striking contrast.",
     },
     editorial: {
-      headline: "An understated arc that celebrates quiet poise.",
+      headline: "An emerald-cut midnight gem set within articulated pavé leaves.",
       description:
-        "Slender and whisper-light against bare skin. The polished curved silhouette catches low light effortlessly without demanding attention.",
+        "Engineered with delicate marquise link motifs that wrap fluidly around the wrist. Completed with an adjustable chain to drape comfortably against bare skin.",
       stylingTip:
-        "Resting right at the collarbone, it is ideal inside an unbuttoned crisp white shirt or paired with silk slips.",
+        "Style solitary beside an evening cuff or pair with minimal silver rings to let the dark center stone captivate.",
     },
     care: standardCareInstructions,
     gallery: {
       main: {
-        src: "/images/archive/piece-05.webp",
-        alt: "The Lune crescent moon pendant necklace",
+        src: "/images/archive/catalog/The NoirA.webp",
+        alt: "The Noir Bracelet",
       },
       thumbnails: [
-        { src: "/images/archive/piece-08.webp", alt: "Layered view" },
-        { src: "/images/archive/piece-05.webp", alt: "Pendant macro" },
-        { src: "/images/archive/piece-01.webp", alt: "Clasp detail" },
+        { src: "/images/archive/catalog/The NoirA.webp", alt: "The Noir Bracelet" },
+        { src: "/images/archive/catalog/The NoirB.webp", alt: "The Noir Bracelet" },
+        { src: "/images/archive/catalog/The NoirC.webp", alt: "The Noir Bracelet" },
       ],
     },
   },
@@ -228,253 +228,110 @@ export const archivePieceDetails: ArchivePieceDetail[] = [
     slug: "the-solace",
     number: "006",
     name: "THE SOLACE",
-    tagline: "Quiet strength, in every detail.",
-    story: "A hand-textured gold cuff punctuated with flush-set brilliant stones.",
+    tagline: "A serene crossover of light and modern balance.",
+    story: "A minimalist piece, designed to bring calm elegance to your everyday gestures.",
     heroImages: {
-      desktop: "/images/archive/piece-06.webp",
-      mobile: "/images/archive/piece-06.webp",
+      desktop: "/images/archive/archive-hero-desktop.webp",
+      mobile: "/images/archive/archive-hero-mobile.webp",
     },
     mood: {
-      titleLines: ["ENDURING.", "MINIMAL.", "WEIGHTED."],
+      titleLines: ["SOFT.", "TIMELESS.", "ROMANTIC."],
       description:
-        "Engineered with a seamless hinge and subtle brushed interior. Designed to be put on and never taken off.",
+        "For days that call for quiet composure. The Solace intertwines linear baguette cuts with delicate micro-pavé to deliver effortless, balanced beauty.",
     },
     editorial: {
-      headline: "Subtle textural dimension with daily resilience.",
+      headline: "An architectural crossover silhouette set with baguette crystals.",
       description:
-        "A balanced oval profile ensures the cuff contours closely to the wrist rather than spinning, making typing and movement completely frictionless.",
+        "Crafted with an overlapping dual band that highlights crisp step cuts over a slender pavé curve. Engineered to rest comfortably flush against the finger for everyday wear.",
       stylingTip:
-        "Stands strong on its own next to a leather watch, or stacked adjacent to a delicate chain bracelet.",
+        "Wear as a standalone accent on the middle or ring finger to elevate casual knits and tailored cuffs alike.",
     },
     care: standardCareInstructions,
     gallery: {
       main: {
-        src: "/images/archive/piece-06.webp",
-        alt: "The Solace textured gold pave diamond bangle",
+        src: "/images/archive/catalog/The SolaceA.webp",
+        alt: "The Solace Ring",
       },
       thumbnails: [
-        { src: "/images/archive/piece-11.webp", alt: "Wrist stack" },
-        { src: "/images/archive/piece-06.webp", alt: "Texture detail" },
-        { src: "/images/archive/piece-07.webp", alt: "Hinge closeup" },
+        { src: "/images/archive/catalog/The SolaceA.webp", alt: "The Solace Ring" },
+        { src: "/images/archive/catalog/The SolaceB.webp", alt: "The Solace Ring" },
+        { src: "/images/archive/catalog/The SolaceC.webp", alt: "The Solace Ring" },
       ],
     },
   },
   {
     id: "07",
-    slug: "the-verite",
+    slug: "the-serenity",
     number: "007",
-    name: "THE VÉRITÉ",
-    tagline: "Because the truth always looks good on you.",
-    story: "An unbroken circle of micro-pavé stones handset in platinum-plated silver.",
+    name: "THE SERENITY",
+    tagline: "A gentle vine of pastel petals and silver grace.",
+    story: "A poetic piece, designed to bring the tranquility of an enchanted garden to your wrist.",
     heroImages: {
-      desktop: "/images/archive/piece-07.webp",
-      mobile: "/images/archive/piece-07.webp",
+      desktop: "/images/archive/archive-hero-desktop.webp",
+      mobile: "/images/archive/archive-hero-mobile.webp",
     },
     mood: {
-      titleLines: ["ESSENTIAL.", "TIMELESS.", "PURIST."],
+      titleLines: ["SOFT.", "ROMANTIC.", "TIMELESS."],
       description:
-        "The eternity ring distilled to its purest essence. Ultra-low profile so it rests weightless alongside your favorite heirloom pieces.",
+        "For days that call for quiet, blooming beauty. The Serenity weaves delicate pastel florets and curved leafy vines into an effortlessly graceful presence.",
     },
     editorial: {
-      headline: "The quintessential eternity ring, refined to perfection.",
+      headline: "An organic silver vine accented by multi-colored crystal blossoms.",
       description:
-        "Low-profile prong settings ensure comfort between fingers while maximizing the continuous facet scintillation from every perspective.",
+        "Crafted with articulated leafy links that trace a delicate bow and teardrop center motif. Designed with an adjustable clasp for a fluid, weightless drape against the wrist.",
       stylingTip:
-        "The ultimate stacking foundation. Pair with solitary gemstones or wear across multiple fingers for refined repetition.",
+        "Wear alone for a soft touch of spring color, or layer alongside fine silver chains for relaxed romance.",
     },
     care: standardCareInstructions,
     gallery: {
       main: {
-        src: "/images/archive/piece-07.webp",
-        alt: "The Vérité delicate pavé eternity band on hand",
+        src: "/images/archive/catalog/The SerenityA.webp",
+        alt: "The Serenity Bracelet",
       },
       thumbnails: [
-        { src: "/images/archive/piece-03.webp", alt: "Stacked look" },
-        { src: "/images/archive/piece-07.webp", alt: "Pavé setting" },
-        { src: "/images/archive/piece-10.webp", alt: "Profile view" },
+        { src: "/images/archive/catalog/The SerenityA.webp", alt: "The Serenity Bracelet" },
+        { src: "/images/archive/catalog/The SerenityB.webp", alt: "The Serenity Bracelet" },
+        { src: "/images/archive/catalog/The SerenityC.webp", alt: "The Serenity Bracelet" },
       ],
     },
   },
   {
     id: "08",
-    slug: "the-delice",
+    slug: "the-stella",
     number: "008",
-    name: "THE DÉLICE",
-    tagline: "A little sweetness. Always.",
-    story: "Two delicately staggered chains cradling a faceted pear-cut pendant.",
+    name: "THE STELLA",
+    tagline: "A delicate constellation of silver and starlight.",
+    story: "A celestial piece, designed to bring a quiet glimmer to every gesture.",
     heroImages: {
-      desktop: "/images/archive/piece-08.webp",
-      mobile: "/images/archive/piece-08.webp",
+      desktop: "/images/archive/archive-hero-desktop.webp",
+      mobile: "/images/archive/archive-hero-mobile.webp",
     },
     mood: {
-      titleLines: ["LUMINOUS.", "LAYERED.", "DELICATE."],
+      titleLines: ["ROMANTIC.", "SOFT.", "TIMELESS."],
       description:
-        "The look of effortless layering without the entanglement. Cascading drop proportions calibrated to highlight open collar shirts and evening gowns.",
+        "For days that call for subtle, starry magic. The Stella weaves graceful infinity curves around a central crystal starburst for an airy, feminine glow.",
     },
     editorial: {
-      headline: "Effortless multi-length cascade without the tangling.",
+      headline: "An openwork infinity band centered with a radiant floral star.",
       description:
-        "Joined at a singular secure clasp, both chains are spaced at proportional intervals to accentuate the throat and décolletage naturally.",
+        "Crafted with pavé-accented ribbons that loop into delicate leaf and petal contours. Designed to sit lightly on the hand while capturing natural daylight.",
       stylingTip:
-        "Best showcased with deep V-necks, blazer lapels, or relaxed silk shirts unbuttoned low.",
+        "Wear alone for everyday romantic refinement, or pair alongside delicate silver stacking rings.",
     },
     care: standardCareInstructions,
     gallery: {
       main: {
-        src: "/images/archive/piece-08.webp",
-        alt: "The Délice layered teardrop crystal necklace",
+        src: "/images/archive/catalog/The StellaA.webp",
+        alt: "The Stella Ring",
       },
       thumbnails: [
-        { src: "/images/archive/piece-01.webp", alt: "Pendant closeup" },
-        { src: "/images/archive/piece-08.webp", alt: "Layering detail" },
-        { src: "/images/archive/piece-05.webp", alt: "Clasp" },
+        { src: "/images/archive/catalog/The StellaA.webp", alt: "The Stella Ring" },
+        { src: "/images/archive/catalog/The StellaB.webp", alt: "The Stella Ring" },
+        { src: "/images/archive/catalog/The StellaC.webp", alt: "The Stella Ring" },
       ],
     },
   },
-  {
-    id: "09",
-    slug: "the-eclat",
-    number: "009",
-    name: "THE ÉCLAT",
-    tagline: "For the ones who shine effortlessly.",
-    story: "Sculptural arches featuring suspended natural baroque pearl drops.",
-    heroImages: {
-      desktop: "/images/archive/piece-09.webp",
-      mobile: "/images/archive/piece-09.webp",
-    },
-    mood: {
-      titleLines: ["ARCHITECTURAL.", "SCULPTURAL.", "DISTINCT."],
-      description:
-        "A dance between modernist gold curves and the irregular, organic beauty of the sea. Made for art gallery openings and quiet dinners alike.",
-    },
-    editorial: {
-      headline: "Organic seaside forms embraced by sleek arches.",
-      description:
-        "Each baroque pearl possesses its own natural surface nuances, ensuring every pair is distinct and carries an unmistakable artisanal soul.",
-      stylingTip:
-        "Let them lead your styling alongside minimal, structured monochrome garments like charcoal wool or matte black silk.",
-    },
-    care: standardCareInstructions,
-    gallery: {
-      main: {
-        src: "/images/archive/piece-09.webp",
-        alt: "The Éclat sculptural gold drop earrings with pearl",
-      },
-      thumbnails: [
-        { src: "/images/archive/piece-09.webp", alt: "Earring profile" },
-        { src: "/images/archive/piece-04.webp", alt: "Pearl nuance" },
-        { src: "/images/archive/piece-12.webp", alt: "Editorial portrait" },
-      ],
-    },
-  },
-  {
-    id: "10",
-    slug: "the-minimal",
-    number: "010",
-    name: "THE MINIMAL",
-    tagline: "Less, but never ordinary.",
-    story: "Twisted organic huggie hoops with an understated ergonomic latch.",
-    heroImages: {
-      desktop: "/images/archive/piece-10.webp",
-      mobile: "/images/archive/piece-10.webp",
-    },
-    mood: {
-      titleLines: ["TACTILE.", "EFFORTLESS.", "DAILY."],
-      description:
-        "The everyday staple perfected. Sits snugly against the lobe with zero pinch, lightweight enough to sleep in.",
-    },
-    editorial: {
-      headline: "Your second-skin hoop, elevated with organic twist detailing.",
-      description:
-        "Designed to sit closely around the earlobe with zero snagging or weight. The subtle ribbon twist reflects ambient warmth across all angles.",
-      stylingTip:
-        "The consummate first or second-piercing anchor. Pairs harmoniously with studs, drops, or worn solo as a timeless uniform.",
-    },
-    care: standardCareInstructions,
-    gallery: {
-      main: {
-        src: "/images/archive/piece-10.webp",
-        alt: "The Minimal organic twisted gold huggie hoops",
-      },
-      thumbnails: [
-        { src: "/images/archive/piece-10.webp", alt: "Twist detail" },
-        { src: "/images/archive/piece-02.webp", alt: "Ear fit" },
-        { src: "/images/archive/piece-06.webp", alt: "Gold luster" },
-      ],
-    },
-  },
-  {
-    id: "11",
-    slug: "the-serenity",
-    number: "011",
-    name: "THE SERENITY",
-    tagline: "Calm. Glossy. Timeless.",
-    story: "Bezel-set floating gems linked by fine hand-assembled articulation.",
-    heroImages: {
-      desktop: "/images/archive/piece-11.webp",
-      mobile: "/images/archive/piece-11.webp",
-    },
-    mood: {
-      titleLines: ["FLUID.", "DELICATE.", "TIMELESS."],
-      description:
-        "A bracelet that moves like liquid water over the wrist. Each stone is individually bezel-set to lay flat and prevent catching on knitwear.",
-    },
-    editorial: {
-      headline: "Liquid drape and smooth bezels that never catch.",
-      description:
-        "Engineered for daily tactile comfort. The enclosed settings shield the stones while giving them a crisp, circular frame of reflective luster.",
-      stylingTip:
-        "Drapes gracefully over shirt cuffs or stacks easily alongside a solid bangle.",
-    },
-    care: standardCareInstructions,
-    gallery: {
-      main: {
-        src: "/images/archive/piece-11.webp",
-        alt: "The Serenity fine bezel crystal chain bracelet",
-      },
-      thumbnails: [
-        { src: "/images/archive/piece-06.webp", alt: "Bezel setting" },
-        { src: "/images/archive/piece-11.webp", alt: "Extender link" },
-        { src: "/images/archive/piece-07.webp", alt: "Worn wrist" },
-      ],
-    },
-  },
-  {
-    id: "12",
-    slug: "the-aura",
-    number: "012",
-    name: "THE AURA",
-    tagline: "Not just a piece. A presence.",
-    story: "Linear cascading chain drops that trace the jawline with radiant grace.",
-    heroImages: {
-      desktop: "/images/archive/piece-12.webp",
-      mobile: "/images/archive/piece-12.webp",
-    },
-    mood: {
-      titleLines: ["HYPNOTIC.", "CINEMATIC.", "PRESENCE."],
-      description:
-        "When you want your arrival to speak before words are spoken. Long diamond-cut links that catch ambient candlelight with every movement.",
-    },
-    editorial: {
-      headline: "An elongated thread of movement and light.",
-      description:
-        "Lightweight fine-chain links deliver dramatic vertical length without weighing down the lobe. Glides fluidly as you move.",
-      stylingTip:
-        "Needs no accompanying necklace. Pair with an off-the-shoulder silhouette or an updo to maximize its vertical impact.",
-    },
-    care: standardCareInstructions,
-    gallery: {
-      main: {
-        src: "/images/archive/piece-12.webp",
-        alt: "The Aura statement dangling earrings against evening portrait",
-      },
-      thumbnails: [
-        { src: "/images/archive/piece-12.webp", alt: "Ear drop macro" },
-        { src: "/images/archive/piece-02.webp", alt: "Chain articulation" },
-        { src: "/images/archive/piece-09.webp", alt: "Atmosphere view" },
-      ],
-    },
-  },
+  
 ];
 
 export const sharedQuoteSection = {

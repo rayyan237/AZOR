@@ -33,11 +33,11 @@ export const aboutData = {
     },
     images: {
       main: {
-        src: "/images/about/story-01.webp",
+        src: "/images/about/story-04.webp",
         alt: "Hands clasped wearing delicate minimal fine gold and diamond rings",
       },
       polaroid: {
-        src: "/images/about/story-02.webp",
+        src: "/images/about/story-03.webp",
         alt: "Model wearing Azor cross diamond pendant necklace",
       },
     },
@@ -78,7 +78,7 @@ export const aboutData = {
       "Azor is for the dreamers, the doers, the ones who find beauty in the in-between.\nFor the girls who wear their story, not just their style.",
     ],
     image: {
-      src: "/images/about/why-azor-still.webp",
+      src: "/images/about/story-05.webp",
       alt: "Azor embossed luxury presentation box with flower crystal ring on natural travertine stone with dried white florals",
     },
     epigram: {

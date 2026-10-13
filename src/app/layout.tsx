@@ -10,15 +10,16 @@ const cormorant = Cormorant_Garamond({
   variable: "--font-serif",
   subsets: ["latin"],
   style: ["normal", "italic"],
-  weight: ["400", "500", "600"],
+  weight: "variable",
   display: "swap",
 });
 
 // Editorial Sans (Eyebrows, UI, Buttons, Navigation, Body)
+
 const montserrat = Montserrat({
-  variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: "variable", // or simply remove the `weight` property entirely, as variable is default
+  variable: "--font-sans",
   display: "swap",
 });
 

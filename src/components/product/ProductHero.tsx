@@ -99,7 +99,7 @@ export function ProductHero({ piece }: ProductHeroProps) {
 
         {/* Piece Index Indicator */}
         <div className="flex items-center gap-2 sm:gap-3 text-zinc-300 text-[9px] xs:text-[10px] sm:text-[10.5px] font-[family-name:var(--font-sans)] font-medium tracking-[0.24em]">
-          <span>{piece.number} / 012</span>
+          <span>{piece.number} / 008</span>
           <span className="w-5 sm:w-7 h-[1px] bg-white/40 block" aria-hidden="true" />
         </div>
       </div>
