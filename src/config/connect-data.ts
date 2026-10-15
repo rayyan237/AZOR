@@ -66,8 +66,8 @@ export const connectData = {
       platform: "EMAIL",
       titleLines: ["DROP US A LINE."],
       description: "For collaborations, press, or general inquiries.",
-      actionLabel: "azorofficial@gmail.com",
-      href: "mailto:azorofficial@gmail.com",
+      actionLabel: "azorjewel@gmail.com",
+      href: "mailto:azorjewel@gmail.com",
       type: "email" as const,
       image: {
         desktop: {
